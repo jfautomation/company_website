@@ -1,0 +1,24 @@
+/*
+Theme Name: My Custom Theme
+Theme URI: https://example.com
+Author: Your Name
+Author URI: https://example.com
+Description: A fully custom WordPress theme from scratch.
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: my-custom-theme
+*/
+
+/* General styles for your custom theme */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+}
+
