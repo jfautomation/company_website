@@ -4,6 +4,10 @@
 
 .navbar {
     background-color: red !important;
+    /* position: -webkit-sticky !important;
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 9999 !important; */
 }
 
 /* Hide the shop icon when the screen size is smaller than 992px (before the hamburger appears) */
