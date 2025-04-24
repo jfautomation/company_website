@@ -1,0 +1,21 @@
+.nav-item a {
+    /* color: red !important; */
+}
+
+.navbar {
+    background-color: red !important;
+}
+
+/* Hide the shop icon when the screen size is smaller than 992px (before the hamburger appears) */
+@media (max-width: 991px) {
+    .shop-icon {
+        display: none;
+    }
+}
+
+/* Show the shop icon on large screens and above (992px and larger) */
+@media (min-width: 992px) {
+    .shop-icon {
+        display: inline-block; /* Or you can use flex, if you prefer */
+    }
+}

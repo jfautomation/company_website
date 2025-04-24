@@ -13,9 +13,10 @@
 <header>
     <div class="">
             <!-- Site Title & Description -->
-            <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">Navbar</a>
+       
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -31,6 +32,8 @@
                     $menu_items = wp_get_nav_menu_items($menu_id); // Get menu items
                     if ( ! empty( $menu_items ) ) :
                         foreach ( $menu_items as $menu_item ) :
+                            // Check if the menu item is 'Contact' and don't output it yet
+                            if (strtolower($menu_item->title) !== 'contact') :
                 ?>
                             <li class="nav-item">
                                 <a class="nav-link" href="<?php echo esc_url( $menu_item->url ); ?>">
@@ -38,6 +41,7 @@
                                 </a>
                             </li>
                 <?php
+                            endif; // End 'Contact' check
                         endforeach;
                     else :
                 ?>
@@ -48,34 +52,42 @@
                     endif;
                 endif;
                 ?>
+
+                <!-- Hardcoded "Shop" link before "Contact" -->
+                <li class="nav-item">
+                    <a href="<?php echo esc_url( home_url( '/shop' ) ); ?>" class="nav-link">
+                        Shop
+                    </a>
+                </li>
+
+                <!-- Now output "Contact" after the "Shop" link -->
+                <?php
+                    if ($menu_id) :
+                        foreach ( $menu_items as $menu_item ) :
+                            // Only output the 'Contact' link
+                            if (strtolower($menu_item->title) === 'contact') :
+                ?>
+                            <li class="nav-item">
+                                <a class="nav-link" href="<?php echo esc_url( $menu_item->url ); ?>">
+                                    <?php echo esc_html( $menu_item->title ); ?>
+                                </a>
+                            </li>
+                <?php
+                            endif;
+                        endforeach;
+                    endif;
+                ?>
             </ul>
+
+            <!-- Icon for shop on the right (for desktop and mobile) -->
+            <a href="<?php echo esc_url( home_url( '/shop' ) ); ?>" class="shop-icon-link">
+                <i class="fas fa-store text-dark"></i>
+            </a>
         </div>
     </div>
 </nav>
 
- 
-
-          
-            <!-- <nav class="navbar navbar-expand-lg bg-body-tertiary">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="<?php echo home_url(); ?>"><?php bloginfo( 'name' ); ?></a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <?php
-                        wp_nav_menu( array(
-                            'theme_location' => 'primary',
-                            'container' => false, 
-                            'menu_class' => 'navbar-nav me-auto mb-2 mb-lg-0', 
-                            'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-                            
-                        ) );
-                        ?>
-                    </div>
-                </div>
-            </nav> -->
         </div>
     </header>
 
-    <!-- Main Content -->
+
