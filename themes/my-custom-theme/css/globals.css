@@ -1,0 +1,18 @@
+:root {
+    --color-gradient-light-blue: #3A7BD5;
+    --color-gradient-dark-blue: #1600A0;
+    --color-dark-text: #000000;
+    --color-grey-text: #747474;
+    --color-light-grey-border:#D8D2D2;
+    --color-light-grey-carousel-indicators:#C2C2C2;
+    --color-light-grey-bg: #EEEEEE;
+    --color-red-badge: #FF4A3D;
+    --color-yellow-star: #FFC300;
+    --color-dark-grey-bg: #383737; 
+    --font-base: 'Inter', sans-serif;
+  }
+
+  body {
+    font-family: var(--font-base);
+    background-color: var(--color-light);
+  }

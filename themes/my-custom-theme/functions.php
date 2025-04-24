@@ -27,6 +27,9 @@ function my_custom_theme_scripts() {
     wp_enqueue_style('navbar-style', get_template_directory_uri() . '/css/nav/nav.css', array(), '1.0', 'all');
 
     wp_enqueue_style('landing-page-style', get_template_directory_uri() . '/css/landing_page/landing_page.css', array(), '1.0', 'all');
+    
+    wp_enqueue_style('global-styles', get_template_directory_uri() . '/css/globals.css', array(), '1.0', 'all');
+
 }
 add_action('wp_enqueue_scripts', 'my_custom_theme_scripts');
 

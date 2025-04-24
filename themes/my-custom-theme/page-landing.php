@@ -8,6 +8,21 @@
 <?php
 $hero_bg_image = get_field('hero_background_image'); // make sure this field exists in ACF
 ?>
+<?php
+$images = [
+    get_field('product_shot_1'),
+    get_field('product_shot_2'),
+    get_field('product_shot_3'),
+    get_field('product_shot_4'),
+
+];
+
+// foreach ($images as $image) {
+//     if ($image) {
+//         echo '<img src="' . esc_url($image['url']) . '" alt="' . esc_attr($image['alt']) . '">';
+//     }
+// }
+?>
 
 <div class="landing-page-content">
     <?php
@@ -19,8 +34,8 @@ $hero_bg_image = get_field('hero_background_image'); // make sure this field exi
     endif;
     ?>
     <div>
-        <section class="hero bg-warning"
-            style="background-image: url('<?php echo esc_url($hero_bg_image); ?>'); background-size: cover; background-position: center; height: 100vh;">
+        <section class="hero"
+            style="background-image: url('<?php echo esc_url($hero_bg_image); ?>'); background-size: cover; background-position: center;">
 
             <h1><?php echo esc_html( get_field('hero_header_text') ); ?></h1>
             <p><?php echo esc_html( get_field('hero_paragraph_text') ); ?></p>
