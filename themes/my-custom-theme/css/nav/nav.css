@@ -1,25 +1,23 @@
-.nav-item a {
-    /* color: red !important; */
+.navbar {
+  background-color: transparent !important;
+  transition: background-color 0.3s ease;
 }
 
-.navbar {
-    background-color: red !important;
-    /* position: -webkit-sticky !important;
-    position: sticky !important;
-    top: 0 !important;
-    z-index: 9999 !important; */
+.navbar.scrolled {
+  background-color: white !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 /* Hide the shop icon when the screen size is smaller than 992px (before the hamburger appears) */
 @media (max-width: 991px) {
-    .shop-icon {
-        display: none;
-    }
+  .shop-icon-link {
+    display: none;
+  }
 }
 
 /* Show the shop icon on large screens and above (992px and larger) */
 @media (min-width: 992px) {
-    .shop-icon {
-        display: inline-block; /* Or you can use flex, if you prefer */
-    }
+  .shop-icon-link {
+    display: inline-block; /* Or you can use flex, if you prefer */
+  }
 }

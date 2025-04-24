@@ -13,9 +13,9 @@
 
 <body <?php body_class(); ?>>
 
-    <header class="sticky-top">
+    <header class="fixed-top">
 
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary px-4">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">Navbar</a>
 
@@ -26,7 +26,7 @@
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-5 d-flex gap-lg-3">
                         <?php
                 // Fetch and loop through the menu items from WordPress
                 $locations = get_nav_menu_locations();
@@ -85,7 +85,7 @@
 
                     <!-- Icon for shop on the right (for desktop and mobile) -->
                     <a href="<?php echo esc_url( home_url( '/shop' ) ); ?>" class="shop-icon-link">
-                        <i class="fas fa-store text-dark"></i>
+                        <i class="fas fa-store text-dark fs-5"></i>
                     </a>
                 </div>
             </div>
