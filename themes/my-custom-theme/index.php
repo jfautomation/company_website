@@ -1,4 +1,4 @@
-<?php get_header(); ?>
+<?php get_template_part( 'partials/header' ); ?>
 
 <main>
     <h1>Welcome to My Custom Theme</h1>
@@ -18,4 +18,4 @@
     ?>
 </main>
 
-<?php get_footer(); ?>
+<?php get_template_part( 'partials/footer' ); ?>
