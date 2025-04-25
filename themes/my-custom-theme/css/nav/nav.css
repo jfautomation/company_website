@@ -9,8 +9,17 @@
 }
 
 .nav-item {
-  text-transform: uppercase;
-  font-weight: 600;
+  /* text-transform: uppercase; */
+  font-weight: 500 !important;
+}
+
+.nav-item a {
+  color: var(--color-dark-text);
+  font-size: 1.1rem !important;
+}
+
+.nav-link.active {
+  color: #1600a0 !important;
 }
 
 /* Hide the shop icon when the screen size is smaller than 992px (before the hamburger appears) */

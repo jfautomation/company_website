@@ -54,15 +54,54 @@ $images = [
                                 </div>
                             </div>
                         </div>
-
-
-
                     </div>
-                    <div class="col-lg-6 col-md-12">
-                        <div class="h-100 w-100 d-flex flex-column justify-content-center align-items-center">
-                            col 2
-                        </div>
-                    </div>
+                    <?php
+
+// Fetch the product images
+$carousel_images = array_filter(array(
+  get_field('product_shot_1'),
+  get_field('product_shot_2'),
+  get_field('product_shot_3'),
+  get_field('product_shot_4'),
+));
+
+// Check if there are images
+if (!empty($carousel_images)) :
+?>
+  <div class="col-lg-6 col-md-12">
+    <div class="h-100 w-100 d-flex flex-column justify-content-center align-items-center">
+      <div id="carouselExampleIndicators" class="carousel w-75 slide" data-bs-ride="carousel">
+        <!-- Carousel Indicators -->
+        <ol class="carousel-indicators">
+          <?php foreach ($carousel_images as $index => $image) : ?>
+            <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="<?php echo $index; ?>" class="<?php echo ($index === 0) ? 'active' : ''; ?>"></li>
+          <?php endforeach; ?>
+        </ol>
+
+        <!-- Carousel Items -->
+        <div class="carousel-inner">
+          <?php foreach ($carousel_images as $index => $image) : ?>
+            <div class="carousel-item <?php echo ($index === 0) ? 'active' : ''; ?>">
+              <img class="d-block w-100" src="<?php echo esc_url($image); ?>" alt="Slide <?php echo $index + 1; ?>">
+            </div>
+          <?php endforeach; ?>
+        </div>
+
+        <!-- Carousel Controls -->
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </a>
+      </div>
+    </div>
+  </div>
+<?php endif; ?>
+
+
 
                     <!-- <h1><?php echo esc_html( get_field('hero_header_text') ); ?></h1>
                     <p><?php echo esc_html( get_field('hero_paragraph_text') ); ?></p>
