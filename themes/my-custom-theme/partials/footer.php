@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function() {
     function setHeroHeight() {
         const navbarHeight = navbar.offsetHeight;
         const viewportHeight = window.innerHeight;
-        const heroHeight = viewportHeight + navbarHeight;
+        const heroHeight = viewportHeight + navbarHeight - 60;
 
         hero.style.height = `${heroHeight}px`;
         console.log(navbarHeight, 'navbar height')

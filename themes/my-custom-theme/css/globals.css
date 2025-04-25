@@ -11,6 +11,10 @@
   --color-dark-grey-bg: #383737;
   --font-base: "Inter", sans-serif;
 }
+h2 {
+  text-transform: uppercase;
+  font-weight: bold;
+}
 
 body,
 html {
@@ -75,4 +79,67 @@ body {
 /* Carousel indicators */
 .indicator-grey {
   background-color: var(--color-light-grey-carousel-indicators);
+}
+
+/* Base button styles */
+.btn-base {
+  font-size: 0.875rem !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 11px 32px;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Primary Button */
+.btn-primary {
+  background: linear-gradient(
+    to right,
+    var(--color-gradient-light-blue),
+    var(--color-gradient-dark-blue)
+  );
+  color: white;
+}
+
+.btn-primary:hover {
+  filter: brightness(1.1);
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.4);
+}
+
+/* Secondary Button */
+.btn-outline-primary {
+  border-image: linear-gradient(
+      to right,
+      var(--color-gradient-light-blue) 0%,
+      var(--color-gradient-dark-blue) 100%
+    )
+    1;
+  border-width: 3px;
+  border-style: solid;
+
+  font-weight: bold;
+  color: black;
+}
+
+.btn-outline-primary:hover {
+  background: linear-gradient(
+    to right,
+    var(--color-gradient-light-blue),
+    var(--color-gradient-dark-blue)
+  );
+  color: white;
+}
+
+.btn-outline-white {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background-color: #5a6268;
+  color: white;
 }

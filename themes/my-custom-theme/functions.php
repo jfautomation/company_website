@@ -12,6 +12,26 @@ function my_custom_theme_setup()
 }
 add_action('after_setup_theme', 'my_custom_theme_setup');
 
+function custom_button_shortcode($atts, $content = null) {
+    // Set up default attributes for the button
+    $atts = shortcode_atts(
+        array(
+            'variant' => 'primary', // default variant
+            'link' => '#',          // default link
+        ),
+        $atts,
+        'button'
+    );
+
+    // Button class based on the variant
+    $button_class = 'btn-base ' . 'btn-' . esc_attr($atts['variant']);
+
+    // Return the HTML of the button
+    return '<a href="' . esc_url($atts['link']) . '" class="' . $button_class . '">' . do_shortcode($content) . '</a>';
+}
+add_shortcode('button', 'custom_button_shortcode');
+
+
 
 function my_custom_theme_scripts() {
     // Enqueue the main stylesheet
@@ -28,7 +48,7 @@ function my_custom_theme_scripts() {
 
     wp_enqueue_style('landing-page-style', get_template_directory_uri() . '/css/landing_page/landing_page.css', array(), '1.0', 'all');
     
-    wp_enqueue_style('global-styles', get_template_directory_uri() . '/css/globals.css', array(), '1.0', 'all');
+    wp_enqueue_style('my-global-styles', get_template_directory_uri() . '/css/globals.css', array(), '1.0', 'all');
 
 }
 add_action('wp_enqueue_scripts', 'my_custom_theme_scripts');
