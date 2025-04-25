@@ -1,28 +1,29 @@
 :root {
-    --color-gradient-light-blue: #3A7BD5;
-    --color-gradient-dark-blue: #1600A0;
-    --color-dark-text: #000000;
-    --color-grey-text: #747474;
-    --color-light-grey-border:#D8D2D2;
-    --color-light-grey-carousel-indicators:#C2C2C2;
-    --color-light-grey-bg: #EEEEEE;
-    --color-red-badge: #FF4A3D;
-    --color-yellow-star: #FFC300;
-    --color-dark-grey-bg: #383737; 
-    --font-base: 'Inter', sans-serif;
-  }
+  --color-gradient-light-blue: #3a7bd5;
+  --color-gradient-dark-blue: #1600a0;
+  --color-dark-text: #000000;
+  --color-grey-text: #747474;
+  --color-light-grey-border: #d8d2d2;
+  --color-light-grey-carousel-indicators: #c2c2c2;
+  --color-light-grey-bg: #eeeeee;
+  --color-red-badge: #ff4a3d;
+  --color-yellow-star: #ffc300;
+  --color-dark-grey-bg: #383737;
+  --font-base: "Inter", sans-serif;
+}
 
-  body, html {
-    margin: 0 !important;
-    padding: 0 !important;
-  }
+body,
+html {
+  margin: 0 !important;
+  padding: 0 !important;
+}
 
-  body {
-    font-family: var(--font-base);
-    background-color: var(--color-light);
-  }
+body {
+  font-family: var(--font-base);
+  background-color: var(--color-light);
+}
 
-  /* Text color utilities */
+/* Text color utilities */
 .text-dark {
   color: var(--color-dark-text) !important;
 }
@@ -39,9 +40,23 @@
   color: var(--color-yellow-star);
 }
 
-/* Background color utilities */
 .bg-gradient-blue {
-  background: linear-gradient(to right, var(--color-gradient-light-blue), var(--color-gradient-dark-blue));
+  background: linear-gradient(
+    to right,
+    var(--color-gradient-light-blue),
+    var(--color-gradient-dark-blue)
+  );
+}
+
+.text-gradient-blue {
+  background: linear-gradient(
+    to right,
+    var(--color-gradient-light-blue),
+    var(--color-gradient-dark-blue)
+  );
+  background-clip: text;
+  -webkit-background-clip: text; /* Ensure the gradient applies to the text */
+  color: transparent; /* Make the text color transparent so the gradient is visible */
 }
 
 .bg-light-grey {

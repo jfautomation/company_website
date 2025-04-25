@@ -34,19 +34,36 @@ $images = [
     endif;
     ?>
     <div>
-        <section class="hero"
+        <section class="hero d-flex flex-column justify-content-center align-items-center"
             style="background-image: url('<?php echo esc_url($hero_bg_image); ?>'); background-size: cover; background-position: center;">
+            <div class="container-fluid h-100">
+                <div class="row h-100">
+                    <div class="col-lg-6 col-md-12">
+                        <div class="bg-warning h-100 w-100 d-flex flex-column justify-content-center align-items-center">
+                            col 1
+                        </div>
 
-            <h1><?php echo esc_html( get_field('hero_header_text') ); ?></h1>
-            <p><?php echo esc_html( get_field('hero_paragraph_text') ); ?></p>
 
 
-            <a href="<?php echo esc_url( get_field('hero_button_link_1') ); ?>" class="btn btn-primary">
-                <?php echo esc_html( get_field('hero_button_text_1') ); ?>
-            </a>
-            <a href="<?php echo esc_url( get_field('hero_button_link_2') ); ?>" class="btn btn-secondary">
-                <?php echo esc_html( get_field('hero_button_text_2') ); ?>
-            </a>
+                    </div>
+                    <div class="col-lg-6 col-md-12">
+                        <div class="bg-primary h-100 w-100 d-flex flex-column justify-content-center align-items-center">
+                            col 2
+                        </div>
+                    </div>
+
+                    <!-- <h1><?php echo esc_html( get_field('hero_header_text') ); ?></h1>
+                    <p><?php echo esc_html( get_field('hero_paragraph_text') ); ?></p>
+
+
+                    <a href="<?php echo esc_url( get_field('hero_button_link_1') ); ?>" class="btn btn-primary">
+                        <?php echo esc_html( get_field('hero_button_text_1') ); ?>
+                    </a>
+                    <a href="<?php echo esc_url( get_field('hero_button_link_2') ); ?>" class="btn btn-secondary">
+                        <?php echo esc_html( get_field('hero_button_text_2') ); ?>
+                    </a> -->
+                </div>
+            </div>
         </section>
         <section>
             What is Lorem Ipsum?
