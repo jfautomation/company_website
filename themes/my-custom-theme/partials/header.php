@@ -15,7 +15,7 @@
 
     <header class="fixed-top">
 
-        <nav class="navbar navbar-expand-lg bg-body-tertiary px-4">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary px-4" id="main-navbar">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">Navbar</a>
 

@@ -12,7 +12,52 @@
     --font-base: 'Inter', sans-serif;
   }
 
+  body, html {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
   body {
     font-family: var(--font-base);
     background-color: var(--color-light);
   }
+
+  /* Text color utilities */
+.text-dark {
+  color: var(--color-dark-text) !important;
+}
+
+.text-grey {
+  color: var(--color-grey-text);
+}
+
+.bg-red {
+  color: var(--color-red-badge);
+}
+
+.bg-yellow {
+  color: var(--color-yellow-star);
+}
+
+/* Background color utilities */
+.bg-gradient-blue {
+  background: linear-gradient(to right, var(--color-gradient-light-blue), var(--color-gradient-dark-blue));
+}
+
+.bg-light-grey {
+  background-color: var(--color-light-grey-bg);
+}
+
+.bg-dark-grey {
+  background-color: var(--color-dark-grey-bg);
+}
+
+/* Border color */
+.border-light-grey {
+  border-color: var(--color-light-grey-border);
+}
+
+/* Carousel indicators */
+.indicator-grey {
+  background-color: var(--color-light-grey-carousel-indicators);
+}
