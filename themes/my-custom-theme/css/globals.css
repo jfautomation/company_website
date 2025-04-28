@@ -147,7 +147,27 @@ body {
   background-color: grey;
 }
 
+/* Default styling for the custom indicators */
+.custom-indicator {
+  width: 12px; /* Size of the circle */
+  height: 12px; /* Size of the circle */
+  background-color: grey; /* Default grey color */
+  border-radius: 50%; /* Make them circular */
+  border: none; /* Remove border */
+  margin: 0 5px; /* Space between the indicators */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for color change */
+  cursor: pointer; /* Pointer on hover */
+}
 
+/* Active state styling */
 .custom-indicator.active {
-  background-color: red;
+  background: linear-gradient(
+    to right,
+    var(--color-gradient-light-blue),
+    var(--color-gradient-dark-blue)
+  );
+}
+
+.indicator-chevron:hover {
+  cursor: pointer;
 }

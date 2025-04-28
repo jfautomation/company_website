@@ -68,43 +68,33 @@ $carousel_images = array_filter(array(
 // Check if there are images
 if (!empty($carousel_images)) :
 ?>
-  <div class="col-lg-6 col-md-12">
-    <div class="h-100 w-100 d-flex flex-column justify-content-center align-items-center">
-      <div id="product-images-carousel" class="carousel w-75 slide" data-bs-ride="carousel">
-        <!-- Carousel Indicators -->
-        <!-- <ol class="carousel-indicators">
-          <?php foreach ($carousel_images as $index => $image) : ?>
-            <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="<?php echo $index; ?>" class="<?php echo ($index === 0) ? 'active' : ''; ?>"></li>
-          <?php endforeach; ?>
-        </ol> -->
+                    <div class="col-lg-6 col-md-12">
+                        <div class="h-100 w-100 d-flex flex-column justify-content-center align-items-center">
 
-        <!-- Carousel Items -->
-        <div class="carousel-inner">
-          <?php foreach ($carousel_images as $index => $image) : ?>
-            <div class="carousel-item <?php echo ($index === 0) ? 'active' : ''; ?>">
-              <img class="d-block w-100" src="<?php echo esc_url($image); ?>" alt="Slide <?php echo $index + 1; ?>">
-              <span><?php echo $index ?></span>
-            </div>
-           
-          <?php endforeach; ?>
-        </div>
+                            <div id="product-images-carousel" class="carousel w-75 slide" data-bs-ride="carousel">
 
-        <!-- Carousel Controls -->
-        <?php render_custom_carousel_indicators('product-images-carousel', $carousel_images); ?>
-      
-        <!-- <div class="custom-carousel-indicators" data-target="#product-images-carousel">
-    <?php foreach ($carousel_images as $index => $image) : ?>
-        <button 
-            class="custom-indicator <?php echo ($index === 0) ? 'active' : ''; ?>" 
-            data-bs-target="#product-images-carousel" 
-            data-bs-slide-to="<?php echo $index; ?>">
-        </button>
-    <?php endforeach; ?>
-</div> -->
-      </div>
-    </div>
-  </div>
-<?php endif; ?>
+                                <div class="carousel-inner">
+                                    <?php foreach ($carousel_images as $index => $image) : ?>
+                                    <div class="carousel-item <?php echo ($index === 0) ? 'active' : ''; ?>">
+                                        <img class="d-block w-100" src="<?php echo esc_url($image); ?>"
+                                            alt="Slide <?php echo $index + 1; ?>">
+                                    </div>
+
+                                    <?php endforeach; ?>
+                                </div>
+
+                                <!-- Carousel Controls -->
+                                <div class="mt-5 pt-2">
+                                    <?php render_custom_carousel_indicators('product-images-carousel', $carousel_images); ?>
+                                </div>
+
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <?php endif; ?>
 
 
 
