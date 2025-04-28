@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Scroll logic for toggling 'scrolled' class
     window.addEventListener('scroll', () => {
         // const heroHeight = hero.offsetHeight; 
-        const heroHeight = 500;
+        const heroHeight = 300;
         console.log('ScrollY:', window.scrollY, 'HeroHeight:', heroHeight);
 
         if (window.scrollY > heroHeight) {
