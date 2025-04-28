@@ -15,8 +15,13 @@ img {
     width: 4rem;
 }
 
-a {
-    font-size: 0.9rem; 
+.arrow {
+    font-size: 0.8rem;
+    font-weight: 600 !important;
+}
+
+i {
+    font-size: 0.9rem;  
 }
 </style>
 
@@ -24,6 +29,9 @@ a {
     <div class="white-card-with-icon d-flex flex-column align-items-start p-4">
         <img src="<?php echo esc_url($args['icon']); ?>" alt="" />
         <h5 class="text-gradient-blue mt-3 fw-semibold"><?php echo esc_html($args['service_heading']); ?></h5>
-        <a class="text-dark" href="<?php echo esc_url($args['link_to_service_page']); ?>">Learn More</a>
+        <div class="d-flex align-items-center gap-2 mt-1">
+            <a class="text-dark arrow" href="<?php echo esc_url($args['link_to_service_page']); ?>">Learn More</a><i
+                class="text-dark fa-sharp fa-solid fa-arrow-right"></i>
+        </div>
     </div>
 </div>
