@@ -43,6 +43,37 @@ document.addEventListener("DOMContentLoaded", function() {
 });
         </script>
 
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Select all carousels (you can add a class like .custom-carousel for better targeting)
+        const carousels = document.querySelectorAll('.carousel');
+        
+        carousels.forEach(function(carousel) {
+            // Get the corresponding indicators for each carousel
+            const carouselId = carousel.id;  // Dynamic ID for each carousel
+            const indicators = carousel.querySelectorAll('.custom-indicator');
+            
+            // Event listener for when the carousel slides to a new slide
+            carousel.addEventListener('slid.bs.carousel', function (event) {
+                // Remove 'active' class from all indicators
+                indicators.forEach(indicator => indicator.classList.remove('active'));
+                
+                // Add 'active' class to the indicator corresponding to the active slide
+                const activeIndicator = indicators[event.to];  // event.to is the index of the active slide
+                if (activeIndicator) {
+                    activeIndicator.classList.add('active');
+                }
+            });
+        });
+    });
+</script>
+
+
+
+        <!-- Add this just before the closing </body> tag -->
+
+
+
 
         <!-- <script>
 document.addEventListener("DOMContentLoaded", function() {

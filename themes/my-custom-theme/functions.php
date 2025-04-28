@@ -32,6 +32,26 @@ function custom_button_shortcode($atts, $content = null) {
 add_shortcode('button', 'custom_button_shortcode');
 
 
+//// custom carousel indicators
+function render_custom_carousel_indicators($carousel_id, $images) {
+    if (empty($images)) return; ?>
+
+<div class="custom-carousel-indicators" data-target="#<?php echo esc_attr($carousel_id); ?>">
+    <?php foreach ($images as $index => $image) : ?>
+    <button class="custom-indicator <?php echo ($index === 0) ? 'active' : ''; ?>"
+        data-bs-target="#<?php echo esc_attr($carousel_id); ?>" data-bs-slide-to="<?php echo $index; ?>">
+        <?php echo $index ?>
+    </button>
+    <?php endforeach; ?>
+</div>
+
+<?php }
+
+
+
+
+
+
 
 function my_custom_theme_scripts() {
     // Enqueue the main stylesheet

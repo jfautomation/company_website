@@ -10,7 +10,6 @@
 
 .nav-item {
   /* text-transform: uppercase; */
-  font-weight: 500 !important;
 }
 
 .nav-item a {
@@ -21,6 +20,7 @@
   padding-left: unset !important;
   text-decoration: none; /* prevent default underlines */
   transition: color 0.3s ease; /* smooth color transition */
+  /* font-weight: 200 !important; */
 }
 
 /* ACTIVE STATE */
@@ -33,6 +33,7 @@
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
+  /* font-weight: 500 !important; */
 }
 
 /* UNDERLINE FOR ACTIVE */
