@@ -35,7 +35,7 @@ $images = [
                     <div class="col-lg-6 col-md-12">
                         <div class="h-100 d-flex flex-column justify-content-center align-items-center">
                             <div class="d-flex flex-column align-items-start">
-<h2 class="text-gradient-blue"><?php echo esc_html( get_field('hero_header_text') ); ?>
+                                <h2 class="text-gradient-blue"><?php echo esc_html( get_field('hero_header_text') ); ?>
                                 </h2>
                                 <p class="text-grey mt-2">
                                     <?php echo esc_html( get_field('hero_paragraph_text') ); ?>
@@ -270,33 +270,46 @@ $products = array_filter($products, function($product) {
   
 ?>
 
+                <!-- <img src="<?php echo esc_url($product['image']); ?>"
+   <h5><?php echo esc_html($product['name']); ?></h5>
+                            <p>Price: <?php echo esc_html($product['price']); ?></p>
+                            <p>Sale: <?php echo esc_html($product['sale_price']); ?></p> -->
+
                 <div class="custom-carousel-container position-relative">
                     <div class="custom-carousel-track" id="customCarouselTrack">
                         <?php foreach ($products as $product): ?>
-                        <div class="custom-carousel-card text-dark text-center">
-                            <img src="<?php echo esc_url($product['image']); ?>"
-                                alt="<?php echo esc_attr($product['name']); ?>" class="img-fluid mb-3"
-                                style="max-height: 200px;">
-                            <h5><?php echo esc_html($product['name']); ?></h5>
-                            <p>Price: <?php echo esc_html($product['price']); ?></p>
-                            <p>Sale: <?php echo esc_html($product['sale_price']); ?></p>
+                        <div class="custom-carousel-card d-flex flex-column text-dark text-center">
+                            <div class="custom-carousel-card-inner-wrapper flex-grow-1">
+                                <div class="row h-100">
+                                    <div class="col-4">
+                                        <div class="h-100">
+                                        <img src="<?php echo esc_url($product['image']); ?>" />
                         </div>
-                        <?php endforeach; ?>
-                    </div>
-
-
-                    <div class="custom-carousel-indicators">
-                        <?php foreach (array_keys($products) as $index): ?>
-                        <div class="custom-slider-carousel-dot <?php echo $index === 0 ? 'active' : ''; ?>"
-                            data-slide="<?php echo $index; ?>"></div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="bg-danger p-3 h-100">col 2</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <?php endforeach; ?>
                     </div>
                 </div>
 
-                <?php foreach ($products as $product): ?>
-                <div class="product-card mb-4">
 
-                    <!-- <span><strong>Name:</strong> <?php echo esc_html($product['name']); ?></span><br>
+
+                <div class="custom-carousel-indicators mt-5">
+                    <?php foreach (array_keys($products) as $index): ?>
+                    <div class="custom-slider-carousel-dot <?php echo $index === 0 ? 'active' : ''; ?>"
+                        data-slide="<?php echo $index; ?>"></div>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+
+            <?php foreach ($products as $product): ?>
+            <div class="product-card mb-4">
+
+                <!-- <span><strong>Name:</strong> <?php echo esc_html($product['name']); ?></span><br>
                     <span><strong>Price:</strong> <?php echo esc_html($product['price']); ?></span><br>
                     <span><strong>Sale Price:</strong> <?php echo esc_html($product['sale_price']); ?></span><br>
                     <span><strong>Description:</strong> <?php echo esc_html($product['description']); ?></span><br>
@@ -306,14 +319,14 @@ $products = array_filter($products, function($product) {
                     <img src="<?php echo esc_url($product['image']); ?>" alt="<?php echo esc_attr($product['name']); ?>"
                         style="max-width: 200px; margin-top: 10px;" />
                     <?php endif; ?> -->
-                </div>
-                <?php endforeach; ?>
-
-
             </div>
+            <?php endforeach; ?>
 
-        </section>
 
     </div>
 
-    <?php get_template_part( 'partials/footer' ); ?>
+    </section>
+
+</div>
+
+<?php get_template_part( 'partials/footer' ); ?>
