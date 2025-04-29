@@ -36,6 +36,10 @@ section {
   background-color: var(--color-light-grey-bg);
 }
 
+hr {
+  opacity: 0.1 !important;
+}
+
 /* Text color utilities */
 .text-dark {
   color: var(--color-dark-text) !important;
@@ -46,7 +50,7 @@ section {
 }
 
 .bg-red {
-  color: var(--color-red-badge);
+  background-color: var(--color-red-badge) !important;
 }
 
 .bg-yellow {
@@ -56,6 +60,7 @@ section {
 .box-shadow {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
+
 
 .bg-gradient-blue {
   background: linear-gradient(
@@ -169,10 +174,9 @@ section {
   background-color: grey;
 }
 
-
-
 /* Default styling for the custom indicators */
-.custom-indicator, .custom-slider-carousel-dot {
+.custom-indicator,
+.custom-slider-carousel-dot {
   width: 12px; /* Size of the circle */
   height: 12px; /* Size of the circle */
   background-color: grey; /* Default grey color */
@@ -184,7 +188,8 @@ section {
 }
 
 /* Active state styling */
-.custom-indicator.active, .custom-slider-carousel-dot.active {
+.custom-indicator.active,
+.custom-slider-carousel-dot.active {
   background: linear-gradient(
     to right,
     var(--color-gradient-light-blue),

@@ -256,10 +256,10 @@ $brands = array_filter($brands, function($brand) {
                 </div>
                 <?php 
 $products = array(
-    array('name' => get_field('product_1_name'), 'price' => get_field('product_1_price'), 'sale_price' => get_field('product_1_sale_price'), 'sale_price' => get_field('product_1_sale_price'), 'description' => get_field('product_1_description'), 'link_to_item' => get_field('product_1_link_to_item'), 'image' => get_field('product_1_image'), ),
-    array('name' => get_field('product_2_name'), 'price' => get_field('product_2_price'), 'sale_price' => get_field('product_2_sale_price'), 'sale_price' => get_field('product_2_sale_price'), 'description' => get_field('product_2_description'), 'link_to_item' => get_field('product_2_link_to_item'), 'image' => get_field('product_2_image'), ),
-    array('name' => get_field('product_3_name'), 'price' => get_field('product_3_price'), 'sale_price' => get_field('product_3_sale_price'), 'sale_price' => get_field('product_3_sale_price'), 'description' => get_field('product_3_description'), 'link_to_item' => get_field('product_3_link_to_item'), 'image' => get_field('product_3_image'), ),
-    array('name' => get_field('product_4_name'), 'price' => get_field('product_4_price'), 'sale_price' => get_field('product_4_sale_price'), 'sale_price' => get_field('product_4_sale_price'), 'description' => get_field('product_4_description'), 'link_to_item' => get_field('product_4_link_to_item'), 'image' => get_field('product_4_image'), ),
+    array('name' => get_field('product_1_name'), 'price' => get_field('product_1_price'), 'sale_price' => get_field('product_1_sale_price'), 'description' => get_field('product_1_description'), 'link_to_item' => get_field('product_1_link_to_item'), 'image' => get_field('product_1_image'), ),
+    array('name' => get_field('product_2_name'), 'price' => get_field('product_2_price'), 'sale_price' => get_field('product_2_sale_price'), 'description' => get_field('product_2_description'), 'link_to_item' => get_field('product_2_link_to_item'), 'image' => get_field('product_2_image'), ),
+    array('name' => get_field('product_3_name'), 'price' => get_field('product_3_price'), 'sale_price' => get_field('product_3_sale_price'), 'description' => get_field('product_3_description'), 'link_to_item' => get_field('product_3_link_to_item'), 'image' => get_field('product_3_image'), ),
+    array('name' => get_field('product_4_name'), 'price' => get_field('product_4_price'), 'sale_price' => get_field('product_4_sale_price'), 'description' => get_field('product_4_description'), 'link_to_item' => get_field('product_4_link_to_item'), 'image' => get_field('product_4_image'), ),
    
 );
 
@@ -283,11 +283,33 @@ $products = array_filter($products, function($product) {
                                 <div class="row h-100">
                                     <div class="col-4">
                                         <div class="h-100">
-                                        <img src="<?php echo esc_url($product['image']); ?>" />
-                        </div>
+                                            <img src="<?php echo esc_url($product['image']); ?>" />
+                                        </div>
                                     </div>
                                     <div class="col">
-                                        <div class="bg-danger p-3 h-100">col 2</div>
+                                        <div class="d-flex flex-column pt-2 px-3 pb-4 h-100">
+                                            <div class="d-flex justify-content-end h-100">
+                                                <span
+                                                    class="badge bg-red <?php echo !empty($product['sale_price']) ? 'bg-primary text-white' : 'invisible'; ?>">
+                                                    Sale
+                                                </span>
+                                            </div>
+                                            <div class="d-flex flex-column align-items-start">
+                                                <h5 class="fw-semibold"><?php echo esc_html($product['name']); ?></h5>
+                                                <h3 class="fw-semibold">$<?php echo esc_html($product['price']); ?></h3>
+                                                <hr class="w-100" />
+                                                <p class="text-grey text-start">
+                                                    <?php echo esc_html($product['description']); ?></p>
+                                                <div class="mt-3">
+                                                    <?php echo do_shortcode('[button variant="primary" link="' . esc_url( get_field('link_to_item') ) . '"]BUY[/button]'); ?>
+
+                                                </div>
+
+                                            </div>
+
+
+
+                                        </div>
                                     </div>
                                 </div>
                             </div>
