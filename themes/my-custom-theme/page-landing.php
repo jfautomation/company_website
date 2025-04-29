@@ -158,16 +158,6 @@ $services = array_filter($services, function($service) {
 
 
         <?php
-
-
-
-// Fetch the banner content
-// $banner_content = array_filter(array(
-//   get_field('landing_page_cta_subheading'),
-//   get_field('landing_page_cta_header'),
-//   get_field('landing_page_cta_paragraph'),
-//   get_field('landing_page_cta_image'),
-// )); 
 ?>
         <section class="bg-gradient-blue">
             <!-- 
@@ -184,7 +174,6 @@ $services = array_filter($services, function($service) {
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-12">
-
                         <div class="h-100 d-flex flex-column align-items-start justify-content-center">
                             <h5 class="fw-semibold"><?php echo esc_html(get_field('landing_page_cta_subheading')); ?>
                             </h5>
@@ -195,12 +184,33 @@ $services = array_filter($services, function($service) {
                             <div class="mt-3">
                                 <?php echo do_shortcode('[button variant="outline-white" link="' . esc_url( get_field('landing_page_cta_button_link') ) . '"]' . esc_html( get_field('landing_page_cta_button_text') ) . '[/button]'); ?>
                             </div>
-
-
                         </div>
                     </div>
                 </div>
 
+
+        </section>
+        <section>
+            <div class="container">
+                <?php
+    $args = array(
+        'h5_text' => 'Brands',
+        'h2_text' => 'Brands we repair'
+    );
+
+    get_template_part('partials/section-header', null, $args);
+    ?>
+
+<?php
+$images = [
+    get_field('brand_1_logo'),
+    get_field('product_shot_2'),
+    get_field('product_shot_3'),
+    get_field('product_shot_4'),
+
+];
+?>
+            </div>
 
         </section>
 
