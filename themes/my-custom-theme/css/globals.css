@@ -32,6 +32,10 @@ section {
   padding-bottom: 4rem;
 }
 
+.light-grey-container {
+  background-color: var(--color-light-grey-bg);
+}
+
 /* Text color utilities */
 .text-dark {
   color: var(--color-dark-text) !important;
@@ -165,8 +169,10 @@ section {
   background-color: grey;
 }
 
+
+
 /* Default styling for the custom indicators */
-.custom-indicator {
+.custom-indicator, .custom-slider-carousel-dot {
   width: 12px; /* Size of the circle */
   height: 12px; /* Size of the circle */
   background-color: grey; /* Default grey color */
@@ -178,7 +184,7 @@ section {
 }
 
 /* Active state styling */
-.custom-indicator.active {
+.custom-indicator.active, .custom-slider-carousel-dot.active {
   background: linear-gradient(
     to right,
     var(--color-gradient-light-blue),
