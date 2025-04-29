@@ -141,6 +141,15 @@ section {
   background: transparent;
   border: 2px solid white;
   color: white;
+  transition: all 0.25s ease;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2),
+    -5px -5px 15px rgba(255, 255, 255, 0.05);
+}
+
+.btn-outline-white:hover {
+  box-shadow: inset 5px 5px 15px rgba(0, 0, 0, 0.2),
+    inset -5px -5px 15px rgba(255, 255, 255, 0.05);
+  transform: scale(1);
 }
 
 .btn-secondary:hover {

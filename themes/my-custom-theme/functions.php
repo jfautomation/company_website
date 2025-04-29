@@ -37,28 +37,25 @@ function render_custom_carousel_indicators($carousel_id, $images) {
     if (empty($images)) return; ?>
 
 <div class="custom-carousel-container d-flex align-items-center justify-content-center">
-    <!-- Left Arrow -->
-    
-        <i class="indicator-chevron fas fa-chevron-left me-4" data-bs-target="#<?php echo esc_attr($carousel_id); ?>"
-            data-bs-slide="prev">
-        </i>
 
-        <!-- Custom Carousel Indicators -->
-        <div class="custom-carousel-indicators" data-target="#<?php echo esc_attr($carousel_id); ?>">
-            <?php foreach ($images as $index => $image) : ?>
-            <button class="custom-indicator <?php echo ($index === 0) ? 'active' : ''; ?>"
-                data-bs-target="#<?php echo esc_attr($carousel_id); ?>" data-bs-slide-to="<?php echo $index; ?>">
-                <?php echo $index?>
+    <i class="indicator-chevron fas fa-chevron-left me-4" data-bs-target="#<?php echo esc_attr($carousel_id); ?>"
+        data-bs-slide="prev">
+    </i>
 
-            </button>
-            <?php endforeach; ?>
-        </div>
+    <div class="custom-carousel-indicators" data-target="#<?php echo esc_attr($carousel_id); ?>">
+        <?php foreach ($images as $index => $image) : ?>
+        <button class="custom-indicator <?php echo ($index === 0) ? 'active' : ''; ?>"
+            data-bs-target="#<?php echo esc_attr($carousel_id); ?>" data-bs-slide-to="<?php echo $index; ?>">
 
-        <!-- Right Arrow -->
-        <i class="indicator-chevron fas fa-chevron-right ms-4" data-bs-target="#<?php echo esc_attr($carousel_id); ?>"
-            data-bs-slide="next">
-        </i>
-    
+
+        </button>
+        <?php endforeach; ?>
+    </div>
+
+    <i class="indicator-chevron fas fa-chevron-right ms-4" data-bs-target="#<?php echo esc_attr($carousel_id); ?>"
+        data-bs-slide="next">
+    </i>
+
 </div>
 
 

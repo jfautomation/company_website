@@ -154,7 +154,7 @@ $services = array_filter($services, function($service) {
     )); ?>
                 <?php endforeach; ?>
             </div>
-</section>
+        </section>
 
 
         <?php
@@ -170,32 +170,33 @@ $services = array_filter($services, function($service) {
 // )); 
 ?>
         <section class="bg-gradient-blue">
-
-            <h1><?php echo esc_html( get_field('landing_page_cta_subheading') ); ?></h1>
+            <!-- 
+            <h1><?php echo esc_html(get_field('landing_page_cta_subheading')); ?></h1> -->
 
             <div class="container text-light">
                 <div class="row h-100">
                     <div class="col-lg-6 col-md-12">
                         <div class="h-100 d-flex flex-column justify-content-center align-items-center">
-                            <?php if ( !empty($banner_content['landing_page_cta_image']) ): ?>
-                            <img src="<?php echo esc_url($banner_content['landing_page_cta_image']); ?>"
-                                alt="Banner Image" class="img-fluid">
-                            <?php endif; ?>
+
+                            <img src="<?php echo esc_url(get_field('landing_page_cta_image')); ?>" alt="Banner Image"
+                                class="img-fluid w-100">
+
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-12">
 
-                        <div class="h-100 d-flex flex-column justify-content-center align-items-center">
-                            <?php if ( !empty($banner_content['landing_page_cta_subheading']) ): ?>
-                            <h5><?php echo esc_html($banner_content['landing_page_cta_subheading']); ?></h5>
-                            <?php endif; ?>
-                            <?php if ( !empty($banner_content['landing_page_cta_header']) ): ?>
-                            <h2 class="text-gradient-blue">
-                                <?php echo esc_html($banner_content['landing_page_cta_header']); ?></h2>
-                            <?php endif; ?>
-                            <?php if ( !empty($banner_content['landing_page_cta_paragraph']) ): ?>
-                            <p><?php echo esc_html($banner_content['landing_page_cta_paragraph']); ?></p>
-                            <?php endif; ?>
+                        <div class="h-100 d-flex flex-column align-items-start justify-content-center">
+                            <h5 class="fw-semibold"><?php echo esc_html(get_field('landing_page_cta_subheading')); ?>
+                            </h5>
+                            <h2 class="mt-2"><?php echo esc_html(get_field('landing_page_cta_header')); ?></h2>
+                            <p class="mt-3">
+                                <?php echo esc_html(get_field('landing_page_cta_paragraph')); ?>
+                            </p>
+                            <div class="mt-3">
+                                <?php echo do_shortcode('[button variant="outline-white" link="' . esc_url( get_field('landing_page_cta_button_link') ) . '"]' . esc_html( get_field('landing_page_cta_button_text') ) . '[/button]'); ?>
+                            </div>
+
+
                         </div>
                     </div>
                 </div>
