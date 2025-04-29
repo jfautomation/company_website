@@ -154,12 +154,7 @@ $services = array_filter($services, function($service) {
     )); ?>
                 <?php endforeach; ?>
             </div>
-
-
-
-
-
-        </section>
+</section>
 
 
         <?php

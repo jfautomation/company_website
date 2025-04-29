@@ -48,6 +48,7 @@ function render_custom_carousel_indicators($carousel_id, $images) {
             <?php foreach ($images as $index => $image) : ?>
             <button class="custom-indicator <?php echo ($index === 0) ? 'active' : ''; ?>"
                 data-bs-target="#<?php echo esc_attr($carousel_id); ?>" data-bs-slide-to="<?php echo $index; ?>">
+                <?php echo $index?>
 
             </button>
             <?php endforeach; ?>
@@ -55,7 +56,7 @@ function render_custom_carousel_indicators($carousel_id, $images) {
 
         <!-- Right Arrow -->
         <i class="indicator-chevron fas fa-chevron-right ms-4" data-bs-target="#<?php echo esc_attr($carousel_id); ?>"
-            data-bs-slide="prev">
+            data-bs-slide="next">
         </i>
     
 </div>
