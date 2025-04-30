@@ -27,13 +27,24 @@
 }
 
 .card-blue {
-    background-color: #1d4ed8;
+    background: var(--blue-gradient-background);
     /* blue */
     color: white;
 }
 
 .card-white {
     background-color: white;
+    color: black;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.card-white .review-body,
+.card-white .reviewer-company {
+    color: var(--color-grey-text);
+}
+
+
+.card-white h5 {
     color: black;
 }
 
@@ -43,11 +54,13 @@
     color: white;
 }
 
-.review-card {
-    border: 2px solid red;
+.avatar-img {
+    width: 47px;
+    height: 47px;
+    border-radius: 50%;
+    object-fit: cover;
+
 }
-
-
 </style>
 
 
@@ -131,32 +144,65 @@ $card_variants = [
     'card-gray',
 ];
 ?>
-
-<div class="row">
-    <?php
+    <div class="row mt-3">
+        <?php
     // Loop through reviews, two cards per column
     for ($i = 0; $i < count($reviews); $i += 2):
         // Get the first and second reviews for the current column (per row)
         $review1 = $reviews[$i];
         $review2 = isset($reviews[$i + 1]) ? $reviews[$i + 1] : null; // Handle case when there is an odd number of reviews
+
+        // Generate avatar URLs
+        $avatar1 = 'https://ui-avatars.com/api/?name=' . urlencode($review1['name']) . '&background=random&size=64';
+        $avatar2 = $review2 ? 'https://ui-avatars.com/api/?name=' . urlencode($review2['name']) . '&background=random&size=64' : null;
     ?>
         <div class="col">
             <!-- Column 1 -->
-            <div class="review-card mb-4 <?php echo esc_attr($card_variants[$i % count($card_variants)]); ?>">
-                <h3><?php echo esc_html($review1['name']); ?></h3>
-                <p><?php echo esc_html($review1['review']); ?></p>
+            <div
+                class="review-card pt-3 pb-4 px-4 mb-4 <?php echo esc_attr($card_variants[$i % count($card_variants)]); ?>">
+
+                <span><?php echo render_stars($review1['stars']); ?></span>
+
+                <p class="review-body fw-normal mt-2">&ldquo;<?php echo esc_html($review1['review']); ?>&rdquo;</p>
+                <div class="d-flex gap-3 mt-4">
+                    <img src="<?php echo esc_url($avatar1); ?>" alt="<?php echo esc_attr($review1['name']); ?>"
+                        class="avatar-img" />
+                    <div class="d-flex flex-column">
+                        <h6 class="fw-bold mb-1"><?php echo esc_html($review1['name']); ?></h6>
+                        <small class="reviewer-company">
+                            <?php echo esc_html($review1['company']); ?>
+                        </small>
+                    </div>
+
+                </div>
+
             </div>
 
             <?php if ($review2): ?>
             <!-- Second review card in the same column -->
-            <div class="review-card mb-4<?php echo esc_attr($card_variants[($i + 1) % count($card_variants)]); ?>">
-                <h3><?php echo esc_html($review2['name']); ?></h3>
-                <p><?php echo esc_html($review2['review']); ?></p>
+            <div
+                class="review-card pt-3 pb-4 px-4 mb-4 <?php echo esc_attr($card_variants[($i + 1) % count($card_variants)]); ?>">
+                <span><?php echo render_stars($review1['stars']); ?></span>
+
+
+                <p class="review-body fw-normal mt-2">&ldquo;<?php echo esc_html($review2['review']); ?>&rdquo;</p>
+                <div class="d-flex gap-3 mt-4">
+                    <img src="<?php echo esc_url($avatar2); ?>" alt="<?php echo esc_attr($review2['name']); ?>"
+                        class="avatar-img" />
+                    <div class="d-flex flex-column">
+                        <h6 class="fw-bold mb-1"><?php echo esc_html($review2['name']); ?></h6>
+                        <small class="reviewer-company">
+                            <?php echo esc_html($review2['company']); ?>
+                        </small>
+                    </div>
+
+                </div>
             </div>
             <?php endif; ?>
         </div>
-    <?php endfor; ?>
-</div>
+        <?php endfor; ?>
+    </div>
+
 
 
 

@@ -10,6 +10,11 @@
   --color-yellow-star: #ffc300;
   --color-dark-grey-bg: #383737;
   --font-base: "Inter", sans-serif;
+  --blue-gradient-background: linear-gradient(
+    to right,
+    var(--color-gradient-light-blue),
+    var(--color-gradient-dark-blue)
+  );
 }
 h2 {
   text-transform: uppercase;
