@@ -41,9 +41,6 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
-        </script>
-
-        <script>
 document.addEventListener('DOMContentLoaded', function() {
     // Select all carousels (you can add a class like .custom-carousel for better targeting)
     const carousels = document.querySelectorAll('.carousel');
@@ -60,16 +57,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Add 'active' class to the indicator corresponding to the active slide
             const activeIndicator = indicators[event
-            .to]; // event.to is the index of the active slide
+                .to]; // event.to is the index of the active slide
             if (activeIndicator) {
                 activeIndicator.classList.add('active');
             }
         });
     });
 });
-        </script>
-
-        <script>
 const track = document.getElementById('customCarouselTrack');
 const dots = document.querySelectorAll('.custom-slider-carousel-dot');
 
@@ -83,17 +77,36 @@ dots.forEach(dot => {
         dot.classList.add('active');
     });
 });
+
+const prevBtn = document.getElementById('carouselPrev');
+const nextBtn = document.getElementById('carouselNext');
+
+let currentIndex = 0;
+
+function goToSlide(index) {
+    const slideWidth = track.children[0].offsetWidth;
+    track.style.transform = `translateX(-${index * slideWidth}px)`;
+    dots.forEach(dot => dot.classList.remove('active'));
+    dots[index].classList.add('active');
+    currentIndex = index;
+}
+
+// Update your existing dot click logic to also set currentIndex
+dots.forEach((dot, i) => {
+    dot.addEventListener('click', () => {
+        goToSlide(i);
+    });
+});
+
+prevBtn.addEventListener('click', () => {
+    if (currentIndex > 0) goToSlide(currentIndex - 1);
+});
+
+nextBtn.addEventListener('click', () => {
+    if (currentIndex < dots.length - 1) goToSlide(currentIndex + 1);
+});
+
         </script>
-
-
-
-
-
-
-
-
-
-
         </body>
 
         </html>

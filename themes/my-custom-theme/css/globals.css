@@ -61,7 +61,6 @@ hr {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
-
 .bg-gradient-blue {
   background: linear-gradient(
     to right,
@@ -103,6 +102,7 @@ hr {
 .btn-base {
   font-weight: 600;
   font-size: 0.875rem;
+  min-width: 9rem !important;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -174,20 +174,26 @@ hr {
   background-color: grey;
 }
 
+.custom-slider-carousel-dot {
+  margin: 0 1px;
+}
+
+.custom-indicator {
+  margin: 0 5px;
+}
+
 /* Default styling for the custom indicators */
 .custom-indicator,
 .custom-slider-carousel-dot {
-  width: 12px; /* Size of the circle */
-  height: 12px; /* Size of the circle */
-  background-color: grey; /* Default grey color */
-  border-radius: 50%; /* Make them circular */
-  border: none; /* Remove border */
-  margin: 0 5px; /* Space between the indicators */
-  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for color change */
-  cursor: pointer; /* Pointer on hover */
+  width: 12px;
+  height: 12px;
+  background-color: grey;
+  border-radius: 50%;
+  border: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
 }
 
-/* Active state styling */
 .custom-indicator.active,
 .custom-slider-carousel-dot.active {
   background: linear-gradient(
