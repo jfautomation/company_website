@@ -21,11 +21,11 @@ img {
 }
 
 i {
-    font-size: 0.9rem;  
+    font-size: 0.9rem;
 }
 </style>
 
-<div class="col-12 col-md-6 col-lg-4 mb-4">
+<div class="col-12 col-md-6 col-lg-3 mb-4">
     <div class="white-card-with-icon d-flex flex-column align-items-start p-4">
         <img src="<?php echo esc_url($args['icon']); ?>" alt="" />
         <h5 class="text-gradient-blue mt-3 fw-semibold"><?php echo esc_html($args['service_heading']); ?></h5>

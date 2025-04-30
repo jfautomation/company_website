@@ -125,16 +125,6 @@ $services = array(
       'header' => get_field('service_header_4'),
       'link'   => get_field('service_link_4'),
   ),
-  array(
-    'icon'   => get_field('service_icon_5'),
-    'header' => get_field('service_header_5'),
-    'link'   => get_field('service_link_5'),
-),
-array(
-  'icon'   => get_field('service_icon_6'),
-  'header' => get_field('service_header_6'),
-  'link'   => get_field('service_link_6'),
-),
 );
 
 // Filter out empty services
@@ -282,8 +272,8 @@ $products = array_filter($products, function($product) {
                             <div class="custom-carousel-card-inner-wrapper flex-grow-1">
                                 <div class="row h-100">
                                     <div class="col-4">
-                                        <div class="h-100">
-                                            <img src="<?php echo esc_url($product['image']); ?>" />
+                                        <div class="h-100 d-flex align-items-center justify-content-center">
+                                            <img class="w-100" src="<?php echo esc_url($product['image']); ?>" />
                                         </div>
                                     </div>
                                     <div class="col">
