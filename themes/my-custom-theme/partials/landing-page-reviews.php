@@ -49,8 +49,7 @@
 }
 
 .card-gray {
-    background-color: #1f2937;
-    /* dark gray */
+    background-color: var(--color-dark-grey-bg);
     color: white;
 }
 
