@@ -18,6 +18,8 @@
     <?php get_template_part('partials/landing-page-hero')?>
     <!-- //// services -->
     <?php get_template_part('partials/landing-page-services')?>
+      <!-- //// services extend -->
+      <?php get_template_part('partials/landing-page-services-stats')?>
     <!-- //// about & CTA -->
     <?php get_template_part('partials/landing-page-about-cta')?>
     <!-- //// brands we repair -->
@@ -28,3 +30,5 @@
     <?php get_template_part('partials/landing-page-reviews')?>
 </div>
 <?php get_template_part( 'partials/footer' ); ?>
+
+

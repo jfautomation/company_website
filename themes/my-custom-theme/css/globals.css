@@ -3,11 +3,11 @@
   --color-gradient-dark-blue: #1600a0;
   --color-dark-text: #000000;
   --color-text-dark-lighter: #1c1c1c; 
-  --color-grey-text: #747474;
+  --color-grey-text: #5b5a5a;
   --color-light-grey-border: #d8d2d2;
   --color-light-grey-carousel-indicators: #c2c2c2;
   --color-light-grey-bg: #eeeeee;
-  --color-red-badge: #ff4a3d;
+  --color-red: #ff4a3d;
   --color-yellow-star: #ffc300;
   --color-dark-grey-bg: #383737;
   --font-base: "Inter", sans-serif;
@@ -51,16 +51,18 @@ hr {
   color: var(--color-dark-text) !important;
 }
 
-.text-dark-lighter {
-  color: var(--color-dark-text-lighter) !important; 
-}
 
 .text-grey {
-  color: var(--color-grey-text);
+  /* color: var(--color-grey-text); */
+  color: var(--color-grey-text) !important; 
+}
+
+.text-red {
+  color: var(--color-red) !important;
 }
 
 .bg-red {
-  background-color: var(--color-red-badge) !important;
+  background-color: var(--color-red) !important;
 }
 
 .bg-yellow {
