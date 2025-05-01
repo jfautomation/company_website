@@ -2,6 +2,7 @@
   --color-gradient-light-blue: #3a7bd5;
   --color-gradient-dark-blue: #1600a0;
   --color-dark-text: #000000;
+  --color-text-dark-lighter: #1c1c1c; 
   --color-grey-text: #747474;
   --color-light-grey-border: #d8d2d2;
   --color-light-grey-carousel-indicators: #c2c2c2;
@@ -48,6 +49,10 @@ hr {
 /* Text color utilities */
 .text-dark {
   color: var(--color-dark-text) !important;
+}
+
+.text-dark-lighter {
+  color: var(--color-dark-text-lighter) !important; 
 }
 
 .text-grey {

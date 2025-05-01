@@ -1,7 +1,7 @@
 <style>
 .header-icon {
-    /* width: 1.5rem; */
-    background: var(---blue-gradient-background); 
+    width: 1.5rem;
+    background: var(---blue-gradient-background);
 }
 </style>
 
@@ -48,7 +48,7 @@ $services = array_filter($services, function($service) {
 });
 
 ?>
-    <div class="row mt-4">
+    <div class="row mt-4 pb-3">
         <?php foreach ($services as $service) : ?>
         <?php get_template_part('partials/service-card', null, array(
         'icon' => $service['icon'],
@@ -56,16 +56,34 @@ $services = array_filter($services, function($service) {
         'link_to_service_page' => $service['link'],
     )); ?>
         <?php endforeach; ?>
-    </div>  
-    <div class="">
-        <div class="d-flex">
+    </div>
+    <hr/>
+    <div class="mt-4">
+        <div class="d-flex gap-2 align-items-center">
 
-        <i class="header-icon fa-solid fa-bolt"></i>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M349.4 44.6c5.9-13.7 1.5-29.7-10.6-38.5s-28.6-8-39.9 1.8l-256 224c-10 8.8-13.6 22.9-8.9 35.3S50.7 288 64 288l111.5 0L98.6 467.4c-5.9 13.7-1.5 29.7 10.6 38.5s28.6 8 39.9-1.8l256-224c10-8.8 13.6-22.9 8.9-35.3s-16.6-20.7-30-20.7l-111.5 0L349.4 44.6z"/></svg>
-        <span>Concept is what we do</span>
+            <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-fill" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M15.528 2.973a.75.75 0 0 1 .472.696v8.662a.75.75 0 0 1-.472.696l-7.25 2.9a.75.75 0 0 1-.557 0l-7.25-2.9A.75.75 0 0 1 0 12.331V3.669a.75.75 0 0 1 .471-.696L7.443.184l.004-.001.274-.11a.75.75 0 0 1 .558 0l.274.11.004.001zm-1.374.527L8 5.962 1.846 3.5 1 3.839v.4l6.5 2.6v7.922l.5.2.5-.2V6.84l6.5-2.6v-.4l-.846-.339Z"/>
+</svg> -->
+
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                <defs>
+                    <linearGradient id="gradient-boxes" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#3a7bd5" />
+                        <stop offset="100%" stop-color="#1600a0" />
+                    </linearGradient>
+                </defs>
+
+                <path fill="url(#gradient-boxes)"
+                    d="M15.528 2.973a.75.75 0 0 1 .472.696v8.662a.75.75 0 0 1-.472.696l-7.25 2.9a.75.75 0 0 1-.557 0l-7.25-2.9A.75.75 0 0 1 0 12.331V3.669a.75.75 0 0 1 .471-.696L7.443.184l.004-.001.274-.11a.75.75 0 0 1 .558 0l.274.11.004.001zm-1.374.527L8 5.962 1.846 3.5 1 3.839v.4l6.5 2.6v7.922l.5.2.5-.2V6.84l6.5-2.6v-.4l-.846-.339Z" />
+            </svg>
+
        
-            <!-- <img class="header-icon" src="<?php echo esc_url(get_field('service_icon_4')); ?>" alt="Service Icon" /> -->
+            <small class="text-dark-lighter">We repair and ship</small>
+           
+
+
         </div>
+        <h3 class="mt-3 w-50 fw-semibold">We specialize in repairing and shipping industrial electronics and motors, while also providing fast access to quality parts for your operation.</h3>
 
     </div>
 </section>
