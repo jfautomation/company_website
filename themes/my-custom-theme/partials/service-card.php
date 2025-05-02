@@ -26,6 +26,10 @@
     font-weight: 600 !important;
 }
 
+.card-image {
+    height: 10rem;
+}
+
 
 
 i {
@@ -33,7 +37,7 @@ i {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     display: inline-block;
-    margin-top: -12px;
+    /* margin-top: -12px; */
 
 }
 </style>
@@ -47,11 +51,13 @@ i {
 
     <div class="white-card-with-icon d-flex flex-column align-items-start p-4 h-100 justify-content-between">
         <div class="d-flex flex-column">
-            <div class="d-flex justify-content-between w-100 align-items-start">
-                <i class="bi fs-3 <?php echo esc_attr($args['icon']); ?>"></i>
-                <small class="text-grey"><?php echo esc_html($args['span']); ?></small>
-            </div>
-            <h5 class="fw-bold mt-3"><?php echo esc_html($args['service_heading']); ?></h5>
+            <img class="w-100 fluid card-image" src="<?php echo esc_url(get_field('product_1_image')); ?>" alt="">
+
+         
+            <!-- <i class="bi fs-4 <?php echo esc_attr($args['icon']); ?>"></i> -->
+                <h5 class="fw-bold mt-3"><?php echo esc_html($args['service_heading']); ?></h5>
+               
+         
 
             <p class="mt-1 service-description"><?php echo esc_html($args['paragraph']); ?>
             </p>

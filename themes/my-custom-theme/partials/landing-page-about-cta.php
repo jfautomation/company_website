@@ -19,7 +19,7 @@
                         <?php echo esc_html(get_field('landing_page_cta_paragraph')); ?>
                     </p>
                     <div class="mt-3">
-                        <?php echo do_shortcode('[button variant="btn-primary-red" link="' . esc_url( get_field('landing_page_cta_button_link') ) . '"]' . esc_html( get_field('landing_page_cta_button_text') ) . '[/button]'); ?>
+                        <?php echo do_shortcode('[button variant="outline-white" link="' . esc_url( get_field('landing_page_cta_button_link') ) . '"]' . esc_html( get_field('landing_page_cta_button_text') ) . '[/button]'); ?>
                     </div>
                 </div>
             </div>
