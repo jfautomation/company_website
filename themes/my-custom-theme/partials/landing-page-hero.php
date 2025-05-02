@@ -21,7 +21,7 @@ $images = [
                         <div class="d-flex flex-column align-items-start">
                             <h1 class="text-start text-gradient-blue fw-semibold w-75"><?php echo esc_html( get_field('hero_header_text') ); ?>
                             </h1>
-                            <p class="text-grey mt-2">
+                            <p class="mt-2 fs-5">
                                 <?php echo esc_html( get_field('hero_paragraph_text') ); ?>
                             </p>
                             <div class="d-flex gap-2 mt-3">

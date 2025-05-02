@@ -44,15 +44,13 @@ $stats = array_filter($stats, function($stat) {
 });
 
 ?>
-<div class="bg-light-grey">
+<div class="">
     <section>
         <div class="container">
+
             <!-- <small class="fw-semibold">Trusted Experts</small> -->
 
-            <span class="badge bg-dark">
-                Trusted experts
 
-            </span>
             <div class="row pb-1 mt-2">
                 <div class="col">
                     <h3 class="mt-2 fw-semibold"> <?php echo esc_html( get_field('services_paragraph') ); ?></h3>
@@ -93,7 +91,10 @@ $stats = array_filter($stats, function($stat) {
                 </div>
             </div>
             <div class="row">
-                <div class="d-flex align-items-center gap-2">
+                <div class="mt-4">
+                    <?php echo do_shortcode('[button variant="outline-primary" link="' . esc_url( get_field('hero_button_link_2') ) . '"]Get a Quote[/button]'); ?>
+                </div>
+                <!-- <div class="d-flex align-items-center gap-2">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 16 16">
                         <defs>
                             <linearGradient id="gradient-phone-fill" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -107,7 +108,9 @@ $stats = array_filter($stats, function($stat) {
 
                     <small class="mt-2 text-decoration-underline">Get a quote</small>
 
-                </div>
+                </div> -->
+
+
 
             </div>
     </section>
