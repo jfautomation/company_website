@@ -19,8 +19,8 @@ $images = [
                 <div class="col-lg-6 col-md-12">
                     <div class="h-100 d-flex flex-column justify-content-center align-items-center">
                         <div class="d-flex flex-column align-items-start">
-                            <h2 class="text-start text-gradient-blue fw-semibold w-75"><?php echo esc_html( get_field('hero_header_text') ); ?>
-                            </h2>
+                            <h1 class="text-start text-gradient-blue fw-semibold w-75"><?php echo esc_html( get_field('hero_header_text') ); ?>
+                            </h1>
                             <p class="text-grey mt-2">
                                 <?php echo esc_html( get_field('hero_paragraph_text') ); ?>
                             </p>

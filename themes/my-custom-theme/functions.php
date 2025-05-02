@@ -16,20 +16,28 @@ function custom_button_shortcode($atts, $content = null) {
     // Set up default attributes for the button
     $atts = shortcode_atts(
         array(
-            'variant' => 'primary', // default variant
-            'link' => '#',          // default link
+            'variant' => 'primary',
+            'link' => '#',
         ),
         $atts,
         'button'
     );
 
     // Button class based on the variant
-    $button_class = 'btn-base ' . 'btn-' . esc_attr($atts['variant']);
+    $variant = esc_attr($atts['variant']);
+    $button_class = 'btn-base btn-' . $variant;
 
-    // Return the HTML of the button
+    // If variant is 'outline-primary', add inner <span> with after styling
+    if ($variant === 'outline-primary') {
+        return '<a href="' . esc_url($atts['link']) . '" class="' . $button_class . '"><span class="btn-inner"></span>' . do_shortcode($content) . '</a>';
+    }
+    
+
+    // Default button markup
     return '<a href="' . esc_url($atts['link']) . '" class="' . $button_class . '">' . do_shortcode($content) . '</a>';
 }
 add_shortcode('button', 'custom_button_shortcode');
+
 
 
 //// custom carousel indicators

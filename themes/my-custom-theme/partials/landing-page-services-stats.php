@@ -49,7 +49,7 @@ $stats = array_filter($stats, function($stat) {
         <div class="container">
             <!-- <small class="fw-semibold">Trusted Experts</small> -->
 
-            <span class="badge bg-red">
+            <span class="badge bg-dark">
                 Trusted experts
 
             </span>

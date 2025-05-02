@@ -127,7 +127,7 @@ function render_stars($stars) {
         </div>
         <div class="col">
             <div class="d-flex align-items-center justify-content-end">
-                <?php echo do_shortcode('[button variant="primary" link="' . esc_url( get_field('link_to_item') ) . '"]REVIEW[/button]'); ?>
+                <?php echo do_shortcode('[button variant="primary" link="' . esc_url( get_field('link_to_item') ) . '"]Review[/button]'); ?>
 
             </div>
         </div>

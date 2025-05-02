@@ -15,7 +15,7 @@
 
 <header class="fixed-top">
     <nav class="navbar navbar-expand-lg bg-body-tertiary px-4" id="main-navbar">
-        <div class="container-fluid">
+        <div class="container">
             <a class="navbar-brand mt-1" href="#">Navbar</a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"

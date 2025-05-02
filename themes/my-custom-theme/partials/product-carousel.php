@@ -97,7 +97,7 @@ if (!empty($sale_price) && $price > 0) {
                                 <p class="text-grey text-start">
                                     <?php echo esc_html($product['description']); ?></p>
                                 <div class="mt-3">
-                                    <?php echo do_shortcode('[button variant="primary" link="' . esc_url( get_field('link_to_item') ) . '"]BUY[/button]'); ?>
+                                    <?php echo do_shortcode('[button variant="primary" link="' . esc_url( get_field('link_to_item') ) . '"]Buy[/button]'); ?>
                                 </div>
                             </div>
                         </div>

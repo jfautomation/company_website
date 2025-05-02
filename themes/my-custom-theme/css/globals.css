@@ -1,8 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Michroma&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap");
+
 :root {
   --color-gradient-light-blue: #3a7bd5;
   --color-gradient-dark-blue: #1600a0;
   --color-dark-text: #000000;
-  --color-text-dark-lighter: #1c1c1c; 
+  --color-text-dark-lighter: #1c1c1c;
   --color-grey-text: #5b5a5a;
   --color-light-grey-border: #d8d2d2;
   --color-light-grey-carousel-indicators: #c2c2c2;
@@ -51,10 +54,9 @@ hr {
   color: var(--color-dark-text) !important;
 }
 
-
 .text-grey {
   /* color: var(--color-grey-text); */
-  color: var(--color-grey-text) !important; 
+  color: var(--color-grey-text) !important;
 }
 
 .text-red {
@@ -112,17 +114,19 @@ hr {
 
 /* Base button styles */
 .btn-base {
+  font-family: "Titillium Web";
   font-weight: 600;
-  font-size: 0.875rem;
+  /* font-size: 0.875rem; */
   min-width: 9rem !important;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 11px 32px;
   text-align: center;
-  text-transform: uppercase;
+  text-transform: capitalize;
   text-decoration: none;
   transition: background-color 0.3s, color 0.3s;
+  border-radius: 4.6px;
 }
 
 /* Primary Button */
@@ -142,24 +146,68 @@ hr {
 
 /* Secondary Button */
 .btn-outline-primary {
-  border-image: linear-gradient(
-      to right,
-      var(--color-gradient-light-blue) 0%,
-      var(--color-gradient-dark-blue) 100%
-    )
-    1;
-  border-width: 3px;
-  border-style: solid;
+  position: relative;
+  display: inline-block;
   color: black;
+  overflow: hidden;
+  z-index: 1;
+  /* padding: 11px 32px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  min-width: 9rem;
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  border-radius: 4.6px;
+  background: linear-gradient(#fff, #fff) padding-box,
+    linear-gradient(
+        to right,
+        var(--color-gradient-light-blue),
+        var(--color-gradient-dark-blue)
+      )
+      border-box;
+  color: black;
+  transition: background 0.3s, color 0.3s;
+  background-clip: padding-box, border-box;
+  box-shadow: 0 0 0 3px transparent;  */
 }
 
-.btn-outline-primary:hover {
+.btn-outline-primary .btn-inner {
+  border-radius: 4.6px;
+  content: "";
+  inset: 0;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  padding: 2px;
+  position: absolute;
+  z-index: -1;
+}
+
+.btn-outline-primary .btn-inner::before {
   background: linear-gradient(
-    to right,
-    var(--color-gradient-light-blue),
+    270deg,
+    var(--color-red),
     var(--color-gradient-dark-blue)
   );
-  color: white;
+  content: "";
+  left: 50%;
+  padding-bottom: 120%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(180deg);
+  transition: transform 0.2s linear;
+  width: 120%;
+}
+
+.btn-outline-primary .btn-inner::before:hover {
+  background: linear-gradient(
+    270deg,
+    var(--color-gradient-dark-blue),
+    var(--color-red)
+  );
 }
 
 .btn-outline-white {
