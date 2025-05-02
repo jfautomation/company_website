@@ -15,7 +15,8 @@
 }
 
 .service-description {
-    line-height: 1.75rem !important;
+    line-height: 1.65rem !important;
+    font-size: 0.95rem !important;
 }
 
 
@@ -44,15 +45,17 @@ i {
 
 <div class="col-12 col-md-6 col-lg-3 mb-4">
 
-    <div class="white-card-with-icon d-flex flex-column align-items-start p-4">
-        <div class="d-flex justify-content-between w-100 align-items-start">
-            <i class="bi fs-1 <?php echo esc_attr($args['icon']); ?>"></i>
-            <small class="text-grey">Placeholder</small>
-        </div>
-        <h5 class="fw-bold mt-3"><?php echo esc_html($args['service_heading']); ?></h5>
+    <div class="white-card-with-icon d-flex flex-column align-items-start p-4 h-100 justify-content-between">
+        <div class="d-flex flex-column">
+            <div class="d-flex justify-content-between w-100 align-items-start">
+                <i class="bi fs-3 <?php echo esc_attr($args['icon']); ?>"></i>
+                <small class="text-grey"><?php echo esc_html($args['span']); ?></small>
+            </div>
+            <h5 class="fw-bold mt-3"><?php echo esc_html($args['service_heading']); ?></h5>
 
-        <p class="service-description">Some stuff here to test and see if i can generate my own lorem impusum text.
-        </p>
+            <p class="mt-1 service-description"><?php echo esc_html($args['paragraph']); ?>
+            </p>
+        </div>
         <div class="mt-3">
 
 

@@ -159,6 +159,21 @@ hr {
   box-shadow: 0 0 10px rgba(0, 123, 255, 0.4);
 }
 
+
+.btn-primary-red {
+  background: linear-gradient(
+    to right,
+    var(--color-red),
+    var(--color-gradient-dark-blue)
+  );
+  color: white;
+}
+
+.btn-primary:hover {
+  filter: brightness(1.1);
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.4);
+}
+
 /* Secondary Button */
 .btn-outline-primary {
   position: relative;

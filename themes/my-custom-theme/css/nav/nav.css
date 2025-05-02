@@ -5,6 +5,7 @@
 
 .navbar.scrolled {
   background-color: white !important;
+  background: linear-gradient(135deg, #fafafa, #f0f0f0);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
