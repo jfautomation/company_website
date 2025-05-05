@@ -15,7 +15,7 @@
   --color-red: #ff4a3d;
   --color-yellow-star: #ffc300;
   --color-dark-grey-bg: #383737;
-  --font-base: "Inter", sans-serif;
+  --font-base: "Titillium Web";
   --blue-gradient-background: linear-gradient(
     to right,
     var(--color-gradient-light-blue),
@@ -148,7 +148,7 @@ hr {
   align-items: center;
   padding: 13px 32px;
   text-align: center;
-  text-transform: capitalize;
+  /* text-transform: capitalize; */
   text-decoration: none;
   transition: background-color 0.3s, color 0.3s;
   border-radius: 4.6px;
