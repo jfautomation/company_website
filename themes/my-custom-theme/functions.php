@@ -12,31 +12,58 @@ function my_custom_theme_setup()
 }
 add_action('after_setup_theme', 'my_custom_theme_setup');
 
+// function custom_button_shortcode($atts, $content = null) {
+//     $atts = shortcode_atts(
+//         array(
+//             'variant' => 'primary',
+//             'link' => '#',
+//         ),
+//         $atts,
+//         'button'
+//     );
+
+//     $variant = esc_attr($atts['variant']);
+//     $button_class = 'btn-base btn-' . $variant;
+
+//     if ($variant === 'outline-primary') {
+//         return '<a href="' . esc_url($atts['link']) . '" class="' . $button_class . '"><span class="btn-inner"></span>' . do_shortcode($content) . '</a>';
+//     }
+    
+//     return '<a href="' . esc_url($atts['link']) . '" class="' . $button_class . '">' . do_shortcode($content) . '</a>';
+// }
+// add_shortcode('button', 'custom_button_shortcode');
+
 function custom_button_shortcode($atts, $content = null) {
     // Set up default attributes for the button
     $atts = shortcode_atts(
         array(
             'variant' => 'primary',
             'link' => '#',
+            'size' => '', // Optional: 'sm', 'lg', etc.
         ),
         $atts,
         'button'
     );
 
-    // Button class based on the variant
     $variant = esc_attr($atts['variant']);
-    $button_class = 'btn-base btn-' . $variant;
+    $size = esc_attr($atts['size']);
 
-    // If variant is 'outline-primary', add inner <span> with after styling
-    if ($variant === 'outline-primary') {
-        return '<a href="' . esc_url($atts['link']) . '" class="' . $button_class . '"><span class="btn-inner"></span>' . do_shortcode($content) . '</a>';
+    // Build button class
+    $button_class = 'btn-base btn-' . $variant;
+    if (!empty($size)) {
+        $button_class .= ' btn-' . $size;
     }
-    
+
+   // Special case for 'outline-*' variants
+if (str_starts_with($variant, 'outline-')) {
+    return '<a href="' . esc_url($atts['link']) . '" class="' . $button_class . '"><span class="btn-inner"></span>' . do_shortcode($content) . '</a>';
+}
 
     // Default button markup
     return '<a href="' . esc_url($atts['link']) . '" class="' . $button_class . '">' . do_shortcode($content) . '</a>';
 }
 add_shortcode('button', 'custom_button_shortcode');
+
 
 
 

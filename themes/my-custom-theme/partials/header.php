@@ -13,20 +13,21 @@
 
 <body <?php body_class(); ?>>
 
-<header class="fixed-top">
-    <nav class="navbar navbar-expand-lg bg-body-tertiary px-4" id="main-navbar">
-        <div class="container">
-            <a class="navbar-brand mt-1" href="#">Navbar</a>
+    <header class="fixed-top">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary px-4" id="main-navbar">
+            <div class="container">
+                <a class="navbar-brand mt-1" href="#">Navbar</a>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mt-2 mb-2 mb-lg-0 ms-lg-5 d-flex gap-lg-5">
-                    <?php
+                <div class="collapse navbar-collapse d-flex justify-content-center" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mt-2 mb-2 mb-lg-0 ms-lg-5 d-flex gap-lg-5">
+
+                        <?php
                     // Fetch and loop through the menu items from WordPress
                     $locations = get_nav_menu_locations();
                     $menu_id = $locations['primary'] ?? null; // Get the primary menu ID
@@ -40,33 +41,34 @@
                                     // Add active class based on current page
                                     $is_active = (esc_url($menu_item->url) === home_url($_SERVER['REQUEST_URI'])) ? 'active' : '';
                     ?>
-                                    <li class="nav-item">
-                                        <a class="nav-link <?php echo $is_active; ?>" href="<?php echo esc_url( $menu_item->url ); ?>">
-                                            <?php echo esc_html( $menu_item->title ); ?>
-                                        </a>
-                                    </li>
-                    <?php
+                        <li class="nav-item">
+                            <a class="nav-link <?php echo $is_active; ?>"
+                                href="<?php echo esc_url( $menu_item->url ); ?>">
+                                <?php echo esc_html( $menu_item->title ); ?>
+                            </a>
+                        </li>
+                        <?php
                                 endif; // End 'Contact' check
                             endforeach;
                         else :
                     ?>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">No Menu Items Found</a>
-                            </li>
-                    <?php
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">No Menu Items Found</a>
+                        </li>
+                        <?php
                         endif;
                     endif;
                     ?>
 
-                    <!-- Hardcoded "Shop" link before "Contact" -->
-                    <li class="nav-item">
-                        <a href="<?php echo esc_url( home_url( '/shop' ) ); ?>" class="nav-link">
-                            Shop
-                        </a>
-                    </li>
+                        <!-- Hardcoded "Shop" link before "Contact" -->
+                        <!-- <li class="nav-item">
+                            <a href="<?php echo esc_url( home_url( '/shop' ) ); ?>" class="nav-link">
+                                Shop
+                            </a>
+                        </li> -->
 
-                    <!-- Now output "Contact" after the "Shop" link -->
-                    <?php
+                        <!-- Now output "Contact" after the "Shop" link -->
+                        <?php
                     if ($menu_id) :
                         foreach ( $menu_items as $menu_item ) :
                             // Only output the 'Contact' link
@@ -77,18 +79,23 @@
                                 <?php echo esc_html( $menu_item->title ); ?>
                             </a>
                         </li>
-                    <?php
+                        <?php
                             endif;
                         endforeach;
                     endif;
                     ?>
-                </ul>
+                    </ul>
 
-                <!-- Icon for shop on the right (for desktop and mobile) -->
-                <a href="<?php echo esc_url( home_url( '/shop' ) ); ?>" class="shop-icon-link">
-                    <i class="fas fa-store text-dark fs-5"></i>
-                </a>
-            </div>
-        </div>
-    </nav>
-</header>
+
+
+                    <div class="d-flex align-items-center gap-3">
+                        <?php echo do_shortcode('[button variant="outline-blue" size="sm" link="' . esc_url( get_field('shop_button_link')  ) . '"]' . esc_html( get_field('shop_button_text') ) . '[/button]'); ?>
+                        <i class="bi fs-5 <?php echo esc_attr(get_field('social_icon_1')); ?>"></i>
+                        <i class="bi fs-5 <?php echo esc_attr(get_field('social_icon_2')); ?>"></i>
+
+
+                        <div>
+                        </div>
+                    </div>
+        </nav>
+    </header>

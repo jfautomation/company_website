@@ -22,8 +22,8 @@
     var(--color-gradient-dark-blue)
   );
 }
+
 h2 {
-  /* text-transform: capitalize; */
   font-weight: bold;
 }
 
@@ -119,7 +119,6 @@ hr {
   color: transparent; /* Make the text color transparent so the gradient is visible */
 }
 
-
 .bg-light-grey {
   background-color: var(--color-light-grey-bg);
 }
@@ -156,6 +155,13 @@ hr {
   /* transition: all .2s ease; */
 }
 
+.btn-sm {
+  padding: 0.5rem 1.5rem; /* Smaller padding */
+  font-size: 0.95rem;
+  line-height: 1.5;
+  min-width: unset !important; /* Optional: smaller radius */
+}
+
 /* Primary Button */
 .btn-primary {
   background: linear-gradient(
@@ -170,7 +176,6 @@ hr {
   filter: brightness(1.1);
   box-shadow: 0 0 10px rgba(0, 123, 255, 0.4);
 }
-
 
 .btn-primary-red {
   background: linear-gradient(
@@ -187,7 +192,7 @@ hr {
 }
 
 /* Secondary Button */
-.btn-outline-primary {
+.btn-outline-primary, .btn-outline-blue {
   position: relative;
   display: inline-block;
   color: black;
@@ -197,7 +202,7 @@ hr {
   transition: border-color 0.3s ease; /* Smooth border color transition */
 }
 
-.btn-outline-primary .btn-inner {
+.btn-outline-primary .btn-inner,  .btn-outline-blue .btn-inner {
   content: "";
   inset: 0;
   mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
@@ -226,7 +231,8 @@ hr {
   transition: transform 0.3s ease, background 0.3s ease;
 }
 
-.btn-outline-primary:hover {
+
+.btn-outline-primary:hover .btn-outline-blue:hover {
   border-color: transparent; /* Initially transparent, switch to a color */
 }
 
@@ -235,6 +241,33 @@ hr {
     270deg,
     var(--color-gradient-dark-blue),
     var(--color-red)
+  );
+  transform: translate(-50%, -50%) rotate(0deg);
+}
+
+/* //////// btn outline blue  */
+
+.btn-outline-blue .btn-inner::before {
+  background: linear-gradient(
+    270deg,
+    var(--color-gradient-light-blue),
+    var(--color-gradient-dark-blue)
+  );
+  content: "";
+  left: 50%;
+  padding-bottom: 120%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(180deg);
+  width: 120%;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.btn-outline-blue:hover .btn-inner::before {
+  background: linear-gradient(
+    270deg,
+    var(--color-gradient-dark-blue),
+    var(--color-gradient-light-blue)
   );
   transform: translate(-50%, -50%) rotate(0deg);
 }
