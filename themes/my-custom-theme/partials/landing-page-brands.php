@@ -28,7 +28,8 @@ $brands = array_filter($brands, function($brand) {
         <div class="row mt-5">
             <?php foreach ($brands as $brand): ?>
             <div class="col-xl-2 col-lg-4 col-md-6 col-sm-12 mb-4">
-                <div class="brand-card box-shadow h-100 d-flex flex-column justify-content-center align-items-center">
+                <div
+                    class="custom-rounded card-gradient box-shadow h-100 d-flex flex-column justify-content-center align-items-center">
                     <div class="brand-card-img-wrapper p-3">
                         <img src="<?php echo esc_url($brand['logo']); ?>" alt="<?php echo esc_attr($brand['name']); ?>"
                             class="img-fluid h-100 w-100" />

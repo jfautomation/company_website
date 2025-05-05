@@ -21,6 +21,7 @@
     var(--color-gradient-light-blue),
     var(--color-gradient-dark-blue)
   );
+  --rounded-border: 4.6px;
 }
 
 h2 {
@@ -47,8 +48,16 @@ section {
   background-color: var(--color-light-grey-bg);
 }
 
+.card-gradient {
+  background: linear-gradient(135deg, #fafafa, #f0f0f0);
+}
+
 hr {
   opacity: 0.1 !important;
+}
+
+.custom-rounded {
+  border-radius: var(--rounded-border) !important;
 }
 
 /* Text color utilities */
@@ -78,7 +87,7 @@ hr {
 }
 
 .box-shadow {
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
 }
 
 .bg-gradient-blue {
@@ -141,17 +150,15 @@ hr {
 .btn-base {
   font-family: "Titillium Web";
   font-weight: 600;
-  /* font-size: 0.875rem; */
   min-width: 10rem !important;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 13px 32px;
   text-align: center;
-  /* text-transform: capitalize; */
   text-decoration: none;
   transition: background-color 0.3s, color 0.3s;
-  border-radius: 4.6px;
+  border-radius: var(--rounded-border);
   /* transition: all .2s ease; */
 }
 
@@ -177,32 +184,25 @@ hr {
   box-shadow: 0 0 10px rgba(0, 123, 255, 0.4);
 }
 
-.btn-primary-red {
-  background: linear-gradient(
-    to right,
-    var(--color-red),
-    var(--color-gradient-dark-blue)
-  );
-  color: white;
-}
-
 .btn-primary:hover {
   filter: brightness(1.1);
   box-shadow: 0 0 10px rgba(0, 123, 255, 0.4);
 }
 
 /* Secondary Button */
-.btn-outline-primary, .btn-outline-blue {
+.btn-outline-primary,
+.btn-outline-blue {
   position: relative;
   display: inline-block;
   color: black;
   overflow: hidden;
   z-index: 1;
-  border-radius: 4.6px;
+  border-radius: var(--rounded-border);
   transition: border-color 0.3s ease; /* Smooth border color transition */
 }
 
-.btn-outline-primary .btn-inner,  .btn-outline-blue .btn-inner {
+.btn-outline-primary .btn-inner,
+.btn-outline-blue .btn-inner {
   content: "";
   inset: 0;
   mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
@@ -212,7 +212,7 @@ hr {
   padding: 2px;
   position: absolute;
   z-index: -1;
-  border-radius: 4.6px;
+  border-radius: var(--rounded-border);
 }
 
 .btn-outline-primary .btn-inner::before {
@@ -230,7 +230,6 @@ hr {
   width: 120%;
   transition: transform 0.3s ease, background 0.3s ease;
 }
-
 
 .btn-outline-primary:hover .btn-outline-blue:hover {
   border-color: transparent; /* Initially transparent, switch to a color */

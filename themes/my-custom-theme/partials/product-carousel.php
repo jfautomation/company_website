@@ -12,7 +12,6 @@
 .custom-carousel-card {
     flex: 0 0 65%;
     max-width: 100%;
-    padding: 1rem;
     box-sizing: border-box;
 }
 
@@ -50,7 +49,6 @@ $products = array(
    
 );
 
-// Filter out any empty brand names or logos
 $products = array_filter($products, function($product) {
     return !empty($product['name']);
 });
@@ -62,8 +60,8 @@ $products = array_filter($products, function($product) {
 <div class="custom-carousel-container position-relative">
     <div class="custom-carousel-track" id="customCarouselTrack">
         <?php foreach ($products as $product): ?>
-        <div class="custom-carousel-card d-flex flex-column text-dark text-center">
-            <div class="custom-carousel-card-inner-wrapper flex-grow-1">
+        <div class="custom-carousel-card me-3 d-flex flex-column text-dark text-center">
+            <div class="custom-carousel-card-inner-wrapper custom-rounded flex-grow-1">
                 <div class="row h-100">
                     <div class="col-4">
                         <div class="h-100 d-flex align-items-center justify-content-center">
@@ -80,7 +78,7 @@ $discount = 0;
 
 if (!empty($sale_price) && $price > 0) {
     $raw_discount = (($price - $sale_price) / $price) * 100;
-    $discount = ceil($raw_discount / 25) * 25; // Round up to the next 25%
+    $discount = ceil($raw_discount / 25) * 25; 
 }
 ?>
 
