@@ -1,4 +1,4 @@
-<div class="section-header d-flex flex-column align-items-start">
+<div class="section-header d-flex flex-column align-items-start mt-3">
     <?php if (!empty($args['h5_text'])) : ?>
     <h5 class="fw-bold"><?php echo esc_html($args['h5_text']); ?></h5>
     <?php endif; ?>

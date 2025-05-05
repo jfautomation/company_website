@@ -12,8 +12,7 @@
 }
 
 .service-description {
-    line-height: 1.65rem !important;
-    font-size: 0.95rem !important;
+    line-height: 1.55rem !important;
 }
 
 
@@ -22,10 +21,6 @@
     font-size: 0.8rem;
     font-weight: 600 !important;
 }
-
-.card-image {
-    height: 10rem;
-}
 </style>
 
 
@@ -33,7 +28,7 @@
 <div class="col-12 col-md-6 col-lg-3 mb-4">
 
     <div
-        class="box-shadow custom-rounded card-gradient white-card-with-icon d-flex flex-column align-items-start h-100 p-4 justify-content-between">
+        class="box-shadow custom-rounded card-gradient white-card-with-icon d-flex flex-column align-items-start h-100 pt-2 px-4 pb-4 justify-content-between">
         <div class="d-flex flex-column">
             <i class="bi fs-2 <?php echo esc_attr($args['icon']); ?>"></i>
             <h4 class="fw-bold card-header mt-3"><?php echo esc_html($args['service_heading']); ?></h4>

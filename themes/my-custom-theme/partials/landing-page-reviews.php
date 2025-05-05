@@ -158,7 +158,7 @@ $card_variants = [
         <div class="col">
             <!-- Column 1 -->
             <div
-                class="review-card pt-3 pb-4 px-4 mb-4 <?php echo esc_attr($card_variants[$i % count($card_variants)]); ?>">
+                class="review-card custom-rounded pt-3 pb-4 px-4 mb-4 <?php echo esc_attr($card_variants[$i % count($card_variants)]); ?>">
 
                 <span><?php echo render_stars($review1['stars']); ?></span>
 
@@ -180,7 +180,7 @@ $card_variants = [
             <?php if ($review2): ?>
             <!-- Second review card in the same column -->
             <div
-                class="review-card pt-3 pb-4 px-4 mb-4 <?php echo esc_attr($card_variants[($i + 1) % count($card_variants)]); ?>">
+                class="review-card custom-rounded pt-3 pb-4 px-4 mb-4 <?php echo esc_attr($card_variants[($i + 1) % count($card_variants)]); ?>">
                 <span><?php echo render_stars($review1['stars']); ?></span>
 
 

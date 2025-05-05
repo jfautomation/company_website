@@ -2,12 +2,20 @@
     <div class="container">
         <?php
     $args = array(
-        'h5_text' => 'Services',
-        'h2_text' => 'What we do'
+        'h5_text' => get_field('services_subheader'),
+        'h2_text' => get_field('services_header'),
     );
 
     get_template_part('partials/section-header', null, $args);
     ?>
+
+        <div class="mt-3">
+            <?php
+get_template_part('partials/paragraph', null, array(
+    'paragraph_text' => get_field('services_paragraph')
+));
+?>
+        </div>
 
         <?php
 

@@ -157,6 +157,8 @@ hr {
   padding: 13px 32px;
   text-align: center;
   text-decoration: none;
+  /* text-transform: uppercase;
+  font-size: 0.9rem; */
   transition: background-color 0.3s, color 0.3s;
   border-radius: var(--rounded-border);
   /* transition: all .2s ease; */

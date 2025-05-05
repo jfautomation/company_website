@@ -9,6 +9,14 @@
     get_template_part('partials/section-header', null, $args);
     ?>
 
+    <!-- <div class="mt-3">
+    <?php
+get_template_part('partials/paragraph', null, array(
+    'paragraph_text' => get_field('services_paragraph')
+));
+?>
+    </div> -->
+
         <?php 
 $brands = array(
     array('logo' => get_field('brand_1_logo'), 'name' => get_field('brand_1_name')),
@@ -17,6 +25,8 @@ $brands = array(
     array('logo' => get_field('brand_4_logo'), 'name' => get_field('brand_4_name')),
     array('logo' => get_field('brand_5_logo'), 'name' => get_field('brand_5_name')),
     array('logo' => get_field('brand_6_logo'), 'name' => get_field('brand_6_name')),
+    array('logo' => get_field('brand_7_logo'), 'name' => get_field('brand_7_name')),
+    array('logo' => get_field('brand_8_logo'), 'name' => get_field('brand_8_name')),
 );
 
 // Filter out any empty brand names or logos
