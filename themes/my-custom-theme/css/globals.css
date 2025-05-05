@@ -108,6 +108,18 @@ hr {
   color: transparent; /* Make the text color transparent so the gradient is visible */
 }
 
+.text-gradient-red-blue {
+  background: linear-gradient(
+    to right,
+    var(--color-red),
+    var(--color-gradient-dark-blue)
+  );
+  background-clip: text;
+  -webkit-background-clip: text; /* Ensure the gradient applies to the text */
+  color: transparent; /* Make the text color transparent so the gradient is visible */
+}
+
+
 .bg-light-grey {
   background-color: var(--color-light-grey-bg);
 }

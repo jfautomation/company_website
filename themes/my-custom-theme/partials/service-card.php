@@ -1,4 +1,8 @@
 <style>
+.card-header {
+    font-size: 1.45rem !important;
+}
+
 .white-card-with-icon {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
     border-radius: 4.6px;
@@ -44,7 +48,7 @@
             <!-- <img class="w-100 fluid card-image" src="<?php echo esc_url(get_field('product_1_image')); ?>" alt=""> -->
 
 
-            <i class="bi fs-3 <?php echo esc_attr($args['icon']); ?>"></i>
+            <i class="bi fs-2 <?php echo esc_attr($args['icon']); ?>"></i>
             <h4 class="fw-bold card-header mt-3"><?php echo esc_html($args['service_heading']); ?></h4>
 
 
@@ -70,6 +74,7 @@
 
 
             <?php echo do_shortcode('[button variant="outline-primary" link="' . esc_url($args['link_to_service_page']) . '"]Learn More[/button]'); ?>
+
         </div>
 
 

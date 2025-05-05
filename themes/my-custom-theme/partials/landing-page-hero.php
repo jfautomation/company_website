@@ -21,10 +21,10 @@ $images = [
                         <div class="d-flex flex-column align-items-start">
                             <h1 class="text-start text-gradient-blue fw-semibold w-75"><?php echo esc_html( get_field('hero_header_text') ); ?>
                             </h1>
-                            <p class="mt-2 fs-5">
+                            <p class="mt-2 hero-paragraph">
                                 <?php echo esc_html( get_field('hero_paragraph_text') ); ?>
                             </p>
-                            <div class="d-flex gap-2 mt-3">
+                            <div class="d-flex gap-2 mt-4">
                                 <?php echo do_shortcode('[button variant="outline-primary" link="' . esc_url( get_field('hero_button_link_2') ) . '"]' . esc_html( get_field('hero_button_text_2') ) . '[/button]'); ?>
                                 <?php echo do_shortcode('[button variant="primary" link="' . esc_url( get_field('hero_button_link_1') ) . '"]' . esc_html( get_field('hero_button_text_1') ) . '[/button]'); ?>
                             </div>
