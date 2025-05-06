@@ -25,7 +25,7 @@
                 </button>
 
                 <div class="collapse navbar-collapse d-flex justify-content-center" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mt-2 mb-2 mb-lg-0 ms-lg-5 d-flex gap-lg-5">
+                    <ul class="navbar-nav me-auto mb-lg-0 ms-lg-5 d-flex gap-lg-5">
 
                         <?php
                     // Fetch and loop through the menu items from WordPress

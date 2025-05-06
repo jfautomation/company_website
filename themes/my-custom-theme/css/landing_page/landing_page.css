@@ -2,6 +2,10 @@
   padding-top: 70px;
 }
 
+.hero-header {
+  font-size: 3rem !important;
+}
+
 .hero-paragraph {
   font-size: 1.15rem !important;
 }
@@ -23,39 +27,15 @@
    object-fit: contain; 
 }
 
-/* .custom-carousel-container {
-  overflow: hidden;
-  padding: 2rem 0;
+.siemens-authorized-dealer-img {
+  width: 10rem;
 }
 
-.custom-carousel-track {
-  display: flex;
-  transition: transform 0.6s ease;
-}
-
-
-
-.custom-carousel-card-inner-wrapper {
-  background-color: #fff;
-}
-
-.custom-carousel-indicators {
-  display: flex;
-  justify-content: center;
-  gap: 0.5rem;
-} */
-
-/* .carousel-dot {
-  width: 12px;
-  height: 12px;
-  background: #fff;
+.arrow-circle-link {
+  height: 1.5rem;
+  width: 1.5rem;
   border-radius: 50%;
-  border: 2px solid #000;
-  cursor: pointer;
-  opacity: 0.5;
 }
 
-.carousel-dot.active {
-  opacity: 1;
-} */
+
 

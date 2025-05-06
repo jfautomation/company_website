@@ -157,18 +157,24 @@ hr {
   padding: 13px 32px;
   text-align: center;
   text-decoration: none;
-  /* text-transform: uppercase;
-  font-size: 0.9rem; */
   transition: background-color 0.3s, color 0.3s;
   border-radius: var(--rounded-border);
-  /* transition: all .2s ease; */
 }
 
 .btn-sm {
-  padding: 0.5rem 1.5rem; /* Smaller padding */
+  padding: 0.5rem 1.5rem;
   font-size: 0.95rem;
   line-height: 1.5;
-  min-width: unset !important; /* Optional: smaller radius */
+  min-width: unset !important;
+}
+
+.btn-sm:hover {
+  color: white;
+  background: linear-gradient(
+    to left,
+    var(--color-gradient-dark-blue),
+    var(--color-gradient-light-blue)
+  );
 }
 
 /* Primary Button */
@@ -217,6 +223,10 @@ hr {
   border-radius: var(--rounded-border);
 }
 
+.btn-outline-primary:hover .btn-inner::before {
+  transform: translate(-50%, -50%) rotate(0deg);
+}
+
 .btn-outline-primary .btn-inner::before {
   background: linear-gradient(
     270deg,
@@ -234,7 +244,7 @@ hr {
 }
 
 .btn-outline-primary:hover .btn-outline-blue:hover {
-  border-color: transparent; /* Initially transparent, switch to a color */
+  border-color: transparent;
 }
 
 .btn-outline-primary:hover .btn-inner::before {
