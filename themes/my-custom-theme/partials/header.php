@@ -60,14 +60,7 @@
                     endif;
                     ?>
 
-                        <!-- Hardcoded "Shop" link before "Contact" -->
-                        <!-- <li class="nav-item">
-                            <a href="<?php echo esc_url( home_url( '/shop' ) ); ?>" class="nav-link">
-                                Shop
-                            </a>
-                        </li> -->
 
-                        <!-- Now output "Contact" after the "Shop" link -->
                         <?php
                     if ($menu_id) :
                         foreach ( $menu_items as $menu_item ) :
@@ -89,7 +82,13 @@
 
 
                     <div class="d-flex align-items-center gap-3">
-                        <?php echo do_shortcode('[button variant="outline-blue" size="sm" link="' . esc_url( get_field('shop_button_link')  ) . '"]' . esc_html( get_field('shop_button_text') ) . '[/button]'); ?>
+                        <?php
+
+// Using an empty link for now, with an arrow icon
+echo do_shortcode('[rounded_pill_button link="#" variant="blue-rounded-btn" icon="fa-solid fa-arrow-right"]Shop now[/rounded_pill_button]'); ?>
+
+
+                        <!-- <?php echo do_shortcode('[button variant="outline-blue" size="sm" link="' . esc_url( get_field('shop_button_link')  ) . '"]' . esc_html( get_field('shop_button_text') ) . '[/button]'); ?> -->
                         <i class="bi fs-5 <?php echo esc_attr(get_field('social_icon_1')); ?>"></i>
                         <i class="bi fs-5 <?php echo esc_attr(get_field('social_icon_2')); ?>"></i>
 

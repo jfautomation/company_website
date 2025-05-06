@@ -64,6 +64,47 @@ if (str_starts_with($variant, 'outline-')) {
 }
 add_shortcode('button', 'custom_button_shortcode');
 
+// rounded pill with icon btn
+function rounded_pill_icon_button_shortcode($atts, $content = null) {
+    // Set up default attributes for the button
+    $atts = shortcode_atts(
+        array(
+            'variant' => 'blue-rounded-btn', // Button style variant (e.g., 'primary', 'secondary', etc.)
+            'link' => '#', // Button link
+            'icon' => '', // e.g., 'fa-solid fa-arrow-right' or 'icon-class-name'
+        ),
+        $atts,
+        'rounded_pill_button' // Shortcode name: [rounded_pill_button]
+    );
+
+    $variant = esc_attr($atts['variant']);
+    $icon = esc_attr($atts['icon']); 
+
+    // Main class is now 'rounded-pill-with-icon' (no 'btn-base' class here)
+    $button_class = 'rounded-pill-with-icon ' . $variant;
+
+   
+    // Handle the icon (if provided)
+    $icon_html = $icon ? '<div class="rounded-btn-icon-container"><i class="' . $icon . '"></i></div>' : '';
+
+    // Build the button content with icon and text
+    $button_content = $icon_html . ' ' . do_shortcode($content);
+
+    // Special case for 'outline-*' variants (e.g., outline-primary)
+    if (str_starts_with($variant, 'outline-')) {
+        return '<a href="' . esc_url($atts['link']) . '" class="' . $button_class . '"><span class="rounded-pill-with-icon"></span>' . $button_content . '</a>';
+    }
+
+    // Default button markup
+    return '<a href="' . esc_url($atts['link']) . '" class="rounded-pill-with-icon ' . $variant . '">'
+        . '<span class="button-text">' . do_shortcode($content) . '</span>' 
+        . $icon_html . '</a>';
+}
+add_shortcode('rounded_pill_button', 'rounded_pill_icon_button_shortcode');
+
+
+
+
 
 
 

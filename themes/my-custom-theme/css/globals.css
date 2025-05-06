@@ -304,6 +304,39 @@ hr {
   color: white;
 }
 
+/* //// rounded btn  */
+
+.rounded-pill-with-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 50rem;
+  padding: 0.35rem 0.3rem 0.35rem 1.2rem;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.blue-rounded-btn {
+  background: linear-gradient(
+    to right,
+    var(--color-gradient-light-blue),
+    var(--color-gradient-dark-blue)
+  );
+  color: white;
+}
+
+.rounded-btn-icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  color: black;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+}
+
 .custom-indicator {
   background-color: grey;
 }
