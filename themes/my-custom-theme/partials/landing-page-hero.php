@@ -12,6 +12,38 @@ $images = [
 ];
 ?>
 
+<?php
+// Service data organized properly
+$products = array(
+  array(
+      'image'   => get_field('product_shot_1'),
+      'product name' => get_field('product_1_text'),
+      'price'   => get_field('product_1_price'),
+      'link' => get_field('product_1_link'),
+  ),
+  array(
+    'image'   => get_field('product_shot_2'),
+    'product name' => get_field('product_2_text'),
+    'price'   => get_field('product_2_price'),
+    'link' => get_field('product_2_link'),
+),
+array(
+    'image'   => get_field('product_shot_3'),
+    'product name' => get_field('product_3_text'),
+    'price'   => get_field('product_3_price'),
+    'link' => get_field('product_3_link'),
+),
+array(
+    'image'   => get_field('product_shot_4'),
+    'product name' => get_field('product_4_text'),
+    'price'   => get_field('product_4_price'),
+    'link' => get_field('product_4_link'),
+),
+ 
+);
+
+?>
+
 <div>
     <div class="hero d-flex flex-column justify-content-center align-items-center"
         style="background-image: url('<?php echo esc_url($hero_bg_image); ?>'); background-size: cover; background-position: center;">
