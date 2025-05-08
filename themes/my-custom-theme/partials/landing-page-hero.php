@@ -89,15 +89,16 @@ if (!empty($carousel_images)) :
                 <div class="col-lg-6 col-md-12">
                     <div class="h-100 w-100 d-flex flex-column justify-content-center align-items-center mt-5">
 
-                        <div id="product-images-carousel" class="carousel w-75 slide" data-bs-ride="carousel">
+                        <!-- <div id="product-images-carousel" class="carousel w-75 slide" data-bs-ride="carousel"> -->
+                              <div id="product-images-carousel" class="carousel w-75 slide">
 
                             <div class="carousel-inner">
                                 <?php foreach ($carousel_images as $index => $image) : ?>
-                                <div class="carousel-item <?php echo ($index === 0) ? 'active' : ''; ?>">
+                                <div class="h-100 w-100 carousel-item <?php echo ($index === 0) ? 'active' : ''; ?>">
                                     <img class="d-block w-100" src="<?php echo esc_url($image); ?>"
                                         alt="Slide <?php echo $index + 1; ?>">
                                     <div
-                                        class="d-flex justify-content-center align-items-center text-align-left pt-4 gap-5">
+                                        class="product-info d-flex justify-content-center align-items-center text-align-left pt-4 gap-5">
                                         <div class="d-flex flex-column justify-content-center align-items-end">
                                             <h6
                                                 class="mt-3 fw-semibold bg-light py-1 ps-3 pe-2 rounded-pill d-flex gap-2 align-items-center">
@@ -108,21 +109,9 @@ if (!empty($carousel_images)) :
                                                 </div>
                                             </h6>
                                             <h4 class="fw-semibold">$653.00</h4>
-
-
                                         </div>
-
-                                        <!-- <div class="d-flex">
-                                            <h5 class="mt-1 fw-semibold">$653.00</h5>
-                                        </div> -->
-
                                     </div>
-                                    <!-- <div
-                                            class="text-light fs-3 arrow-circle-link d-flex justify-content-center align-items-center bg-gradient-blue">
-                                            <i class="bi bi-arrow-right-short"></i></div>
 
-
-                                    </div> -->
                                 </div>
 
                                 <?php endforeach; ?>
@@ -144,3 +133,4 @@ if (!empty($carousel_images)) :
             </div>
         </div>
     </div>
+</div>

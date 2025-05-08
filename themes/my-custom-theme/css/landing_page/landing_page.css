@@ -11,12 +11,19 @@
 }
 
 .brand-card {
-
 }
 
-.carousel-item img {
-  width: 50%;
+.carousel-inner {
+  width: 300px;
+  height: 500px;
 }
+
+.product-info {
+  position: absolute;
+  bottom: 0;
+}
+
+
 
 .brand-card-img-wrapper {
   border-bottom: 1px solid var(--color-light-grey-border);
@@ -28,11 +35,7 @@
 }
 
 .brand-card-img-wrapper img {
-   object-fit: contain; 
-}
-
-.siemens-authorized-dealer-img {
-  width: 10rem;
+  object-fit: contain;
 }
 
 .arrow-circle-link {
@@ -40,6 +43,3 @@
   width: 1.5rem;
   border-radius: 50%;
 }
-
-
-
