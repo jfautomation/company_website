@@ -10,9 +10,6 @@
   font-size: 1.15rem !important;
 }
 
-.brand-card {
-}
-
 .carousel-inner {
   width: 400px;
   height: 500px;
@@ -23,11 +20,8 @@
   bottom: 0;
 }
 
-
-
 .brand-card-img-wrapper {
-  border-bottom: 1px solid var(--color-light-grey-border);
-  height: 150px;
+  height: 100px;
   width: 100%;
   display: flex;
   align-items: center;
@@ -38,6 +32,7 @@
   object-fit: contain;
 }
 
+/* /// in product carousel hero */
 .arrow-circle-link {
   height: 1.5rem;
   width: 1.5rem;

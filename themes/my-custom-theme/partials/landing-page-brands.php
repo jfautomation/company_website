@@ -1,6 +1,8 @@
 <section>
     <div class="container">
-        <?php
+        <div class="row">
+            <div class="col">
+                <?php
     $args = array(
         'h5_text' => 'Brands',
         'h2_text' => 'Brands we repair'
@@ -9,15 +11,20 @@
     get_template_part('partials/section-header', null, $args);
     ?>
 
-    <!-- <div class="mt-3">
-    <?php
+                <div class="mt-3">
+                    <?php
 get_template_part('partials/paragraph', null, array(
     'paragraph_text' => get_field('services_paragraph')
 ));
 ?>
-    </div> -->
+                </div>
+                <div class="mt-5">
+            <?php echo do_shortcode('[button variant="outline-primary" link="#"]Learn More[/button]'); ?>
+        </div>
+            </div>
 
-        <?php 
+
+            <?php 
 $brands = array(
     array('logo' => get_field('brand_1_logo'), 'name' => get_field('brand_1_name')),
     array('logo' => get_field('brand_2_logo'), 'name' => get_field('brand_2_name')),
@@ -35,21 +42,24 @@ $brands = array_filter($brands, function($brand) {
 });
   
 ?>
-        <div class="row mt-5">
+<div class="col">
+    <h1>tetsing brands here</h1>
+</div>
+
+            <!-- <div class="row mt-5">
             <?php foreach ($brands as $brand): ?>
-            <div class="col-xl-2 col-lg-4 col-md-6 col-sm-12 mb-4">
+            <div class="col-xl- col-lg-4 col-md-6 col-sm-6 mb-4">
                 <div
-                    class="custom-rounded card-gradient box-shadow h-100 d-flex flex-column justify-content-center align-items-center">
-                    <div class="brand-card-img-wrapper p-3">
+                    class="h-100 d-flex flex-column justify-content-center align-items-center">
+                    <div class="brand-card-img-wrapper">
                         <img src="<?php echo esc_url($brand['logo']); ?>" alt="<?php echo esc_attr($brand['name']); ?>"
                             class="img-fluid h-100 w-100" />
                     </div>
-                    <div class="py-3"><small class="brand-text fw-semibold">
-                            <?php echo esc_html($brand['name']); ?>
-                        </small></div>
+                 
                 </div>
             </div>
             <?php endforeach; ?>
+        </div> -->
         </div>
     </div>
 </section>

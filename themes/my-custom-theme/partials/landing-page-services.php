@@ -9,7 +9,7 @@
     get_template_part('partials/section-header', null, $args);
     ?>
 
-        <div class="mt-3">
+        <div class="mt-3 w-75">
             <?php
 get_template_part('partials/paragraph', null, array(
     'paragraph_text' => get_field('services_paragraph')
