@@ -312,9 +312,19 @@ hr {
   justify-content: center;
   gap: 0.5rem;
   border-radius: 50rem;
-  padding: 0.35rem 0.3rem 0.35rem 1.2rem;
+  padding: 0.3rem 0.3rem 0.3rem 1.2rem;
   text-decoration: none;
   font-size: 0.95rem;
+}
+
+.rounded-btn-icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1.7rem;
+  height: 1.7rem;
+  border-radius: 50%;
+  margin-left: 0.2rem;
 }
 
 .blue-rounded-btn {
@@ -326,15 +336,24 @@ hr {
   color: white;
 }
 
-.rounded-btn-icon-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.white-rounded-btn {
   background-color: white;
   color: black;
-  width: 1.6rem;
-  height: 1.6rem;
-  border-radius: 50%;
+  font-weight: 600;
+}
+
+.blue-rounded-btn .rounded-btn-icon-container {
+  background-color: white;
+  color: black;
+}
+
+.white-rounded-btn .rounded-btn-icon-container {
+  background: linear-gradient(
+    to right,
+    var(--color-gradient-light-blue),
+    var(--color-gradient-dark-blue)
+  );
+  color: white;
 }
 
 .custom-indicator {

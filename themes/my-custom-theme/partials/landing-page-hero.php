@@ -2,18 +2,10 @@
 $hero_bg_image = get_field('hero_background_image'); // make sure this field exists in ACF
 $siemens_authorized_distributer = get_field('siemens_authorized_distributer'); // make sure this field exists in ACF
 ?>
-<?php
-$images = [
-    get_field('product_shot_1'),
-    get_field('product_shot_2'),
-    get_field('product_shot_3'),
-    get_field('product_shot_4'),
 
-];
-?>
 
 <?php
-// Service data organized properly
+// products data organized properly
 $products = array(
   array(
       'image'   => get_field('product_shot_1'),
@@ -53,9 +45,7 @@ array(
                     <div class="h-100 d-flex flex-column justify-content-center align-items-center">
                         <div class="d-flex flex-column align-items-start">
                             <h5 class="fw-semibold">JF Automation</h5>
-                            <!-- <div>
-                                <img class="siemens-authorized-dealer-img" src="<?php echo esc_url($siemens_authorized_distributer); ?>" alt="Siemens Authorized Distributor"/>
-                            </div> -->
+
 
 
 
@@ -90,7 +80,7 @@ if (!empty($carousel_images)) :
                     <div class="h-100 w-100 d-flex flex-column justify-content-center align-items-center mt-5">
 
                         <!-- <div id="product-images-carousel" class="carousel w-75 slide" data-bs-ride="carousel"> -->
-                              <div id="product-images-carousel" class="carousel w-75 slide">
+                        <div id="product-images-carousel" class="carousel w-75 slide">
 
                             <div class="carousel-inner">
                                 <?php foreach ($carousel_images as $index => $image) : ?>
@@ -116,6 +106,8 @@ if (!empty($carousel_images)) :
 
                                 <?php endforeach; ?>
                             </div>
+
+
 
                             <!-- Carousel Controls -->
                             <div class="mt-5 pt-2">

@@ -62,7 +62,8 @@ $stats = array_filter($stats, function($stat) {
                         <?php echo esc_html(get_field('landing_page_cta_paragraph')); ?>
                     </p> -->
                     <div class="mt-5">
-                        <?php echo do_shortcode('[button variant="outline-white" link="' . esc_url( get_field('landing_page_cta_button_link') ) . '"]' . esc_html( get_field('landing_page_cta_button_text') ) . '[/button]'); ?>
+                        <!-- <?php echo do_shortcode('[button variant="outline-white" link="' . esc_url( get_field('landing_page_cta_button_link') ) . '"]' . esc_html( get_field('landing_page_cta_button_text') ) . '[/button]'); ?> -->
+                        <?php echo do_shortcode('[rounded_pill_button link="#" variant="white-rounded-btn" icon="fa-solid fa-arrow-right"]Get a quote[/rounded_pill_button]'); ?>
                     </div>
                 </div>
             </div>
