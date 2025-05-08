@@ -30,7 +30,7 @@
     <div
         class="box-shadow custom-rounded card-gradient white-card-with-icon d-flex flex-column align-items-start h-100 pt-2 px-4 pb-4 justify-content-between">
         <div class="d-flex flex-column">
-            <i class="bi fs-2 <?php echo esc_attr($args['icon']); ?>"></i>
+            <i class="bi fs-2 mt-2 <?php echo esc_attr($args['icon']); ?>"></i>
             <h4 class="fw-bold card-header mt-3"><?php echo esc_html($args['service_heading']); ?></h4>
             <p class="mt-3 service-description"><?php echo esc_html($args['paragraph']); ?>
             </p>

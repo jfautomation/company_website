@@ -80,30 +80,33 @@ if (!empty($carousel_images)) :
                     <div class="h-100 w-100 d-flex flex-column justify-content-center align-items-center mt-5">
 
                         <!-- <div id="product-images-carousel" class="carousel w-75 slide" data-bs-ride="carousel"> -->
-                        <div id="product-images-carousel" class="carousel w-75 slide">
+                        <div id="product-images-carousel" class="carousel slide">
 
                             <div class="carousel-inner">
-                                <?php foreach ($carousel_images as $index => $image) : ?>
+                                <?php foreach ($products as $index => $product) : ?>
                                 <div class="h-100 w-100 carousel-item <?php echo ($index === 0) ? 'active' : ''; ?>">
-                                    <img class="d-block w-100" src="<?php echo esc_url($image); ?>"
+
+                                    <img class="d-block w-100" src="<?php echo esc_url($product['image']); ?>"
                                         alt="Slide <?php echo $index + 1; ?>">
+
+
                                     <div
                                         class="product-info d-flex justify-content-center align-items-center text-align-left pt-4 gap-5">
                                         <div class="d-flex flex-column justify-content-center align-items-end">
                                             <h6
-                                                class="mt-3 fw-semibold bg-light py-1 ps-3 pe-2 rounded-pill d-flex gap-2 align-items-center">
-                                                <small class="">Seiemens PLC G68DS</small>
+                                                class="mt-3 fw-semibold bg-light py-1 ps-3 pe-1 rounded-pill d-flex gap-2 align-items-center">
+                                                <small><?php echo esc_html($product['product name']); ?></small>
                                                 <div
                                                     class="text-light fs-4 arrow-circle-link d-flex justify-content-center align-items-center bg-gradient-blue">
                                                     <i class="bi bi-arrow-right-short"></i>
                                                 </div>
                                             </h6>
-                                            <h4 class="fw-semibold">$653.00</h4>
+                                            <!-- <?php echo do_shortcode('[rounded_pill_button link="' . esc_url($product['link']) . '" variant="white-rounded-btn" icon="fa-solid fa-arrow-right"]' . esc_html($product['product name']) . '[/rounded_pill_button]'); ?> -->
+
+                                            <h4 class="fw-semibold"><?php echo esc_html($product['price']); ?></h4>
                                         </div>
                                     </div>
-
                                 </div>
-
                                 <?php endforeach; ?>
                             </div>
 
@@ -111,7 +114,7 @@ if (!empty($carousel_images)) :
 
                             <!-- Carousel Controls -->
                             <div class="mt-5 pt-2">
-                                <?php render_custom_carousel_indicators('product-images-carousel', $carousel_images); ?>
+                                <?php render_custom_carousel_indicators('product-images-carousel', $products); ?>
                             </div>
 
 
