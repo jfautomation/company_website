@@ -15,14 +15,11 @@
     line-height: 1.5rem !important;
 }
 
-.icon-container {
-    width: fit-content;
-    height: 2rem;
-    width: 2rem;
-    border-radius: 50%
+.service-card-badge {
+    position: absolute;
+    right: 0;
+    font-size: 0.8rem;
 }
-
-
 
 .arrow {
     font-size: 0.8rem;
@@ -36,7 +33,12 @@
 
     <div class="d-flex flex-column align-items-start h-100 justify-content-between pe-4">
         <div class="d-flex flex-column align-items-start">
-            <img class="custom-rounded w-100" src='<?php echo esc_url($args['image']); ?>'></img>
+            <div class="position-relative">
+                <span
+                    class="d-flex align-items-center justify-content-center service-card-badge badge bg-dark mt-1 me-1"><?php echo esc_html($args['span']); ?></span>
+                <img class="custom-rounded w-100" src='<?php echo esc_url($args['image']); ?>'></img>
+            </div>
+
             <!-- <span class="badge dark-grey-container">Placeholder</span> -->
 
             <!-- <div class="icon-container d-flex justify-content-center align-items-center bg-gradient-blue">
@@ -49,6 +51,6 @@
         <div class="d-flex align-items-center mt-3">
             <?php echo do_shortcode('[button variant="outline-primary" link="' . esc_url($args['link_to_service_page']) . '"]Learn More[/button]'); ?>
         </div>
-        
+
     </div>
 </div>

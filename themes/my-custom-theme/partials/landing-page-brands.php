@@ -45,9 +45,9 @@ $brands = array_filter($brands, function($brand) {
 ?>
 
 
-            <!-- <div class="row mt-5">
+            <div class="row mt-5 box-shadow p-3 custom-rounded">
             <?php foreach ($brands as $brand): ?>
-            <div class="col-xl- col-lg-4 col-md-6 col-sm-6 mb-4">
+            <div class="col-xl-2 col-lg-3 col-md-6 col-sm-6 mb-4">
                 <div
                     class="h-100 d-flex flex-column justify-content-center align-items-center">
                     <div class="brand-card-img-wrapper">
@@ -58,7 +58,7 @@ $brands = array_filter($brands, function($brand) {
                 </div>
             </div>
             <?php endforeach; ?>
-        </div> -->
+        </div>
         </div>
     </div>
 </section>
