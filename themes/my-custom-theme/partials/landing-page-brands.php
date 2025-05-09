@@ -1,8 +1,8 @@
 <section>
     <div class="container">
         <div class="row">
-            <div class="col">
-                <?php
+            <!-- <div class="col"> -->
+            <?php
     $args = array(
         'h5_text' => 'Brands',
         'h2_text' => 'Brands we repair'
@@ -11,17 +11,18 @@
     get_template_part('partials/section-header', null, $args);
     ?>
 
-                <div class="mt-3">
-                    <?php
+            <!-- <div class="mt-3 paragraph-container">
+                <?php
 get_template_part('partials/paragraph', null, array(
     'paragraph_text' => get_field('services_paragraph')
 ));
 ?>
-                </div>
-                <div class="mt-5">
-            <?php echo do_shortcode('[button variant="outline-primary" link="#"]Learn More[/button]'); ?>
-        </div>
             </div>
+
+            <div class="mt-4">
+                <?php echo do_shortcode('[button variant="outline-primary" link="#"]Learn More[/button]'); ?>
+            </div> -->
+         
 
 
             <?php 
@@ -42,9 +43,7 @@ $brands = array_filter($brands, function($brand) {
 });
   
 ?>
-<div class="col">
-    <h1>tetsing brands here</h1>
-</div>
+
 
             <!-- <div class="row mt-5">
             <?php foreach ($brands as $brand): ?>

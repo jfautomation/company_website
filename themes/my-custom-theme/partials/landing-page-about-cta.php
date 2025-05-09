@@ -40,11 +40,10 @@ $stats = array_filter($stats, function($stat) {
                     <h5 class="fw-semibold"><?php echo esc_html(get_field('landing_page_cta_subheading')); ?>
                     </h5>
                     <h2 class="mt-2"><?php echo esc_html(get_field('landing_page_cta_header')); ?></h2>
-                    <!-- <p class="mt-2">
-                        <?php echo esc_html(get_field('landing_page_cta_paragraph')); ?>
-                    </p> -->
+                 
+                  
 
-                    <div class="row w-100 mt-4 pt-3">
+                    <div class="row w-100 mt-3 pt-3">
                         <?php foreach ($stats as $stat): ?>
                         <div class="col">
                             <div class="d-flex flex-column h-100 justify-content-center align-items-start">
@@ -58,13 +57,12 @@ $stats = array_filter($stats, function($stat) {
                         </div>
                         <?php endforeach; ?>
                     </div>
-                    <!-- <p class="mt-4">
-                        <?php echo esc_html(get_field('landing_page_cta_paragraph')); ?>
-                    </p> -->
-                    <div class="mt-5">
+                        <div class="mt-5">
                         <!-- <?php echo do_shortcode('[button variant="outline-white" link="' . esc_url( get_field('landing_page_cta_button_link') ) . '"]' . esc_html( get_field('landing_page_cta_button_text') ) . '[/button]'); ?> -->
-                        <?php echo do_shortcode('[rounded_pill_button link="#" variant="white-rounded-btn" icon="fa-solid fa-arrow-right"]Get a quote[/rounded_pill_button]'); ?>
+                        <?php echo do_shortcode('[button link="#" variant="outline-white" icon="fa-solid fa-arrow-right"]Get a quote[/button]'); ?>
                     </div>
+              
+                  
                 </div>
             </div>
         </div>

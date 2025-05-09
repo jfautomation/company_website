@@ -44,8 +44,16 @@ section {
   padding-bottom: 4rem;
 }
 
+.paragraph-container {
+  width: 75%;
+}
+
 .light-grey-container {
   background-color: var(--color-light-grey-bg);
+}
+
+.dark-grey-container {
+  background-color: var(--color-dark-grey-bg) !important;
 }
 
 .card-gradient {
@@ -87,7 +95,17 @@ hr {
 }
 
 .box-shadow {
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 2px 4px 0px rgba(51, 55, 59, 0.12), 0px 1px 10px 0px rgba(51, 55, 59, 0.1);
+
+}
+
+.bg-gradient-blue-to-black {
+  background: linear-gradient(
+    to bottom,
+    var(--color-gradient-light-blue),
+    var(--color-gradient-dark-blue),
+    #000814 /* deep navy-black */
+  );
 }
 
 .bg-gradient-blue {

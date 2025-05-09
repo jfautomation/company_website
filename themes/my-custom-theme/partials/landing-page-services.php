@@ -9,7 +9,7 @@
     get_template_part('partials/section-header', null, $args);
     ?>
 
-        <div class="mt-3 w-75">
+        <div class="mt-3 paragraph-container">
             <?php
 get_template_part('partials/paragraph', null, array(
     'paragraph_text' => get_field('services_paragraph')
@@ -27,6 +27,7 @@ $services = array(
       'link'   => get_field('service_link_1'),
       'paragraph' => get_field('service_1_paragraph'),
       'span' => get_field('service_1_span'),
+      'image' => get_field('service_1_image'),
   ),
   array(
       'icon'   => get_field('service_icon_2'),
@@ -34,6 +35,7 @@ $services = array(
       'link'   => get_field('service_link_2'),
       'paragraph' => get_field('service_2_paragraph'),
       'span' => get_field('service_2_span'),
+       'image' => get_field('service_2_image'),
   ),
   array(
       'icon'   => get_field('service_icon_3'),
@@ -41,6 +43,7 @@ $services = array(
       'link'   => get_field('service_link_3'),
       'paragraph' => get_field('service_3_paragraph'),
       'span' => get_field('service_3_span'),
+      'image' => get_field('service_3_image'),
   ),
   array(
       'icon'   => get_field('service_icon_4'),
@@ -48,6 +51,7 @@ $services = array(
       'link'   => get_field('service_link_4'),
       'paragraph' => get_field('service_4_paragraph'),
       'span' => get_field('service_4_span'),
+      'image' => get_field('service_4_image'),
   ),
 );
 
@@ -57,7 +61,7 @@ $services = array_filter($services, function($service) {
 });
 
 ?>
-        <div class="row mt-5 pb-1">
+        <div class="row mt-5 pt-2 pb-1">
             <?php foreach ($services as $service) : ?>
             <?php get_template_part('partials/service-card', null, array(
         'icon' => $service['icon'],
@@ -65,10 +69,12 @@ $services = array_filter($services, function($service) {
         'link_to_service_page' => $service['link'],
         'paragraph' => $service['paragraph'],
         'span' => $service['span'],
+        'image' => $service['image'],
     )); ?>
             <?php endforeach; ?>
         </div>
     </div>
+
 
 
 
