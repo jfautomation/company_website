@@ -44,7 +44,7 @@ array(
                 <div class="col-lg-6 col-md-12">
                     <div class="h-100 d-flex flex-column justify-content-center align-items-center">
                         <div class="d-flex flex-column align-items-start">
-                            <h5 class="fw-semibold">JF Automation</h5>
+                            <!-- <h5 class="fw-semibold">JF Automation</h5> -->
 
 
 
@@ -103,7 +103,7 @@ if (!empty($carousel_images)) :
                                             </h6>
                                             <!-- <?php echo do_shortcode('[rounded_pill_button link="' . esc_url($product['link']) . '" variant="white-rounded-btn" icon="fa-solid fa-arrow-right"]' . esc_html($product['product name']) . '[/rounded_pill_button]'); ?> -->
 
-                                            <h4 class="fw-semibold"><?php echo esc_html($product['price']); ?></h4>
+                                            <h4 class="fw-semibold">$<?php echo esc_html($product['price']); ?></h4>
                                         </div>
                                     </div>
                                 </div>

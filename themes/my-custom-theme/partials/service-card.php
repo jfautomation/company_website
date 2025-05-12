@@ -1,7 +1,7 @@
 <style>
-/* .card-header {
-    font-size: 1.55rem !important;
-} */
+.card-header {
+    font-size: 1.35rem !important;
+}
 
 .white-card-with-icon {
     transition: box-shadow 0.3s ease;

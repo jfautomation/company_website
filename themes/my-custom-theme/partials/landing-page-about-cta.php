@@ -40,29 +40,32 @@ $stats = array_filter($stats, function($stat) {
                     <h5 class="fw-semibold"><?php echo esc_html(get_field('landing_page_cta_subheading')); ?>
                     </h5>
                     <h2 class="mt-2"><?php echo esc_html(get_field('landing_page_cta_header')); ?></h2>
-                 
-                  
+                    <p class="mt-3">With 25+ years of trusted service, we back every repair with expert craftsmanship, thorough testing, and a commitment to minimizing your downtime.</p>
 
-                    <div class="row w-100 mt-3 pt-3">
+
+
+                    <!-- <div class="row w-100 mt-3 pt-3">
                         <?php foreach ($stats as $stat): ?>
                         <div class="col">
                             <div class="d-flex flex-column h-100 justify-content-center align-items-start">
                                 <h2 class="fw-semibold mb-1">
                                     <?php echo esc_html($stat['number']) . '+'; ?>
                                 </h2>
-                                <small class="text-light">
+                                <small class="text-light mb-0">
                                     <?php echo esc_html($stat['text']); ?>
                                 </small>
                             </div>
                         </div>
                         <?php endforeach; ?>
-                    </div>
-                        <div class="mt-5">
+                    </div> -->
+                    <div class="mt-4">
+
                         <!-- <?php echo do_shortcode('[button variant="outline-white" link="' . esc_url( get_field('landing_page_cta_button_link') ) . '"]' . esc_html( get_field('landing_page_cta_button_text') ) . '[/button]'); ?> -->
                         <?php echo do_shortcode('[button link="#" variant="outline-white" icon="fa-solid fa-arrow-right"]Get a quote[/button]'); ?>
+
                     </div>
-              
-                  
+
+
                 </div>
             </div>
         </div>

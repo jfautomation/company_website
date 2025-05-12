@@ -22,7 +22,7 @@ get_template_part('partials/paragraph', null, array(
             <div class="mt-4">
                 <?php echo do_shortcode('[button variant="outline-primary" link="#"]Learn More[/button]'); ?>
             </div> -->
-         
+
 
 
             <?php 
@@ -44,21 +44,23 @@ $brands = array_filter($brands, function($brand) {
   
 ?>
 
+ <div>
+    testing some stuff here
+            <!-- <div class="row mt-5 box-shadow p-3 custom-rounded">
+               
+                    <?php foreach ($brands as $brand): ?>
+                    <div class="col-xl-2 col-lg-3 col-md-6 col-sm-6 mb-4">
+                        <div class="h-100 d-flex flex-column justify-content-center align-items-center">
+                            <div class="brand-card-img-wrapper">
+                                <img src="<?php echo esc_url($brand['logo']); ?>"
+                                    alt="<?php echo esc_attr($brand['name']); ?>" class="img-fluid h-100 w-100" />
+                            </div>
 
-            <div class="row mt-5 box-shadow p-3 custom-rounded">
-            <?php foreach ($brands as $brand): ?>
-            <div class="col-xl-2 col-lg-3 col-md-6 col-sm-6 mb-4">
-                <div
-                    class="h-100 d-flex flex-column justify-content-center align-items-center">
-                    <div class="brand-card-img-wrapper">
-                        <img src="<?php echo esc_url($brand['logo']); ?>" alt="<?php echo esc_attr($brand['name']); ?>"
-                            class="img-fluid h-100 w-100" />
+                        </div>
                     </div>
-                 
-                </div>
+                    <?php endforeach; ?>
+                </div> -->
             </div>
-            <?php endforeach; ?>
-        </div>
         </div>
     </div>
 </section>
