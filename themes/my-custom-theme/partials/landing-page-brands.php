@@ -1,9 +1,6 @@
 <style>
 .brands-img-container {
-    max-width: 900px;
-
-    /* max-width: 800px;
-    padding: 2.3rem 7rem 2.3rem 2.5rem; */
+    max-width: 800px;
 }
 
 .brands-container-wrapper {}
@@ -21,7 +18,7 @@
             ?>
 
 
-        <div class="box-shadow brands-img-container mt-4">
+        <div class="box-shadow brands-img-container mt-4 p-4">
             <?php
                 $image = get_field('brands_image');
                 if ($image):

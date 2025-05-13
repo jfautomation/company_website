@@ -9,13 +9,13 @@
     get_template_part('partials/section-header', null, $args);
     ?>
 
-        <div class="mt-3 paragraph-container">
+        <!-- <div class="mt-3 paragraph-container">
             <?php
 get_template_part('partials/paragraph', null, array(
     'paragraph_text' => get_field('services_paragraph')
 ));
 ?>
-        </div>
+        </div> -->
 
         <?php
 
@@ -61,7 +61,7 @@ $services = array_filter($services, function($service) {
 });
 
 ?>
-        <div class="row mt-5 pt-2 pb-1">
+        <div class="row mt-4 pb-1">
             <?php foreach ($services as $service) : ?>
             <?php get_template_part('partials/service-card', null, array(
         'icon' => $service['icon'],
