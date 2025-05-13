@@ -2,12 +2,12 @@
   padding-top: 70px;
 }
 
-/* .hero-header {
-  font-size: 2.75rem !important;
-} */
+.hero-header {
+  font-size: 2.3rem !important;
+}
 
 .hero-paragraph {
-  font-size: 1.15rem !important;
+  font-size: 1.1rem !important;
 }
 
 .carousel-inner {

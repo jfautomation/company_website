@@ -45,10 +45,10 @@
                 <i class="bi fs-5 text-light <?php echo esc_attr($args['icon']); ?>"></i>
             </div> -->
             <h4 class="fw-bold card-header mt-3"><?php echo esc_html($args['service_heading']); ?></h4>
-            <p class="mt-3 service-description"><?php echo esc_html($args['paragraph']); ?>
+            <p class="mt-3 service-description fs-6"><?php echo esc_html($args['paragraph']); ?>
             </p>
         </div>
-        <div class="d-flex align-items-center mt-3">
+        <div class="d-flex align-items-center">
             <?php echo do_shortcode('[button variant="outline-primary" link="' . esc_url($args['link_to_service_page']) . '"]Learn More[/button]'); ?>
         </div>
 

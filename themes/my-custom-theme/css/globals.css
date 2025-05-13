@@ -28,6 +28,10 @@ h2 {
   font-weight: bold;
 }
 
+p {
+  font-size: 1.1rem !important;
+}
+
 body,
 html {
   margin: 0 !important;
