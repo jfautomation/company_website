@@ -61,7 +61,7 @@ $services = array_filter($services, function($service) {
 });
 
 ?>
-        <div class="row mt-4 pb-1">
+        <div class="row pt-1 mt-3">
             <?php foreach ($services as $service) : ?>
             <?php get_template_part('partials/service-card', null, array(
         'icon' => $service['icon'],

@@ -1,4 +1,4 @@
-<section class="bg-gradient-blue">
+<section class="">
 
     <?php
 
@@ -25,7 +25,7 @@ $stats = array_filter($stats, function($stat) {
 
 ?>
 
-    <div class="container text-light">
+    <div class="container bg-gradient-blue text-light custom-rounded p-4">
         <div class="row h-100">
             <div class="col-lg-6 col-md-12">
                 <div class="h-100 d-flex flex-column justify-content-center align-items-center">

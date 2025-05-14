@@ -9,7 +9,7 @@
   --color-dark-text: #000000;
   --color-text-dark-lighter: #1c1c1c;
   --color-grey-text: #5b5a5a;
-  --color-light-grey-border: #d8d2d2;
+  --color-light-grey-border: #e5e5e5;
   --color-light-grey-carousel-indicators: #c2c2c2;
   --color-light-grey-bg: #eeeeee;
   --color-red: #ff4a3d;
@@ -44,8 +44,8 @@ body {
 }
 
 section {
-  padding-top: 3rem;
-  padding-bottom: 4rem;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
 }
 
 .paragraph-container {
@@ -160,7 +160,7 @@ hr {
 
 /* Border color */
 .border-light-grey {
-  border-color: var(--color-light-grey-border);
+  border: 1px solid var(--color-light-grey-border);
 }
 
 /* Carousel indicators */
@@ -220,20 +220,19 @@ hr {
   box-shadow: 0 0 10px rgba(0, 123, 255, 0.4);
 }
 
-/* Secondary Button */
-.btn-outline-primary,
-.btn-outline-blue {
+
+/* //// btn outline primary  */
+.btn-outline-primary {
   position: relative;
   display: inline-block;
   color: black;
   overflow: hidden;
   z-index: 1;
-  border-radius: var(--rounded-border);
-  transition: border-color 0.3s ease; /* Smooth border color transition */
+  /* border-radius: var(--rounded-border); */
+  transition: border-color 0.3s ease; 
 }
 
-.btn-outline-primary .btn-inner,
-.btn-outline-blue .btn-inner {
+.btn-outline-primary .btn-inner {
   content: "";
   inset: 0;
   mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
@@ -328,6 +327,37 @@ hr {
   background-color: #5a6268;
   color: white;
 }
+
+/* /// btn outline black */
+
+.btn-outline-black {
+  background-color: #212529;
+  color: white;
+  /* background-color: transparent;
+  border: 2px solid #333333;
+  color: #333333; */
+  transition: all 0.25s ease;
+  font-weight: 500;
+  min-width: unset !important;
+
+  padding: 5px 20px !important;
+  font-size: 0.85rem !important;
+  white-space: nowrap;
+
+}
+
+.btn-outline-black:hover {
+  /* box-shadow: inset 5px 5px 15px rgba(0, 0, 0, 0.2),
+    inset -5px -5px 15px rgba(255, 255, 255, 0.05); */
+  transform: scale(1);
+}
+
+/* .btn-secondary:hover {
+  background-color: #5a6268;
+  color: white;
+} */
+
+
 
 /* //// rounded btn  */
 
