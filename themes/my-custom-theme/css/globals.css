@@ -73,6 +73,10 @@ hr {
 }
 
 /* Text color utilities */
+
+.text-blue {
+  color: var(--color-gradient-dark-blue);
+}
 .text-dark {
   color: var(--color-dark-text) !important;
 }
@@ -146,8 +150,8 @@ hr {
     var(--color-gradient-dark-blue)
   );
   background-clip: text;
-  -webkit-background-clip: text; 
-  color: transparent; 
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
 .bg-light-grey {
@@ -220,7 +224,6 @@ hr {
   box-shadow: 0 0 10px rgba(0, 123, 255, 0.4);
 }
 
-
 /* //// btn outline primary  */
 .btn-outline-primary {
   position: relative;
@@ -229,7 +232,7 @@ hr {
   overflow: hidden;
   z-index: 1;
   /* border-radius: var(--rounded-border); */
-  transition: border-color 0.3s ease; 
+  transition: border-color 0.3s ease;
 }
 
 .btn-outline-primary .btn-inner {
@@ -343,7 +346,6 @@ hr {
   padding: 5px 20px !important;
   font-size: 0.85rem !important;
   white-space: nowrap;
-
 }
 
 .btn-outline-black:hover {
@@ -356,8 +358,6 @@ hr {
   background-color: #5a6268;
   color: white;
 } */
-
-
 
 /* //// rounded btn  */
 
