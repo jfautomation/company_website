@@ -28,7 +28,7 @@ $brand_images = array_filter([
         <div class="row w-100">
 
             <?php $brands_preview_banner = get_field('brands_preview_banner');
-            $brands_subheader = get_field('brand_subheader');
+            $brands_preview_header = get_field('brands_preview_header');
             $brands_preview_banner = get_field('brands_preview_banner');
              $brands_preview_subheader_number = get_field('brands_preview_subheader_number');
              $brands_preview_subheader_text = get_field('brands_preview_subheader_text');
@@ -39,8 +39,8 @@ $brand_images = array_filter([
             <?php if ($brands_preview_banner): ?>
             <div class="col-lg-2">
                 <div class="d-flex flex-column ps-3 py-3">
-                    <span class="fw-bold mb-0">Brands we repair</span>
-                    <small><span class="fw-semibold">6546+</span> machines repaired</small>
+                    <span class="fw-bold mb-0"><?php echo($brands_preview_header) ?></span>
+                    <small class=""><span class="fw-bold"><?php echo($brands_preview_subheader_number) ?> </span><?php echo($brands_preview_subheader_text) ?></small>
                     <!-- <small class="text-grey small-heading">Something</small> -->
 
                 </div>

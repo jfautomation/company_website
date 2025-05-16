@@ -62,7 +62,25 @@ $services = array_filter($services, function($service) {
 
 ?>
         <div class="row pt-1 mt-3">
-            <?php foreach ($services as $service) : ?>
+            <div class="col-8">
+                <div class="w-75">
+                    <p class="fs-4">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                        the industry's standard dummy text ever since the 1500s
+                    </p>
+                    <div class="d-flex gap-2 mt-4 pt-1">
+                        <small class="custom-rounded py-1 px-2 border-light-grey fw-semibold">Engineering</small>
+                        <small class="custom-rounded py-1 px-2 border-light-grey text-grey">Motor repair</small>
+                        <small class="custom-rounded py-1 px-2 border-light-grey  text-grey">Motor repair</small>
+                        <small class="custom-rounded py-1 px-2 border-light-grey  text-grey">Motor repair</small>
+                        <small class="custom-rounded py-1 px-2 border-light-grey  text-grey">Motor repair</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                col 2
+            </div>
+            <!-- <?php foreach ($services as $service) : ?>
             <?php get_template_part('partials/service-card', null, array(
         'icon' => $service['icon'],
         'service_heading' => $service['header'],
@@ -71,7 +89,7 @@ $services = array_filter($services, function($service) {
         'span' => $service['span'],
         'image' => $service['image'],
     )); ?>
-            <?php endforeach; ?>
+            <?php endforeach; ?> -->
         </div>
 
     </div>

@@ -25,20 +25,31 @@
     font-size: 0.8rem;
     font-weight: 600 !important;
 }
+
+.card-container {
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    background-color: #efeeee;
+
+}
 </style>
 
 
 
-<div class="col-12 col-md-6 mb-5 mt-2">
+<div class="col-12 col-md-4 mb-5">
 
-    <div class="d-flex flex-column align-items-start h-100 justify-content-between pe-4">
+    <div
+        class="border-light-grey px-3 py-3 d-flex flex-column align-items-start h-100 justify-content-between custom-rounded">
         <div class="d-flex flex-column align-items-start">
             <div class="d-flex gap-2 align-items-center">
+                <div class="card-container d-flex align-items-center justify-content-center">
+                    <i class="bi fs-3 text-gradient-blue  <?php echo esc_attr($args['icon']); ?>"></i>
+                </div>
 
-                <i class="bi fs-2 text-gradient-red-blue  <?php echo esc_attr($args['icon']); ?>"></i>
-
-                <h5 class="fw-bold card-header ms-1"><?php echo esc_html($args['service_heading']); ?></h5>
+                
             </div>
+            <h5 class="fw-bold card-header mt-3"><?php echo esc_html($args['service_heading']); ?></h5>
 
 
             <p class="mt-3 service-description fs-6 text-grey">Lorem ipsum is a dummy or placeholder text commonly used
@@ -47,8 +58,8 @@
                 independently of the copy that will subsequently populate it
             </p>
         </div>
-        <div class="d-flex align-items-center mt-3">
-            <?php echo do_shortcode('[button variant="outline-primary" link="' . esc_url($args['link_to_service_page']) . '"]Learn More[/button]'); ?>
+        <div class="d-flex align-items-center mt-4">
+            <?php echo do_shortcode('[button variant="primary" link="' . esc_url($args['link_to_service_page']) . '"]Learn More[/button]'); ?>
         </div>
 
     </div>
