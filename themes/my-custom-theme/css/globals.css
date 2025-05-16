@@ -22,6 +22,7 @@
     var(--color-gradient-dark-blue)
   );
   --rounded-border: 4.6px;
+  --shadow-light: 0px 2px 4px 0px rgba(51, 55, 59, .08), 0px 1px 10px 0px rgba(51, 55, 59, .06);
 }
 
 h2 {
@@ -103,8 +104,7 @@ hr {
 }
 
 .box-shadow {
-  box-shadow: 0px 4px 8px rgba(51, 55, 59, 0.18),
-    0px 2px 16px rgba(51, 55, 59, 0.15);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
 .bg-gradient-blue-to-black {

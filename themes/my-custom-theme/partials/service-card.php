@@ -1,7 +1,7 @@
 <style>
-.card-header {
+/* .card-header {
     font-size: 1.4rem !important;
-}
+} */
 
 .white-card-with-icon {
     transition: box-shadow 0.3s ease;
@@ -33,34 +33,25 @@
     background-color: #efeeee;
 
 }
+
+.service-img {
+    height: 6rem;
+}
 </style>
 
 
 
-<div class="col-12 col-md-4 mb-5">
-
-    <div
-        class="border-light-grey px-3 py-3 d-flex flex-column align-items-start h-100 justify-content-between custom-rounded">
-        <div class="d-flex flex-column align-items-start">
-            <div class="d-flex gap-2 align-items-center">
-                <div class="card-container d-flex align-items-center justify-content-center">
-                    <i class="bi fs-3 text-gradient-blue  <?php echo esc_attr($args['icon']); ?>"></i>
-                </div>
-
-                
-            </div>
-            <h5 class="fw-bold card-header mt-3"><?php echo esc_html($args['service_heading']); ?></h5>
-
-
-            <p class="mt-3 service-description fs-6 text-grey">Lorem ipsum is a dummy or placeholder text commonly used
-                in graphic
-                design, publishing, and web development. Its purpose is to permit a page layout to be designed,
-                independently of the copy that will subsequently populate it
-            </p>
-        </div>
-        <div class="d-flex align-items-center mt-4">
-            <?php echo do_shortcode('[button variant="primary" link="' . esc_url($args['link_to_service_page']) . '"]Learn More[/button]'); ?>
-        </div>
-
+<div class="col-12 col-md-3 mb-5">
+    <div class="d-flex flex-column border-light-grey px-3 pt-2 pb-3 custom-rounded">
+        <i class="bi bi-cart4 fs-4"></i>
+        <!-- <div class="w-100"> <img class="service-img w-100" src="<?php echo esc_url($args['image']); ?>" /></div> -->
+        <h5 class="fw-bold card-header mt-2"><?php echo esc_html($args['service_heading']); ?></h5>
+        <small class="mt-2 service-description fs-6 text-grey">Lorem ipsum is a dummy.</small>
+        <small class="text-primary fw-semibold mt-2 text-decoration-underline">Learn more -></small>
     </div>
+
+
+
+
+
 </div>

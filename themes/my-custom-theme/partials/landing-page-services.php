@@ -1,3 +1,14 @@
+<style>
+.small-services-paragraph {
+    font-size: 0.93rem !important;
+}
+
+.active-service {
+    border: 1px solid #c1c1c1;
+}
+</style>
+
+
 <section>
     <div class="container">
         <?php
@@ -61,26 +72,18 @@ $services = array_filter($services, function($service) {
 });
 
 ?>
-        <div class="row pt-1 mt-3">
-            <div class="col-8">
-                <div class="w-75">
+        <div class="row gx-5 pt-1 mt-3">
+            <div class="col-9">
+                <div class="h-100 d-flex flex-column justify-content-between">
                     <p class="fs-4">
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                        the industry's standard dummy text ever since the 1500s
+                        the industry's standard dummy text simply ever since the 1500s the industry's standard dummy
+                        text ever
+                        since.
                     </p>
-                    <div class="d-flex gap-2 mt-4 pt-1">
-                        <small class="custom-rounded py-1 px-2 border-light-grey fw-semibold">Engineering</small>
-                        <small class="custom-rounded py-1 px-2 border-light-grey text-grey">Motor repair</small>
-                        <small class="custom-rounded py-1 px-2 border-light-grey  text-grey">Motor repair</small>
-                        <small class="custom-rounded py-1 px-2 border-light-grey  text-grey">Motor repair</small>
-                        <small class="custom-rounded py-1 px-2 border-light-grey  text-grey">Motor repair</small>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                col 2
-            </div>
-            <!-- <?php foreach ($services as $service) : ?>
+                   
+                    <div class="row mt-3">
+                        <?php foreach ($services as $service) : ?>
             <?php get_template_part('partials/service-card', null, array(
         'icon' => $service['icon'],
         'service_heading' => $service['header'],
@@ -89,7 +92,24 @@ $services = array_filter($services, function($service) {
         'span' => $service['span'],
         'image' => $service['image'],
     )); ?>
-            <?php endforeach; ?> -->
+            <?php endforeach; ?> 
+                    </div>
+
+                  
+                </div>
+            </div>
+            <div class="col">
+                <div class="d-flex flex-column justify-content-between">
+                    <p class="text-grey small-services-paragraph"> Lorem Ipsum is simply dummy text of the printing and
+                        typesetting industry. Lorem Ipsum has been
+                        the industry's standard dummy text ever since the 1500s</p>
+                </div>
+                <div class="d-flex align-items-center mt-4">
+                    <?php echo do_shortcode('[button variant="primary" link="#"]Learn More[/button]'); ?>
+
+                </div>
+            </div>
+
         </div>
 
     </div>
