@@ -53,7 +53,7 @@ $brand_images = array_filter([
 
             </div>
             <div class="col-lg-1 d-flex align-items-center justify-content-center">
-                <?php echo do_shortcode('[button link="#" variant="outline-black" icon="fa-solid fa-arrow-right"]View all[/button]'); ?>
+                <?php echo do_shortcode('[button link="#" variant="black" size="sm" icon="fa-solid fa-arrow-right"]View all[/button]'); ?>
             </div>
             <?php endif; ?>
 

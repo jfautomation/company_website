@@ -4,8 +4,7 @@
 :root {
   --color-gradient-light-blue: #3a7bd5;
   --color-gradient-dark-blue: #1600a0;
-  --color-eggplant-light: #6e3b76;
-  --color-eggplant-dark: #2e1437;
+  --color-text-primary: #0044cc;
   --color-dark-text: #000000;
   --color-text-dark-lighter: #1c1c1c;
   --color-grey-text: #5b5a5a;
@@ -76,7 +75,7 @@ hr {
 /* Text color utilities */
 
 .text-blue {
-  color: var(--color-gradient-dark-blue);
+  color: var(--color-text-primary);
 }
 .text-dark {
   color: var(--color-dark-text) !important;
@@ -181,6 +180,7 @@ hr {
   display: flex;
   justify-content: center;
   align-items: center;
+  white-space: nowrap;
   padding: 13px 32px;
   text-align: center;
   text-decoration: none;
@@ -189,20 +189,18 @@ hr {
 }
 
 .btn-sm {
-  padding: 0.5rem 1.5rem;
-  font-size: 0.95rem;
-  line-height: 1.5;
+  padding: 0.3rem 1.5rem;
+  font-size: 0.9rem;
   min-width: unset !important;
 }
 
-.btn-sm:hover {
-  color: white;
-  background: linear-gradient(
-    to left,
-    var(--color-gradient-dark-blue),
-    var(--color-gradient-light-blue)
-  );
+.btn-md {
+  padding: 0.5rem 1.5rem;
+  font-size: 0.9rem;
+  min-width: unset !important;
 }
+
+
 
 /* Primary Button */
 .btn-primary {
@@ -222,6 +220,17 @@ hr {
 .btn-primary:hover {
   filter: brightness(1.1);
   box-shadow: 0 0 10px rgba(0, 123, 255, 0.4);
+}
+
+/* Black variant */
+.btn-black {
+  background-color: #1e1e1e;
+  color: #fff;
+}
+
+.btn-black:hover {
+  background-color: #222;
+  color: #fff;
 }
 
 /* //// btn outline primary  */

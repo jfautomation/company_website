@@ -39,6 +39,7 @@ $services = array(
       'paragraph' => get_field('service_1_paragraph'),
       'span' => get_field('service_1_span'),
       'image' => get_field('service_1_image'),
+      'link' => get_field('service_1_link')
   ),
   array(
       'icon'   => get_field('service_icon_2'),
@@ -47,6 +48,7 @@ $services = array(
       'paragraph' => get_field('service_2_paragraph'),
       'span' => get_field('service_2_span'),
        'image' => get_field('service_2_image'),
+       'link' => get_field('service_2_link')
   ),
   array(
       'icon'   => get_field('service_icon_3'),
@@ -55,6 +57,7 @@ $services = array(
       'paragraph' => get_field('service_3_paragraph'),
       'span' => get_field('service_3_span'),
       'image' => get_field('service_3_image'),
+      'link' => get_field('service_3_link')
   ),
   array(
       'icon'   => get_field('service_icon_4'),
@@ -63,6 +66,7 @@ $services = array(
       'paragraph' => get_field('service_4_paragraph'),
       'span' => get_field('service_4_span'),
       'image' => get_field('service_4_image'),
+      'link' => get_field('service_4_link')
   ),
 );
 
@@ -75,27 +79,28 @@ $services = array_filter($services, function($service) {
         <div class="row gx-5 pt-1 mt-3">
             <div class="col-9">
                 <div class="h-100 d-flex flex-column justify-content-between">
-                    <p class="fs-4">
+                    <p class="pe-5">
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                        the industry's standard dummy text simply ever since the 1500s the industry's standard dummy
+                        the industry's standard dummy text ever since the 1500s the industry's standard dummy
                         text ever
                         since.
                     </p>
-                   
+
                     <div class="row mt-3">
                         <?php foreach ($services as $service) : ?>
-            <?php get_template_part('partials/service-card', null, array(
+                        <?php get_template_part('partials/service-card', null, array(
         'icon' => $service['icon'],
         'service_heading' => $service['header'],
         'link_to_service_page' => $service['link'],
         'paragraph' => $service['paragraph'],
         'span' => $service['span'],
         'image' => $service['image'],
+        'link' => $service['link']
     )); ?>
-            <?php endforeach; ?> 
+                        <?php endforeach; ?>
                     </div>
 
-                  
+
                 </div>
             </div>
             <div class="col">
@@ -105,7 +110,7 @@ $services = array_filter($services, function($service) {
                         the industry's standard dummy text ever since the 1500s</p>
                 </div>
                 <div class="d-flex align-items-center mt-4">
-                    <?php echo do_shortcode('[button variant="primary" link="#"]Learn More[/button]'); ?>
+                    <?php echo do_shortcode('[button variant="primary" link="#"]Get a quote[/button]'); ?>
 
                 </div>
             </div>

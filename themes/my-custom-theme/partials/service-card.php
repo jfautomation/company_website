@@ -39,15 +39,38 @@
 }
 </style>
 
+<!-- 'icon' => $service['icon'],
+        'service_heading' => $service['header'],
+        'link_to_service_page' => $service['link'],
+        'paragraph' => $service['paragraph'],
+        'span' => $service['span'],
+        'image' => $service['image'],
+    )); ?> -->
+
+
+
 
 
 <div class="col-12 col-md-3 mb-5">
-    <div class="d-flex flex-column border-light-grey px-3 pt-2 pb-3 custom-rounded">
-        <i class="bi bi-cart4 fs-4"></i>
-        <!-- <div class="w-100"> <img class="service-img w-100" src="<?php echo esc_url($args['image']); ?>" /></div> -->
-        <h5 class="fw-bold card-header mt-2"><?php echo esc_html($args['service_heading']); ?></h5>
-        <small class="mt-2 service-description fs-6 text-grey">Lorem ipsum is a dummy.</small>
-        <small class="text-primary fw-semibold mt-2 text-decoration-underline">Learn more -></small>
+    <div class="d-flex flex-column gap-3 justify-content-between h-100 border-light-grey px-3 pt-2 pb-3 custom-rounded">
+        <div class="d-flex flex-column mt-1">
+            <?php if (!empty($args['icon'])): ?>
+            <i class="bi fs-4 <?php echo esc_attr($args['icon']); ?>"></i>
+            <?php endif; ?>
+
+
+            <h5 class="fw-bold card-header mt-2"><?php echo esc_html($args['service_heading']); ?></h5>
+            <small class="mt-3 service-description fs-6 text-grey"><?php echo esc_html($args['paragraph']); ?></small>
+        </div>
+
+        <?php if (!empty($args['link'])): ?>
+        <a href="<?php echo esc_url($args['link']); ?>"
+            class="text-blue fw-semibold text-decoration-underline d-flex align-items-center gap-1 small">
+            Learn more
+            <i class="bi bi-arrow-right"></i>
+        </a>
+        <?php endif; ?>
+
     </div>
 
 
