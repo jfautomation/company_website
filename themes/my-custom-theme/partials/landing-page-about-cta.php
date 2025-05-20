@@ -19,7 +19,7 @@
 
 
 
-                        <div class="mt-3">
+                        <div class="mt-2">
                             <?php echo do_shortcode('[button variant="black" size="md" link="' . esc_url( get_field('landing_page_cta_button_link') ) . '"]' . esc_html( get_field('landing_page_cta_button_text') ) . '[/button]'); ?>
                         </div>
 

@@ -108,7 +108,7 @@ if (!empty($sale_price) && $price > 0) {
     </div>
 </div>
 
-<div class="custom-carousel-indicators mt-5 d-flex align-items-center justify-content-center gap-3">
+<div class="custom-carousel-indicators mt-3 d-flex align-items-center justify-content-center gap-3 pb-5">
     <i id="carouselPrev" class="carousel-arrow indicator-chevron fas fa-chevron-left me-2">
     </i>
     <?php foreach (array_keys($products) as $index): ?>

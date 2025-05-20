@@ -3,6 +3,10 @@
     transition: box-shadow 0.3s ease;
 }
 
+.card-header {
+    font-size: 1.3rem;
+}
+
 .white-card-with-icon:hover {
     cursor: pointer;
 }
