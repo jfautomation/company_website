@@ -25,11 +25,12 @@
 
     <!-- //// about & CTA -->
     <?php get_template_part('partials/landing-page-about-cta')?>
-    <!-- //// brands we repair -->
-    <?php get_template_part('partials/landing-page-brands')?>
+    
     <!-- //// visit online shop CTA -->
     <?php get_template_part('partials/landing-page-online-shop-cta')?>
     <!-- //// reviews -->
     <?php get_template_part('partials/landing-page-reviews')?>
+    <!-- //// brands we repair -->
+    <?php get_template_part('partials/landing-page-brands')?>
 </div>
 <?php get_template_part( 'partials/footer' ); ?>

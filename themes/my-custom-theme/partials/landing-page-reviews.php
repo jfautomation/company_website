@@ -1,14 +1,12 @@
 <style>
 .star {
     color: #ccc;
-    /* default empty star color */
     font-size: 1.5rem;
     margin-right: 2px;
 }
 
 .star.filled {
     color: #FFD700;
-    /* gold for filled stars */
 }
 
 .star.half-filled {
@@ -28,14 +26,12 @@
 
 .card-blue {
     background: var(--blue-gradient-background);
-    /* blue */
     color: white;
 }
 
 .card-white {
     background-color: white;
-    color: black;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    color: var(--color-bs-dark);
 }
 
 .card-white .review-body,
@@ -45,11 +41,11 @@
 
 
 .card-white h5 {
-    color: black;
+    color: var(--color-bs-dark);
 }
 
 .card-gray {
-    background-color: var(--color-dark-grey-bg);
+    background-color: var(--color-black);
     color: white;
 }
 
@@ -63,8 +59,9 @@
 </style>
 
 
-<section class="container">
-    <?php
+<section class="light-grey-container">
+    <div class="container">
+        <?php
     $args = array(
         'h5_text' => 'Reviews',
         'h2_text' => 'What people are saying'
@@ -72,7 +69,7 @@
 
     get_template_part('partials/section-header', null, $args);
     ?>
-    <?php
+        <?php
 
 $reviews = array(
     array('stars' => get_field('star_rating_1'), 'name' => get_field('reviewer_name_1'), 'company' => get_field('reviewer_company_1'), 'review' => get_field('review_body_1')),
@@ -81,7 +78,7 @@ $reviews = array(
     array('stars' => get_field('star_rating_4'), 'name' => get_field('reviewer_name_4'), 'company' => get_field('reviewer_company_4'), 'review' => get_field('review_body_4')),
 );
 ?>
-    <?php
+        <?php
 $totalStars = 0;
 $reviewCount = 0;
 
@@ -97,7 +94,7 @@ $testAvgRating = 2.3
 ?>
 
 
-    <?php
+        <?php
 function render_stars($stars) {
     $roundedRating = round($stars * 2) / 2;
     $output = '';
@@ -115,27 +112,27 @@ function render_stars($stars) {
     return $output;
 }
 ?>
-    <div class="row mt-3">
-        <div class="col">
-            <div class="d-flex align-items-center justify-content-start gap-3">
-                <span class="fw-semibold fs-3"><?php echo $averageRating; ?></span>
-                <span><?php echo render_stars($averageRating); ?></span>
+        <div class="row mt-3">
+            <div class="col">
+                <div class="d-flex align-items-center justify-content-start gap-3">
+                    <span class="fw-semibold fs-3"><?php echo $averageRating; ?></span>
+                    <span><?php echo render_stars($averageRating); ?></span>
 
 
-            </div>
-
-        </div>
-        <div class="col">
-            <div class="d-flex align-items-center justify-content-end">
-                <?php echo do_shortcode('[button variant="primary" link="' . esc_url( get_field('link_to_item') ) . '"]Review[/button]'); ?>
+                </div>
 
             </div>
+            <div class="col">
+                <div class="d-flex align-items-center justify-content-end">
+                    <?php echo do_shortcode('[button variant="primary" link="' . esc_url( get_field('link_to_item') ) . '"]Review[/button]'); ?>
+
+                </div>
+            </div>
         </div>
-    </div>
 
 
 
-    <?php 
+        <?php 
 $card_variants = [
     'card-blue',
     'card-white',
@@ -143,8 +140,8 @@ $card_variants = [
     'card-gray',
 ];
 ?>
-    <div class="row mt-3">
-        <?php
+        <div class="row mt-3">
+            <?php
     // Loop through reviews, two cards per column
     for ($i = 0; $i < count($reviews); $i += 2):
         // Get the first and second reviews for the current column (per row)
@@ -155,51 +152,52 @@ $card_variants = [
         $avatar1 = 'https://ui-avatars.com/api/?name=' . urlencode($review1['name']) . '&background=random&size=64';
         $avatar2 = $review2 ? 'https://ui-avatars.com/api/?name=' . urlencode($review2['name']) . '&background=random&size=64' : null;
     ?>
-        <div class="col">
-            <!-- Column 1 -->
-            <div
-                class="review-card custom-rounded pt-3 pb-4 px-4 mb-4 <?php echo esc_attr($card_variants[$i % count($card_variants)]); ?>">
+            <div class="col">
+                <!-- Column 1 -->
+                <div
+                    class="review-card custom-rounded pt-3 pb-4 px-4 mb-4 <?php echo esc_attr($card_variants[$i % count($card_variants)]); ?>">
 
-                <span><?php echo render_stars($review1['stars']); ?></span>
+                    <span><?php echo render_stars($review1['stars']); ?></span>
 
-                <p class="review-body fw-normal mt-2">&ldquo;<?php echo esc_html($review1['review']); ?>&rdquo;</p>
-                <div class="d-flex gap-3 mt-4">
-                    <img src="<?php echo esc_url($avatar1); ?>" alt="<?php echo esc_attr($review1['name']); ?>"
-                        class="avatar-img" />
-                    <div class="d-flex flex-column">
-                        <h6 class="fw-bold mb-1"><?php echo esc_html($review1['name']); ?></h6>
-                        <small class="reviewer-company">
-                            <?php echo esc_html($review1['company']); ?>
-                        </small>
+                    <p class="review-body fw-normal mt-2">&ldquo;<?php echo esc_html($review1['review']); ?>&rdquo;</p>
+                    <div class="d-flex gap-3 mt-4">
+                        <img src="<?php echo esc_url($avatar1); ?>" alt="<?php echo esc_attr($review1['name']); ?>"
+                            class="avatar-img" />
+                        <div class="d-flex flex-column">
+                            <h6 class="fw-bold mb-1"><?php echo esc_html($review1['name']); ?></h6>
+                            <small class="reviewer-company">
+                                <?php echo esc_html($review1['company']); ?>
+                            </small>
+                        </div>
+
                     </div>
 
                 </div>
 
-            </div>
-
-            <?php if ($review2): ?>
-            <!-- Second review card in the same column -->
-            <div
-                class="review-card custom-rounded pt-3 pb-4 px-4 mb-4 <?php echo esc_attr($card_variants[($i + 1) % count($card_variants)]); ?>">
-                <span><?php echo render_stars($review1['stars']); ?></span>
+                <?php if ($review2): ?>
+                <!-- Second review card in the same column -->
+                <div
+                    class="review-card custom-rounded pt-3 pb-4 px-4 mb-4 <?php echo esc_attr($card_variants[($i + 1) % count($card_variants)]); ?>">
+                    <span><?php echo render_stars($review1['stars']); ?></span>
 
 
-                <p class="review-body fw-normal mt-2">&ldquo;<?php echo esc_html($review2['review']); ?>&rdquo;</p>
-                <div class="d-flex gap-3 mt-4">
-                    <img src="<?php echo esc_url($avatar2); ?>" alt="<?php echo esc_attr($review2['name']); ?>"
-                        class="avatar-img" />
-                    <div class="d-flex flex-column">
-                        <h6 class="fw-bold mb-1"><?php echo esc_html($review2['name']); ?></h6>
-                        <small class="reviewer-company">
-                            <?php echo esc_html($review2['company']); ?>
-                        </small>
+                    <p class="review-body fw-normal mt-2">&ldquo;<?php echo esc_html($review2['review']); ?>&rdquo;</p>
+                    <div class="d-flex gap-3 mt-4">
+                        <img src="<?php echo esc_url($avatar2); ?>" alt="<?php echo esc_attr($review2['name']); ?>"
+                            class="avatar-img" />
+                        <div class="d-flex flex-column">
+                            <h6 class="fw-bold mb-1"><?php echo esc_html($review2['name']); ?></h6>
+                            <small class="reviewer-company">
+                                <?php echo esc_html($review2['company']); ?>
+                            </small>
+                        </div>
+
                     </div>
-
                 </div>
+                <?php endif; ?>
             </div>
-            <?php endif; ?>
+            <?php endfor; ?>
         </div>
-        <?php endfor; ?>
     </div>
 
 

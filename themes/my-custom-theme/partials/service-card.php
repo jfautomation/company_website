@@ -1,8 +1,4 @@
 <style>
-/* .card-header {
-    font-size: 1.4rem !important;
-} */
-
 .white-card-with-icon {
     transition: box-shadow 0.3s ease;
 }
@@ -39,14 +35,6 @@
 }
 </style>
 
-<!-- 'icon' => $service['icon'],
-        'service_heading' => $service['header'],
-        'link_to_service_page' => $service['link'],
-        'paragraph' => $service['paragraph'],
-        'span' => $service['span'],
-        'image' => $service['image'],
-    )); ?> -->
-
 
 
 
@@ -60,7 +48,8 @@
 
 
             <h5 class="fw-bold card-header mt-2"><?php echo esc_html($args['service_heading']); ?></h5>
-            <small class="mt-3 service-description fs-6 text-grey"><?php echo esc_html($args['paragraph']); ?></small>
+            <p class="mt-3 service-description text-grey"><?php echo esc_html($args['paragraph']); ?>
+            </p>
         </div>
 
         <?php if (!empty($args['link'])): ?>

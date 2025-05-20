@@ -60,7 +60,8 @@ $products = array_filter($products, function($product) {
 <div class="custom-carousel-container position-relative">
     <div class="custom-carousel-track" id="customCarouselTrack">
         <?php foreach ($products as $product): ?>
-        <div class="custom-carousel-card me-3 d-flex flex-column text-dark text-center">
+        <div
+            class="custom-carousel-card border-light-grey custom-rounded p-2 me-3 d-flex flex-column text-dark text-center">
             <div class="custom-carousel-card-inner-wrapper custom-rounded flex-grow-1">
                 <div class="row h-100">
                     <div class="col-4">
@@ -83,7 +84,7 @@ if (!empty($sale_price) && $price > 0) {
 ?>
 
                                 <span
-                                    class="badge bg-red <?php echo !empty($sale_price) ? 'bg-red text-white' : 'invisible'; ?>">
+                                    class="badge rounded-pill bg-red px-2 <?php echo !empty($sale_price) ? 'bg-red text-white' : 'invisible'; ?>">
                                     <?php echo !empty($sale_price) ? $discount . '%' : ''; ?>
 
                                 </span>
@@ -95,7 +96,7 @@ if (!empty($sale_price) && $price > 0) {
                                 <p class="text-grey text-start">
                                     <?php echo esc_html($product['description']); ?></p>
                                 <div class="mt-3">
-                                    <?php echo do_shortcode('[button variant="primary" link="' . esc_url( get_field('link_to_item') ) . '"]Buy[/button]'); ?>
+                                    <?php echo do_shortcode('[button variant="primary" link="' . esc_url( get_field('link_to_item') ) . '"]Visit[/button]'); ?>
                                 </div>
                             </div>
                         </div>
