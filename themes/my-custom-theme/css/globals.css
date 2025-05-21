@@ -62,6 +62,10 @@ section {
   background-color: var(--color-dark-grey-bg) !important;
 }
 
+.black-bg {
+  background-color: var( --color-black);
+}
+
 .card-gradient {
   background: linear-gradient(135deg, #fafafa, #f0f0f0);
 }

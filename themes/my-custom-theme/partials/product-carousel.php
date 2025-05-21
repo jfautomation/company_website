@@ -13,11 +13,34 @@
     flex: 0 0 30%;
     max-width: 100%;
     box-sizing: border-box;
+    border-radius: 10px;
 }
 
-.custom-carousel-card-inner-wrapper {
-    background-color: #fff;
+.card-col {
+    border-radius: 10px;
 }
+
+.product-card-image-container {
+    position: relative;
+    width: 100%;
+    padding-top: 60%;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.product-card-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit;
+}
+
+
+
+
 
 .custom-carousel-indicators {
     display: flex;
@@ -62,11 +85,19 @@ $products = array_filter($products, function($product) {
         <?php if ($index % 2 === 0): ?>
         <!-- EVEN INDEX CARD TEMPLATE (e.g., white bg, one layout) -->
         <!-- /// change class name of custom carousel card, add 'even' -->
-        <div class="custom-carousel-card custom-rounded p-2 me-3 d-flex flex-column text-dark text-center">
+        <!-- /// change this styling to odd  -->
+        <div class="custom-carousel-card custom-rounded p-3 me-3 d-flex flex-column text-dark text-center">
             <div class="custom-carousel-card-inner-wrapper custom-rounded">
                 <div class="row h-100">
-                    <div class="col">
-                        <div class="bg-warning w-100">DIV 1</div>
+                    <div class="col p-2 card-col bg-light">
+                        <div class="w-100 h-100">
+                            <div class="product-card-image-container">
+                                <img class="product-card-image" src="<?php echo esc_url($product['image']); ?>" />
+                            </div>
+                            <h3>Some stuff here to test</h3>
+                            <p class="text-grey">Some product details here in grey text</p>
+
+                        </div>
 
 
 
@@ -76,12 +107,15 @@ $products = array_filter($products, function($product) {
             </div>
         </div>
         <?php else: ?>
-        <!-- /// change this styling to odd  -->
-        <div class="custom-carousel-card custom-rounded p-2 me-3 d-flex flex-column text-dark text-center">
+        <div class="custom-carousel-card custom-rounded p-3 me-3 d-flex flex-column text-dark text-center">
             <div class="custom-carousel-card-inner-wrapper custom-rounded">
                 <div class="row h-100">
-                    <div class="col">
-                        <div class="bg-secondary w-100">DIV 2</div>
+                    <div class="col card-col black-bg text-light">
+                        <div class="w-100">
+                            <h1>TESTING THE UI</h1>
+                            <p>EVEN INDEX CARD TEMPLATE (e.g., white bg, one layout)
+                                change class name of custom carousel card, add 'even'</p>
+                        </div>
 
 
 
@@ -90,6 +124,7 @@ $products = array_filter($products, function($product) {
                 </div>
             </div>
         </div>
+
         <?php endif; ?>
         <?php endforeach; ?>
     </div>
