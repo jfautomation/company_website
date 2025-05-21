@@ -31,7 +31,6 @@
     width: 3rem;
     border-radius: 50%;
     background-color: #efeeee;
-
 }
 
 .service-img {

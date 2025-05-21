@@ -59,7 +59,7 @@
 </style>
 
 
-<section class="light-grey-container">
+<section class="">
     <div class="container">
         <?php
     $args = array(

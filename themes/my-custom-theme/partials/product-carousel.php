@@ -10,7 +10,7 @@
 }
 
 .custom-carousel-card {
-    flex: 0 0 65%;
+    flex: 0 0 30%;
     max-width: 100%;
     box-sizing: border-box;
 }
@@ -46,7 +46,8 @@ $products = array(
     array('name' => get_field('product_2_name'), 'price' => get_field('product_2_price'), 'sale_price' => get_field('product_2_sale_price'), 'description' => get_field('product_2_description'), 'link_to_item' => get_field('product_2_link_to_item'), 'image' => get_field('product_2_image'), ),
     array('name' => get_field('product_3_name'), 'price' => get_field('product_3_price'), 'sale_price' => get_field('product_3_sale_price'), 'description' => get_field('product_3_description'), 'link_to_item' => get_field('product_3_link_to_item'), 'image' => get_field('product_3_image'), ),
     array('name' => get_field('product_4_name'), 'price' => get_field('product_4_price'), 'sale_price' => get_field('product_4_sale_price'), 'description' => get_field('product_4_description'), 'link_to_item' => get_field('product_4_link_to_item'), 'image' => get_field('product_4_image'), ),
-   
+    array('name' => get_field('product_5_name'), 'price' => get_field('product_5_price'), 'sale_price' => get_field('product_5_sale_price'), 'description' => get_field('product_5_description'), 'link_to_item' => get_field('product_5_link_to_item'), 'image' => get_field('product_5_image'), ),
+    array('name' => get_field('product_6_name'), 'price' => get_field('product_6_price'), 'sale_price' => get_field('product_6_sale_price'), 'description' => get_field('product_6_description'), 'link_to_item' => get_field('product_6_link_to_item'), 'image' => get_field('product_6_image'), ),
 );
 
 $products = array_filter($products, function($product) {
@@ -54,15 +55,55 @@ $products = array_filter($products, function($product) {
 });
   
 ?>
-
-
-
 <div class="custom-carousel-container position-relative">
     <div class="custom-carousel-track" id="customCarouselTrack">
+
+        <?php foreach ($products as $index => $product): ?>
+        <?php if ($index % 2 === 0): ?>
+        <!-- EVEN INDEX CARD TEMPLATE (e.g., white bg, one layout) -->
+        <!-- /// change class name of custom carousel card, add 'even' -->
+        <div class="custom-carousel-card custom-rounded p-2 me-3 d-flex flex-column text-dark text-center">
+            <div class="custom-carousel-card-inner-wrapper custom-rounded">
+                <div class="row h-100">
+                    <div class="col">
+                        <div class="bg-warning w-100">DIV 1</div>
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <?php else: ?>
+        <!-- /// change this styling to odd  -->
+        <div class="custom-carousel-card custom-rounded p-2 me-3 d-flex flex-column text-dark text-center">
+            <div class="custom-carousel-card-inner-wrapper custom-rounded">
+                <div class="row h-100">
+                    <div class="col">
+                        <div class="bg-secondary w-100">DIV 2</div>
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <?php endif; ?>
+        <?php endforeach; ?>
+    </div>
+</div>
+
+
+
+
+
+<!-- <div class="custom-carousel-container position-relative">
+    <div class="custom-carousel-track" id="customCarouselTrack">
         <?php foreach ($products as $product): ?>
-        <div
-            class="custom-carousel-card border-light-grey custom-rounded p-2 me-3 d-flex flex-column text-dark text-center">
-            <div class="custom-carousel-card-inner-wrapper custom-rounded flex-grow-1">
+        <div class="custom-carousel-card custom-rounded p-2 me-3 d-flex flex-column text-dark text-center">
+            <div class="custom-carousel-card-inner-wrapper custom-rounded">
                 <div class="row h-100">
                     <div class="col-4">
                         <div class="h-100 d-flex align-items-center justify-content-center">
@@ -106,7 +147,7 @@ if (!empty($sale_price) && $price > 0) {
         </div>
         <?php endforeach; ?>
     </div>
-</div>
+</div> -->
 
 <div class="custom-carousel-indicators mt-3 d-flex align-items-center justify-content-center gap-3 pb-5">
     <i id="carouselPrev" class="carousel-arrow indicator-chevron fas fa-chevron-left me-2">
