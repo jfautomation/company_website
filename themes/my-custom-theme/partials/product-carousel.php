@@ -16,6 +16,10 @@
     border-radius: 10px;
 }
 
+.custom-carousel-card-inner-wrapper {
+    height: 100% !important;
+}
+
 .card-col {
     border-radius: 10px;
 }
@@ -39,8 +43,17 @@
 }
 
 
+.btn-container {
+    width: fit-content;
+}
 
+.product-card-transparent-image {
+    height: 10rem;
+}
 
+.product-card-description {
+    font-size: 0.85rem !important;
+}
 
 .custom-carousel-indicators {
     display: flex;
@@ -61,16 +74,22 @@
 .carousel-dot.active {
     opacity: 1;
 }
+
+.arrow-btn {
+    height: 1.75rem;
+    width: 2rem;
+    border-radius: 4.6px;
+}
 </style>
 
 <?php 
 $products = array(
-    array('name' => get_field('product_1_name'), 'price' => get_field('product_1_price'), 'sale_price' => get_field('product_1_sale_price'), 'description' => get_field('product_1_description'), 'link_to_item' => get_field('product_1_link_to_item'), 'image' => get_field('product_1_image'), ),
-    array('name' => get_field('product_2_name'), 'price' => get_field('product_2_price'), 'sale_price' => get_field('product_2_sale_price'), 'description' => get_field('product_2_description'), 'link_to_item' => get_field('product_2_link_to_item'), 'image' => get_field('product_2_image'), ),
-    array('name' => get_field('product_3_name'), 'price' => get_field('product_3_price'), 'sale_price' => get_field('product_3_sale_price'), 'description' => get_field('product_3_description'), 'link_to_item' => get_field('product_3_link_to_item'), 'image' => get_field('product_3_image'), ),
-    array('name' => get_field('product_4_name'), 'price' => get_field('product_4_price'), 'sale_price' => get_field('product_4_sale_price'), 'description' => get_field('product_4_description'), 'link_to_item' => get_field('product_4_link_to_item'), 'image' => get_field('product_4_image'), ),
-    array('name' => get_field('product_5_name'), 'price' => get_field('product_5_price'), 'sale_price' => get_field('product_5_sale_price'), 'description' => get_field('product_5_description'), 'link_to_item' => get_field('product_5_link_to_item'), 'image' => get_field('product_5_image'), ),
-    array('name' => get_field('product_6_name'), 'price' => get_field('product_6_price'), 'sale_price' => get_field('product_6_sale_price'), 'description' => get_field('product_6_description'), 'link_to_item' => get_field('product_6_link_to_item'), 'image' => get_field('product_6_image'), ),
+    array('name' => get_field('product_1_name'), 'price' => get_field('product_1_price'), 'sale_price' => get_field('product_1_sale_price'), 'description' => get_field('product_1_description'), 'link_to_item' => get_field('product_1_link_to_item'), 'image' => get_field('product_1_image'), 'span' => get_field('product_1_span')),
+    array('name' => get_field('product_2_name'), 'price' => get_field('product_2_price'), 'sale_price' => get_field('product_2_sale_price'), 'description' => get_field('product_2_description'), 'link_to_item' => get_field('product_2_link_to_item'), 'image' => get_field('product_2_image'), 'span' => get_field('product_2_span')),
+    array('name' => get_field('product_3_name'), 'price' => get_field('product_3_price'), 'sale_price' => get_field('product_3_sale_price'), 'description' => get_field('product_3_description'), 'link_to_item' => get_field('product_3_link_to_item'), 'image' => get_field('product_3_image'), 'span' => get_field('product_2_span')),
+    array('name' => get_field('product_4_name'), 'price' => get_field('product_4_price'), 'sale_price' => get_field('product_4_sale_price'), 'description' => get_field('product_4_description'), 'link_to_item' => get_field('product_4_link_to_item'), 'image' => get_field('product_4_image'), 'span' => get_field('product_4_span')),
+    array('name' => get_field('product_5_name'), 'price' => get_field('product_5_price'), 'sale_price' => get_field('product_5_sale_price'), 'description' => get_field('product_5_description'), 'link_to_item' => get_field('product_5_link_to_item'), 'image' => get_field('product_5_image'), 'span' => get_field('product_5_span')),
+    array('name' => get_field('product_6_name'), 'price' => get_field('product_6_price'), 'sale_price' => get_field('product_6_sale_price'), 'description' => get_field('product_6_description'), 'link_to_item' => get_field('product_6_link_to_item'), 'image' => get_field('product_6_image'), 'span' => get_field('product_6_span')),
 );
 
 $products = array_filter($products, function($product) {
@@ -90,12 +109,41 @@ $products = array_filter($products, function($product) {
             <div class="custom-carousel-card-inner-wrapper custom-rounded">
                 <div class="row h-100">
                     <div class="col p-2 card-col bg-light">
-                        <div class="w-100 h-100">
+                        <div class="w-100 h-100 d-flex flex-column">
                             <div class="product-card-image-container">
                                 <img class="product-card-image" src="<?php echo esc_url($product['image']); ?>" />
                             </div>
-                            <h3>Some stuff here to test</h3>
-                            <p class="text-grey">Some product details here in grey text</p>
+                            <div class="d-flex text-start flex-column align-items-start justify-content-start">
+                                <h5 class="fw-semibold mt-3"><?php echo esc_html($product['name']); ?></h5>
+                                <p class="product-card-description text-grey">
+                                    <?php echo esc_html($product['description']); ?></p>
+                                <div class="w-100 d-flex justify-content-between">
+                                    <div class="d-flex gap-2 align-items-center">
+
+
+                                        <h4 class="mb-0 fw-semibold">$<?php echo esc_html($product['price']); ?></h4>
+
+
+                                        <?php
+$price = floatval($product['price']);
+$sale_price = $product['sale_price'];
+?>
+
+                                        <?php if (!empty($sale_price)): ?>
+                                        <span class="fw-semibold fs-6 text-red text-decoration-line-through">
+                                            $<?php echo esc_html($sale_price); ?>
+                                        </span>
+                                        <?php endif; ?>
+
+
+
+                                    </div>
+                                    <span
+                                        class="d-flex justify-content-center align-items-center arrow-btn bg-gradient-blue text-light"><i
+                                            class="bi bi-arrow-right"></i></span>
+                                </div>
+
+                            </div>
 
                         </div>
 
@@ -110,11 +158,24 @@ $products = array_filter($products, function($product) {
         <div class="custom-carousel-card custom-rounded p-3 me-3 d-flex flex-column text-dark text-center">
             <div class="custom-carousel-card-inner-wrapper custom-rounded">
                 <div class="row h-100">
-                    <div class="col card-col black-bg text-light">
-                        <div class="w-100">
-                            <h1>TESTING THE UI</h1>
-                            <p>EVEN INDEX CARD TEMPLATE (e.g., white bg, one layout)
-                                change class name of custom carousel card, add 'even'</p>
+                    <div class="col card-col black-bg text-light p-3">
+                        <div class="w-100 d-flex flex-column justify-content-between gap-3">
+                            <div>
+                                <div class="mt-2">
+                                    <small class="text-light"><?php echo esc_html($product['span']); ?></small>
+                                </div>
+                                <h4 class="text-light fw-semibold mt-2"><?php echo esc_html($product['name']); ?></h4>
+
+                                <div class="product-card-transparent-image-wrapper">
+                                    <img class="product-card-transparent-image"
+                                        src="<?php echo esc_url($product['image']); ?>" />
+                                </div>
+
+                            </div>
+                            <div class="btn-container d-flex justify-content-center align-items-center w-100 mt-1 pb-3">
+                                <?php echo do_shortcode('[button variant="primary" link="' . esc_url( get_field('link_to_item') ) . '"]$7564[/button]'); ?>
+                            </div>
+
                         </div>
 
 
