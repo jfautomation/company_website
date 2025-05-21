@@ -1,7 +1,4 @@
 <style>
-/* .brands-preview-wrapper {
-        border: 1px solid grey;
-    } */
 .small-heading {
     font-size: 0.85rem;
 }
@@ -16,10 +13,6 @@ $brand_images = array_filter([
     get_field('brand_5')
 ]);
 ?>
-
-
-
-
 
 
 
@@ -40,8 +33,9 @@ $brand_images = array_filter([
             <div class="col-lg-2">
                 <div class="d-flex flex-column ps-3 py-3">
                     <span class="fw-bold mb-0"><?php echo($brands_preview_header) ?></span>
-                    <small class=""><span class="fw-bold"><?php echo($brands_preview_subheader_number) ?> </span><?php echo($brands_preview_subheader_text) ?></small>
-                    <!-- <small class="text-grey small-heading">Something</small> -->
+                    <small class=""><span class="fw-bold"><?php echo($brands_preview_subheader_number) ?>
+                        </span><?php echo($brands_preview_subheader_text) ?></small>
+
 
                 </div>
             </div>

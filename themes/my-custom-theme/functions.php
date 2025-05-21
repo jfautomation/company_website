@@ -12,34 +12,14 @@ function my_custom_theme_setup()
 }
 add_action('after_setup_theme', 'my_custom_theme_setup');
 
-// function custom_button_shortcode($atts, $content = null) {
-//     $atts = shortcode_atts(
-//         array(
-//             'variant' => 'primary',
-//             'link' => '#',
-//         ),
-//         $atts,
-//         'button'
-//     );
-
-//     $variant = esc_attr($atts['variant']);
-//     $button_class = 'btn-base btn-' . $variant;
-
-//     if ($variant === 'outline-primary') {
-//         return '<a href="' . esc_url($atts['link']) . '" class="' . $button_class . '"><span class="btn-inner"></span>' . do_shortcode($content) . '</a>';
-//     }
-    
-//     return '<a href="' . esc_url($atts['link']) . '" class="' . $button_class . '">' . do_shortcode($content) . '</a>';
-// }
-// add_shortcode('button', 'custom_button_shortcode');
 
 function custom_button_shortcode($atts, $content = null) {
-    // Set up default attributes for the button
+    
     $atts = shortcode_atts(
         array(
             'variant' => 'primary',
             'link' => '#',
-            'size' => '', // Optional: 'sm', 'lg', etc.
+            'size' => '', 
         ),
         $atts,
         'button'
@@ -48,63 +28,52 @@ function custom_button_shortcode($atts, $content = null) {
     $variant = esc_attr($atts['variant']);
     $size = esc_attr($atts['size']);
 
-    // Build button class
+    
     $button_class = 'btn-base btn-' . $variant;
     if (!empty($size)) {
         $button_class .= ' btn-' . $size;
     }
 
-   // Special case for 'outline-*' variants
+  
 if (str_starts_with($variant, 'outline-')) {
     return '<a href="' . esc_url($atts['link']) . '" class="' . $button_class . '"><span class="btn-inner"></span>' . do_shortcode($content) . '</a>';
 }
 
-    // Default button markup
+
     return '<a href="' . esc_url($atts['link']) . '" class="' . $button_class . '">' . do_shortcode($content) . '</a>';
 }
 add_shortcode('button', 'custom_button_shortcode');
 
-// rounded pill with icon btn
+
 function rounded_pill_icon_button_shortcode($atts, $content = null) {
-    // Set up default attributes for the button
     $atts = shortcode_atts(
         array(
-            'variant' => 'blue-rounded-btn', // Button style variant (e.g., 'primary', 'secondary', etc.)
-            'link' => '#', // Button link
-            'icon' => '', // e.g., 'fa-solid fa-arrow-right' or 'icon-class-name'
+            'variant' => 'blue-rounded-btn', 
+            'link' => '#', 
+            'icon' => '', 
         ),
         $atts,
-        'rounded_pill_button' // Shortcode name: [rounded_pill_button]
+        'rounded_pill_button' 
     );
 
     $variant = esc_attr($atts['variant']);
     $icon = esc_attr($atts['icon']); 
 
-    // Main class is now 'rounded-pill-with-icon' (no 'btn-base' class here)
     $button_class = 'rounded-pill-with-icon ' . $variant;
 
-   
-    // Handle the icon (if provided)
     $icon_html = $icon ? '<div class="rounded-btn-icon-container"><i class="' . $icon . '"></i></div>' : '';
 
-    // Build the button content with icon and text
     $button_content = $icon_html . ' ' . do_shortcode($content);
 
-    // Special case for 'outline-*' variants (e.g., outline-primary)
     if (str_starts_with($variant, 'outline-')) {
         return '<a href="' . esc_url($atts['link']) . '" class="' . $button_class . '"><span class="rounded-pill-with-icon"></span>' . $button_content . '</a>';
     }
 
-    // Default button markup
     return '<a href="' . esc_url($atts['link']) . '" class="rounded-pill-with-icon ' . $variant . '">'
         . '<span class="button-text">' . do_shortcode($content) . '</span>' 
         . $icon_html . '</a>';
 }
 add_shortcode('rounded_pill_button', 'rounded_pill_icon_button_shortcode');
-
-
-
-
 
 
 
@@ -144,17 +113,13 @@ function render_custom_carousel_indicators($carousel_id, $images) {
 
 
 function my_custom_theme_scripts() {
-    // Enqueue the main stylesheet
     wp_enqueue_style('my-custom-theme-style', get_stylesheet_uri());
 
-    // Enqueue Bootstrap 5 CSS
     wp_enqueue_style('bootstrap-css', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css');
 
-    // Enqueue Bootstrap 5 Bundle JS (includes Popper)
     wp_enqueue_script('bootstrap-bundle', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js', array(), null, true);
     wp_enqueue_style('bootstrap-icons', 'https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css', array(), null);
 
-    // Enqueue the custom navbar CSS
     wp_enqueue_style('navbar-style', get_template_directory_uri() . '/css/nav/nav.css', array(), '1.0', 'all');
 
     wp_enqueue_style('landing-page-style', get_template_directory_uri() . '/css/landing_page/landing_page.css', array(), '1.0', 'all');
@@ -166,10 +131,8 @@ add_action('wp_enqueue_scripts', 'my_custom_theme_scripts');
 
 
 
-// Register the Navigation Menu
 function my_custom_register_menus()
 {
-    // Register Primary Navigation Menu
     register_nav_menus(array(
         'primary' => __('Primary Menu', 'my-custom-theme'),
     ));

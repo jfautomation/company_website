@@ -1,11 +1,9 @@
 <?php
-$hero_bg_image = get_field('hero_background_image'); // make sure this field exists in ACF
-$siemens_authorized_distributer = get_field('siemens_authorized_distributer'); // make sure this field exists in ACF
+$hero_bg_image = get_field('hero_background_image'); 
 ?>
 
 
 <?php
-// products data organized properly
 $products = array(
   array(
       'image'   => get_field('product_shot_1'),
@@ -44,12 +42,6 @@ array(
                 <div class="col-lg-6 col-md-12">
                     <div class="h-100 d-flex flex-column justify-content-center align-items-center">
                         <div class="d-flex flex-column align-items-start">
-                            <!-- <h5 class="fw-semibold">JF Automation</h5> -->
-
-
-
-
-
                             <h1 class="hero-header text-start text-gradient-blue fw-semibold w-75 mt-1">
                                 <?php echo esc_html( get_field('hero_header_text') ); ?>
                             </h1>
@@ -65,7 +57,7 @@ array(
                 </div>
                 <?php
 
-// Fetch the product images
+
 $carousel_images = array_filter(array(
   get_field('product_shot_1'),
   get_field('product_shot_2'),
@@ -73,13 +65,11 @@ $carousel_images = array_filter(array(
   get_field('product_shot_4'),
 ));
 
-// Check if there are images
+
 if (!empty($carousel_images)) :
 ?>
                 <div class="col-lg-6 col-md-12">
                     <div class="h-100 w-100 d-flex flex-column justify-content-center align-items-center mt-5">
-
-                        <!-- <div id="product-images-carousel" class="carousel w-75 slide" data-bs-ride="carousel"> -->
                         <div id="product-images-carousel" class="carousel slide">
 
                             <div class="carousel-inner">
@@ -101,7 +91,7 @@ if (!empty($carousel_images)) :
                                                     <i class="bi bi-arrow-right-short"></i>
                                                 </div>
                                             </h6>
-                                            <!-- <?php echo do_shortcode('[rounded_pill_button link="' . esc_url($product['link']) . '" variant="white-rounded-btn" icon="fa-solid fa-arrow-right"]' . esc_html($product['product name']) . '[/rounded_pill_button]'); ?> -->
+                                            <?php echo do_shortcode('[rounded_pill_button link="' . esc_url($product['link']) . '" variant="white-rounded-btn" icon="fa-solid fa-arrow-right"]' . esc_html($product['product name']) . '[/rounded_pill_button]'); ?>
 
                                             <h4 class="fw-semibold">$<?php echo esc_html($product['price']); ?></h4>
                                         </div>
@@ -112,7 +102,7 @@ if (!empty($carousel_images)) :
 
 
 
-                            <!-- Carousel Controls -->
+
                             <div class="mt-5 pt-2">
                                 <?php render_custom_carousel_indicators('product-images-carousel', $products); ?>
                             </div>

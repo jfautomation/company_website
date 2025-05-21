@@ -1,7 +1,7 @@
 <style>
 .custom-carousel-container {
     overflow: hidden;
-    padding: 2rem 0;
+    padding: 1rem 0;
 }
 
 .custom-carousel-track {
@@ -40,6 +40,15 @@
     height: 100%;
     object-fit: cover;
     border-radius: inherit;
+}
+
+.indicator-container {
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -102,9 +111,7 @@ $products = array_filter($products, function($product) {
 
         <?php foreach ($products as $index => $product): ?>
         <?php if ($index % 2 === 0): ?>
-        <!-- EVEN INDEX CARD TEMPLATE (e.g., white bg, one layout) -->
-        <!-- /// change class name of custom carousel card, add 'even' -->
-        <!-- /// change this styling to odd  -->
+
         <div class="custom-carousel-card custom-rounded p-3 me-3 d-flex flex-column text-dark text-center">
             <div class="custom-carousel-card-inner-wrapper custom-rounded">
                 <div class="row h-100">
@@ -118,7 +125,7 @@ $products = array_filter($products, function($product) {
                                 <p class="product-card-description text-grey">
                                     <?php echo esc_html($product['description']); ?></p>
                                 <div class="w-100 d-flex justify-content-between">
-                                    <div class="d-flex gap-2 align-items-center">
+                                    <div class="d-flex gap-2 align-items-center pb-3">
 
 
                                         <h4 class="mb-0 fw-semibold">$<?php echo esc_html($product['price']); ?></h4>
@@ -130,7 +137,7 @@ $sale_price = $product['sale_price'];
 ?>
 
                                         <?php if (!empty($sale_price)): ?>
-                                        <span class="fw-semibold fs-6 text-red text-decoration-line-through">
+                                        <span class="fw-semibold fs-6 text-red text-decoration-line-through mt-1">
                                             $<?php echo esc_html($sale_price); ?>
                                         </span>
                                         <?php endif; ?>
@@ -159,20 +166,20 @@ $sale_price = $product['sale_price'];
             <div class="custom-carousel-card-inner-wrapper custom-rounded">
                 <div class="row h-100">
                     <div class="col card-col black-bg text-light p-3">
-                        <div class="w-100 d-flex flex-column justify-content-between gap-3">
+                        <div class="w-100 d-flex flex-column justify-content-between h-100 gap-3">
                             <div>
                                 <div class="mt-2">
                                     <small class="text-light"><?php echo esc_html($product['span']); ?></small>
                                 </div>
-                                <h4 class="text-light fw-semibold mt-2"><?php echo esc_html($product['name']); ?></h4>
+                                <h5 class="text-light fw-bold mt-2"><?php echo esc_html($product['name']); ?></h5>
 
-                                <div class="product-card-transparent-image-wrapper">
+                                <div class="product-card-transparent-image-wrapper mt-2">
                                     <img class="product-card-transparent-image"
                                         src="<?php echo esc_url($product['image']); ?>" />
                                 </div>
 
                             </div>
-                            <div class="btn-container d-flex justify-content-center align-items-center w-100 mt-1 pb-3">
+                            <div class="btn-container d-flex justify-content-center align-items-center w-100 mt-1 pb-2">
                                 <?php echo do_shortcode('[button variant="primary" link="' . esc_url( get_field('link_to_item') ) . '"]$7564[/button]'); ?>
                             </div>
 
@@ -191,67 +198,17 @@ $sale_price = $product['sale_price'];
     </div>
 </div>
 
+<div class="w-100 d-flex justify-content-end gap-2"><span class="indicator-container bg-light"><i
+            class="bi bi-chevron-left"></i></span><span class="indicator-container bg-light"><i
+            class="bi bi-chevron-right"></i><span></div>
 
 
 
 
-<!-- <div class="custom-carousel-container position-relative">
-    <div class="custom-carousel-track" id="customCarouselTrack">
-        <?php foreach ($products as $product): ?>
-        <div class="custom-carousel-card custom-rounded p-2 me-3 d-flex flex-column text-dark text-center">
-            <div class="custom-carousel-card-inner-wrapper custom-rounded">
-                <div class="row h-100">
-                    <div class="col-4">
-                        <div class="h-100 d-flex align-items-center justify-content-center">
-                            <img class="w-100" src="<?php echo esc_url($product['image']); ?>" />
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="d-flex flex-column pt-2 px-3 pb-4 h-100">
-                            <div class="d-flex justify-content-end h-100">
-                                <?php
-$price = floatval($product['price']);
-$sale_price = floatval($product['sale_price']);
-$discount = 0;
-
-if (!empty($sale_price) && $price > 0) {
-    $raw_discount = (($price - $sale_price) / $price) * 100;
-    $discount = ceil($raw_discount / 25) * 25; 
-}
-?>
-
-                                <span
-                                    class="badge rounded-pill bg-red px-2 <?php echo !empty($sale_price) ? 'bg-red text-white' : 'invisible'; ?>">
-                                    <?php echo !empty($sale_price) ? $discount . '%' : ''; ?>
-
-                                </span>
-                            </div>
-                            <div class="d-flex flex-column align-items-start">
-                                <h5 class="fw-semibold"><?php echo esc_html($product['name']); ?></h5>
-                                <h3 class="fw-semibold">$<?php echo esc_html($product['price']); ?></h3>
-                                <hr class="w-100" />
-                                <p class="text-grey text-start">
-                                    <?php echo esc_html($product['description']); ?></p>
-                                <div class="mt-3">
-                                    <?php echo do_shortcode('[button variant="primary" link="' . esc_url( get_field('link_to_item') ) . '"]Visit[/button]'); ?>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <?php endforeach; ?>
-    </div>
-</div> -->
-
-<div class="custom-carousel-indicators mt-3 d-flex align-items-center justify-content-center gap-3 pb-5">
-    <i id="carouselPrev" class="carousel-arrow indicator-chevron fas fa-chevron-left me-2">
-    </i>
-    <?php foreach (array_keys($products) as $index): ?>
-    <div class="custom-slider-carousel-dot <?php echo $index === 0 ? 'active' : ''; ?>"
-        data-slide="<?php echo $index; ?>"></div>
-    <?php endforeach; ?>
-    <i id="carouselNext" class="carousel-arrow indicator-chevron fas fa-chevron-right ms-2">
-    </i>
+<?php foreach (array_keys($products) as $index): ?>
+<div class="custom-slider-carousel-dot <?php echo $index === 0 ? 'active' : ''; ?>" data-slide="<?php echo $index; ?>">
+</div>
+<?php endforeach; ?>
+<i id="carouselNext" class="carousel-arrow indicator-chevron fas fa-chevron-right ms-2">
+</i>
 </div>

@@ -142,13 +142,13 @@ $card_variants = [
 ?>
         <div class="row mt-3">
             <?php
-    // Loop through reviews, two cards per column
+    
     for ($i = 0; $i < count($reviews); $i += 2):
-        // Get the first and second reviews for the current column (per row)
+        
         $review1 = $reviews[$i];
-        $review2 = isset($reviews[$i + 1]) ? $reviews[$i + 1] : null; // Handle case when there is an odd number of reviews
+        $review2 = isset($reviews[$i + 1]) ? $reviews[$i + 1] : null; 
 
-        // Generate avatar URLs
+       
         $avatar1 = 'https://ui-avatars.com/api/?name=' . urlencode($review1['name']) . '&background=random&size=64';
         $avatar2 = $review2 ? 'https://ui-avatars.com/api/?name=' . urlencode($review2['name']) . '&background=random&size=64' : null;
     ?>
@@ -175,7 +175,7 @@ $card_variants = [
                 </div>
 
                 <?php if ($review2): ?>
-                <!-- Second review card in the same column -->
+               
                 <div
                     class="review-card custom-rounded pt-3 pb-4 px-4 mb-4 <?php echo esc_attr($card_variants[($i + 1) % count($card_variants)]); ?>">
                     <span><?php echo render_stars($review1['stars']); ?></span>

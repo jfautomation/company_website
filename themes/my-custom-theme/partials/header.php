@@ -8,7 +8,6 @@
 
     <title><?php bloginfo( 'name' ); ?> - <?php bloginfo( 'description' ); ?></title>
     <?php wp_head(); ?>
-    <!-- Required for WordPress to function properly -->
 </head>
 
 <body <?php body_class(); ?>>
@@ -28,17 +27,14 @@
                     <ul class="navbar-nav me-auto mb-lg-0 ms-lg-5 d-flex gap-lg-5">
 
                         <?php
-                    // Fetch and loop through the menu items from WordPress
                     $locations = get_nav_menu_locations();
-                    $menu_id = $locations['primary'] ?? null; // Get the primary menu ID
+                    $menu_id = $locations['primary'] ?? null; 
 
                     if ($menu_id) :
-                        $menu_items = wp_get_nav_menu_items($menu_id); // Get menu items
+                        $menu_items = wp_get_nav_menu_items($menu_id); 
                         if ( ! empty( $menu_items ) ) :
                             foreach ( $menu_items as $menu_item ) :
-                                // Check if the menu item is 'Contact' and don't output it yet
                                 if (strtolower($menu_item->title) !== 'contact') :
-                                    // Add active class based on current page
                                     $is_active = (esc_url($menu_item->url) === home_url($_SERVER['REQUEST_URI'])) ? 'active' : '';
                     ?>
                         <li class="nav-item">
@@ -48,7 +44,7 @@
                             </a>
                         </li>
                         <?php
-                                endif; // End 'Contact' check
+                                endif; 
                             endforeach;
                         else :
                     ?>
@@ -64,7 +60,6 @@
                         <?php
                     if ($menu_id) :
                         foreach ( $menu_items as $menu_item ) :
-                            // Only output the 'Contact' link
                             if (strtolower($menu_item->title) === 'contact') :
                     ?>
                         <li class="nav-item">
@@ -84,11 +79,11 @@
                     <div class="d-flex align-items-center gap-3">
                         <?php
 
-// Using an empty link for now, with an arrow icon
+
 echo do_shortcode('[rounded_pill_button link="#" variant="blue-rounded-btn" icon="fa-solid fa-arrow-right"]Shop now[/rounded_pill_button]'); ?>
 
 
-                        <!-- <?php echo do_shortcode('[button variant="outline-blue" size="sm" link="' . esc_url( get_field('shop_button_link')  ) . '"]' . esc_html( get_field('shop_button_text') ) . '[/button]'); ?> -->
+                        <?php echo do_shortcode('[button variant="outline-blue" size="sm" link="' . esc_url( get_field('shop_button_link')  ) . '"]' . esc_html( get_field('shop_button_text') ) . '[/button]'); ?> 
                         <i class="bi fs-5 <?php echo esc_attr(get_field('social_icon_1')); ?>"></i>
                         <i class="bi fs-5 <?php echo esc_attr(get_field('social_icon_2')); ?>"></i>
 

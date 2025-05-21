@@ -9,18 +9,12 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.nav-item {
-  /* text-transform: uppercase; */
-}
-
 .nav-item a {
   position: relative;
   font-size: 1.1rem !important;
   text-decoration: none;
   padding-left: unset !important;
   padding-right: unset !important;
-
-  /* Shared styles for gradient background */
   background: linear-gradient(
     to right,
     var(--color-gradient-light-blue),
@@ -35,13 +29,11 @@
   transition: color 0.3s ease;
 }
 
-/* HOVER and ACTIVE STATES - gradient text */
 .nav-item a:hover,
 .navbar .nav-link.active {
   color: transparent;
 }
 
-/* UNDERLINE BASE (initial state) */
 .nav-link::after {
   content: "";
   position: absolute;
@@ -58,24 +50,19 @@
   transition: all 0.3s ease;
 }
 
-/* SHOW UNDERLINE ON HOVER OR ACTIVE */
 .nav-link:hover::after,
 .nav-link.active::after {
   width: 100%;
 }
 
-
-
-/* Hide the shop icon when the screen size is smaller than 992px (before the hamburger appears) */
 @media (max-width: 991px) {
   .shop-icon-link {
     display: none;
   }
 }
 
-/* Show the shop icon on large screens and above (992px and larger) */
 @media (min-width: 992px) {
   .shop-icon-link {
-    display: inline-block; /* Or you can use flex, if you prefer */
+    display: inline-block;
   }
 }

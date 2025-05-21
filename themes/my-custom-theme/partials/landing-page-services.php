@@ -20,17 +20,17 @@
     get_template_part('partials/section-header', null, $args);
     ?>
 
-        <!-- <div class="mt-3 paragraph-container">
-            <?php
+
+        <?php
 get_template_part('partials/paragraph', null, array(
     'paragraph_text' => get_field('services_paragraph')
 ));
 ?>
-        </div> -->
+    </div>
 
-        <?php
+    <?php
 
-            // Service data organized properly
+            
 $services = array(
   array(
       'icon'   => get_field('service_icon_1'),
@@ -70,25 +70,25 @@ $services = array(
   ),
 );
 
-// Filter out empty services
+
 $services = array_filter($services, function($service) {
-  return !empty($service['header']); // Only keep services with a header
+  return !empty($service['header']); 
 });
 
 ?>
-        <div class="row gx-5 pt-1 mt-3">
-            <div class="col-9">
-                <div class="h-100 d-flex flex-column justify-content-between">
-                    <p class="pe-5">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                        the industry's standard dummy text ever since the 1500s the industry's standard dummy
-                        text ever
-                        since.
-                    </p>
+    <div class="row gx-5 pt-1 mt-3">
+        <div class="col-9">
+            <div class="h-100 d-flex flex-column justify-content-between">
+                <p class="pe-5">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                    the industry's standard dummy text ever since the 1500s the industry's standard dummy
+                    text ever
+                    since.
+                </p>
 
-                    <div class="row mt-3">
-                        <?php foreach ($services as $service) : ?>
-                        <?php get_template_part('partials/service-card', null, array(
+                <div class="row mt-3">
+                    <?php foreach ($services as $service) : ?>
+                    <?php get_template_part('partials/service-card', null, array(
         'icon' => $service['icon'],
         'service_heading' => $service['header'],
         'link_to_service_page' => $service['link'],
@@ -97,25 +97,25 @@ $services = array_filter($services, function($service) {
         'image' => $service['image'],
         'link' => $service['link']
     )); ?>
-                        <?php endforeach; ?>
-                    </div>
-
-
+                    <?php endforeach; ?>
                 </div>
+
+
             </div>
-            <div class="col">
-                <div class="d-flex flex-column justify-content-between">
-                    <p class="text-grey small-services-paragraph"> Lorem Ipsum is simply dummy text of the printing and
-                        typesetting industry. Lorem Ipsum has been
-                        the industry's standard dummy text ever since the 1500s</p>
-                </div>
-                <div class="d-flex align-items-center mt-4">
-                    <?php echo do_shortcode('[button variant="primary" link="#"]Get a quote[/button]'); ?>
-
-                </div>
-            </div>
-
         </div>
+        <div class="col">
+            <div class="d-flex flex-column justify-content-between">
+                <p class="text-grey small-services-paragraph"> Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry. Lorem Ipsum has been
+                    the industry's standard dummy text ever since the 1500s</p>
+            </div>
+            <div class="d-flex align-items-center mt-4">
+                <?php echo do_shortcode('[button variant="primary" link="#"]Get a quote[/button]'); ?>
+
+            </div>
+        </div>
+
+    </div>
 
     </div>
 

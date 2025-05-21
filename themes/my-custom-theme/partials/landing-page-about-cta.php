@@ -12,13 +12,8 @@
 
                 <div class="col lg-7">
                     <div class="h-100 d-flex flex-column align-items-start justify-content-center">
-
                         <h2 class=""><?php echo esc_html(get_field('landing_page_cta_header')); ?></h2>
                         <p class="mt-1"><?php echo esc_html(get_field('landing_page_cta_paragraph')); ?></p>
-
-
-
-
                         <div class="mt-2">
                             <?php echo do_shortcode('[button variant="black" size="md" link="' . esc_url( get_field('landing_page_cta_button_link') ) . '"]' . esc_html( get_field('landing_page_cta_button_text') ) . '[/button]'); ?>
                         </div>
@@ -33,7 +28,6 @@
                                     alt="Banner Image" class="img-fluid custom-rounded"></div>
                             <div class="rounded"> <img src="<?php echo esc_url(get_field('landing_page_cta_image')); ?>"
                                     alt="Banner Image" class="img-fluid custom-rounded"></div>
-
                         </div>
                         <div class="d-flex w-100 justify-content-between mt-3">
                             <small>Some text here to show what we do</small>

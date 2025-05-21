@@ -42,22 +42,17 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 document.addEventListener('DOMContentLoaded', function() {
-    // Select all carousels (you can add a class like .custom-carousel for better targeting)
     const carousels = document.querySelectorAll('.carousel');
 
     carousels.forEach(function(carousel) {
-        // Get the corresponding indicators for each carousel
-        const carouselId = carousel.id; // Dynamic ID for each carousel
+        const carouselId = carousel.id;
         const indicators = carousel.querySelectorAll('.custom-indicator');
 
-        // Event listener for when the carousel slides to a new slide
-        carousel.addEventListener('slid.bs.carousel', function(event) {
-            // Remove 'active' class from all indicators
-            indicators.forEach(indicator => indicator.classList.remove('active'));
 
-            // Add 'active' class to the indicator corresponding to the active slide
+        carousel.addEventListener('slid.bs.carousel', function(event) {
+            indicators.forEach(indicator => indicator.classList.remove('active'));
             const activeIndicator = indicators[event
-                .to]; // event.to is the index of the active slide
+                .to];
             if (activeIndicator) {
                 activeIndicator.classList.add('active');
             }
@@ -91,7 +86,7 @@ function goToSlide(index) {
     currentIndex = index;
 }
 
-// Update your existing dot click logic to also set currentIndex
+
 dots.forEach((dot, i) => {
     dot.addEventListener('click', () => {
         goToSlide(i);
@@ -105,7 +100,6 @@ prevBtn.addEventListener('click', () => {
 nextBtn.addEventListener('click', () => {
     if (currentIndex < dots.length - 1) goToSlide(currentIndex + 1);
 });
-
         </script>
         </body>
 

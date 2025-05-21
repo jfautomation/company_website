@@ -5,7 +5,7 @@
 </style>
 
 
-<section class="shop-section mt-5">
+<section class="shop-section mt-5 pb-5">
     <div class="container">
         <?php
     $args = array(

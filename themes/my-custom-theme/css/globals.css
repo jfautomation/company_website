@@ -14,7 +14,6 @@
   --color-light-grey-bg: #eeeeee;
   --color-red: #ff4a3d;
   --color-yellow-star: #ffc300;
-  --color-dark-grey-bg: #383737;
   --font-base: "Titillium Web";
   --blue-gradient-background: linear-gradient(
     to right,
@@ -78,15 +77,13 @@ hr {
   border-radius: var(--rounded-border) !important;
 }
 
-/* Text color utilities */
+
 
 .text-blue {
   color: var(--color-text-primary);
 }
 
-
 .text-grey {
-  /* color: var(--color-grey-text); */
   color: var(--color-grey-text) !important;
 }
 
@@ -165,12 +162,10 @@ hr {
   background-color: var(--color-dark-grey-bg);
 }
 
-/* Border color */
 .border-light-grey {
   border: 1px solid var(--color-light-grey-border);
 }
 
-/* Carousel indicators */
 .indicator-grey {
   background-color: var(--color-light-grey-carousel-indicators);
 }
@@ -327,7 +322,6 @@ hr {
   transition: all 0.25s ease;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2),
     -5px -5px 15px rgba(255, 255, 255, 0.05);
-  /* font-size: 1.1rem; */
   font-weight: 700;
 }
 
@@ -347,9 +341,6 @@ hr {
 .btn-outline-black {
   background-color: #212529;
   color: white;
-  /* background-color: transparent;
-  border: 2px solid #333333;
-  color: #333333; */
   transition: all 0.25s ease;
   font-weight: 500;
   min-width: unset !important;
@@ -360,15 +351,8 @@ hr {
 }
 
 .btn-outline-black:hover {
-  /* box-shadow: inset 5px 5px 15px rgba(0, 0, 0, 0.2),
-    inset -5px -5px 15px rgba(255, 255, 255, 0.05); */
   transform: scale(1);
 }
-
-/* .btn-secondary:hover {
-  background-color: #5a6268;
-  color: white;
-} */
 
 /* //// rounded btn  */
 
@@ -439,7 +423,6 @@ hr {
   margin: 0 5px;
 }
 
-/* Default styling for the custom indicators */
 .custom-indicator,
 .custom-slider-carousel-dot {
   width: 12px;
