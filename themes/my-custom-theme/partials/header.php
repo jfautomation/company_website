@@ -2,11 +2,11 @@
 <html <?php language_attributes(); ?>>
 
 <head>
-    <meta charset="<?php bloginfo( 'charset' ); ?>">
+    <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 
-    <title><?php bloginfo( 'name' ); ?> - <?php bloginfo( 'description' ); ?></title>
+    <title><?php bloginfo('name'); ?> - <?php bloginfo('description'); ?></title>
     <?php wp_head(); ?>
 </head>
 
@@ -25,71 +25,59 @@
 
                 <div class="collapse navbar-collapse d-flex justify-content-center" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-lg-0 ms-lg-5 d-flex gap-lg-5">
-
                         <?php
-                    $locations = get_nav_menu_locations();
-                    $menu_id = $locations['primary'] ?? null; 
+                        $locations = get_nav_menu_locations();
+                        $menu_id = $locations['primary'] ?? null;
 
-                    if ($menu_id) :
-                        $menu_items = wp_get_nav_menu_items($menu_id); 
-                        if ( ! empty( $menu_items ) ) :
-                            foreach ( $menu_items as $menu_item ) :
-                                if (strtolower($menu_item->title) !== 'contact') :
-                                    $is_active = (esc_url($menu_item->url) === home_url($_SERVER['REQUEST_URI'])) ? 'active' : '';
-                    ?>
-                        <li class="nav-item">
-                            <a class="nav-link <?php echo $is_active; ?>"
-                                href="<?php echo esc_url( $menu_item->url ); ?>">
-                                <?php echo esc_html( $menu_item->title ); ?>
-                            </a>
-                        </li>
+                        if ($menu_id) :
+                            $menu_items = wp_get_nav_menu_items($menu_id);
+                            if (!empty($menu_items)) :
+                                foreach ($menu_items as $menu_item) :
+                                    if (strtolower($menu_item->title) !== 'contact') :
+                                        $is_active = (esc_url($menu_item->url) === home_url($_SERVER['REQUEST_URI'])) ? 'active' : '';
+                        ?>
+                                        <li class="nav-item">
+                                            <a class="nav-link <?php echo $is_active; ?>" href="<?php echo esc_url($menu_item->url); ?>">
+                                                <?php echo esc_html($menu_item->title); ?>
+                                            </a>
+                                        </li>
                         <?php
-                                endif; 
-                            endforeach;
-                        else :
-                    ?>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">No Menu Items Found</a>
-                        </li>
-                        <?php
-                        endif;
-                    endif;
-                    ?>
-
-
-                        <?php
-                    if ($menu_id) :
-                        foreach ( $menu_items as $menu_item ) :
-                            if (strtolower($menu_item->title) === 'contact') :
-                    ?>
-                        <li class="nav-item">
-                            <a class="nav-link" href="<?php echo esc_url( $menu_item->url ); ?>">
-                                <?php echo esc_html( $menu_item->title ); ?>
-                            </a>
-                        </li>
+                                    endif;
+                                endforeach;
+                            else :
+                        ?>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">No Menu Items Found</a>
+                                </li>
                         <?php
                             endif;
-                        endforeach;
-                    endif;
-                    ?>
+                        endif;
+                        ?>
+
+                        <?php
+                        if ($menu_id) :
+                            foreach ($menu_items as $menu_item) :
+                                if (strtolower($menu_item->title) === 'contact') :
+                        ?>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="<?php echo esc_url($menu_item->url); ?>">
+                                            <?php echo esc_html($menu_item->title); ?>
+                                        </a>
+                                    </li>
+                        <?php
+                                endif;
+                            endforeach;
+                        endif;
+                        ?>
                     </ul>
 
-
-
                     <div class="d-flex align-items-center gap-3">
-                        <?php
+                        <?php echo do_shortcode('[rounded_pill_button link="#" variant="blue-rounded-btn" icon="fa-solid fa-arrow-right"]Shop now[/rounded_pill_button]'); ?>
 
-
-echo do_shortcode('[rounded_pill_button link="#" variant="blue-rounded-btn" icon="fa-solid fa-arrow-right"]Shop now[/rounded_pill_button]'); ?>
-
-
-                        <?php echo do_shortcode('[button variant="outline-blue" size="sm" link="' . esc_url( get_field('shop_button_link')  ) . '"]' . esc_html( get_field('shop_button_text') ) . '[/button]'); ?> 
                         <i class="bi fs-5 <?php echo esc_attr(get_field('social_icon_1')); ?>"></i>
                         <i class="bi fs-5 <?php echo esc_attr(get_field('social_icon_2')); ?>"></i>
-
-
-                        <div>
-                        </div>
                     </div>
+                </div> <!-- /.collapse -->
+            </div> <!-- /.container -->
         </nav>
     </header>

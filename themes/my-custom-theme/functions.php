@@ -81,28 +81,21 @@ add_shortcode('rounded_pill_button', 'rounded_pill_icon_button_shortcode');
 function render_custom_carousel_indicators($carousel_id, $images) {
     if (empty($images)) return; ?>
 
-<div class="custom-carousel-container d-flex align-items-center justify-content-center">
+<div class="w-100 d-flex justify-content-end gap-2">
+    <!-- Previous Arrow -->
+    <span role="button" data-bs-target="#<?php echo esc_attr($carousel_id); ?>" data-bs-slide="prev"
+        aria-label="Previous slide" class="indicator-container bg-light cursor-pointer">
+        <i class="indicator-chevron fas fa-chevron-left">
+        </i>
+    </span>
 
-    <i class="indicator-chevron fas fa-chevron-left me-4" data-bs-target="#<?php echo esc_attr($carousel_id); ?>"
-        data-bs-slide="prev">
-    </i>
-
-    <div class="custom-carousel-indicators" data-target="#<?php echo esc_attr($carousel_id); ?>">
-        <?php foreach ($images as $index => $image) : ?>
-        <button class="custom-indicator <?php echo ($index === 0) ? 'active' : ''; ?>"
-            data-bs-target="#<?php echo esc_attr($carousel_id); ?>" data-bs-slide-to="<?php echo $index; ?>">
-
-
-        </button>
-        <?php endforeach; ?>
-    </div>
-
-    <i class="indicator-chevron fas fa-chevron-right ms-4" data-bs-target="#<?php echo esc_attr($carousel_id); ?>"
-        data-bs-slide="next">
-    </i>
-
+    <!-- Next Arrow -->
+    <span role="button" class="indicator-container bg-light cursor-pointer"
+        data-bs-target="#<?php echo esc_attr($carousel_id); ?>" data-bs-slide="next" aria-label="Next slide">
+        <i class="indicator-chevron fas fa-chevron-right">
+        </i>
+    </span>
 </div>
-
 
 <?php }
 

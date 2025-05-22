@@ -10,7 +10,6 @@ document.addEventListener("DOMContentLoaded", function() {
     const navbar = document.getElementById('main-navbar') || document.querySelector('.navbar');
     const hero = document.querySelector('.hero');
 
-    // Function to set hero height based on viewport - navbar
     function setHeroHeight() {
         const navbarHeight = navbar.offsetHeight;
         const viewportHeight = window.innerHeight;
@@ -22,11 +21,9 @@ document.addEventListener("DOMContentLoaded", function() {
         console.log(heroHeight, 'heroHeight')
     }
 
-    // Set the hero height initially and on resize
     setHeroHeight();
     window.addEventListener('resize', setHeroHeight);
 
-    // Scroll logic for toggling 'scrolled' class
     window.addEventListener('scroll', () => {
         // const heroHeight = hero.offsetHeight; 
         const heroHeight = 300;
@@ -41,65 +38,37 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
+
 document.addEventListener('DOMContentLoaded', function() {
-    const carousels = document.querySelectorAll('.carousel');
+    const track = document.getElementById('customCarouselTrack');
+    const slides = track.children;
+    const prevBtn = document.getElementById('carouselPrev');
+    const nextBtn = document.getElementById('carouselNext');
 
-    carousels.forEach(function(carousel) {
-        const carouselId = carousel.id;
-        const indicators = carousel.querySelectorAll('.custom-indicator');
+    let currentIndex = 0;
+    const maxIndex = slides.length - 1;
 
-
-        carousel.addEventListener('slid.bs.carousel', function(event) {
-            indicators.forEach(indicator => indicator.classList.remove('active'));
-            const activeIndicator = indicators[event
-                .to];
-            if (activeIndicator) {
-                activeIndicator.classList.add('active');
-            }
-        });
-    });
-});
-const track = document.getElementById('customCarouselTrack');
-const dots = document.querySelectorAll('.custom-slider-carousel-dot');
-
-dots.forEach(dot => {
-    dot.addEventListener('click', () => {
-        const index = parseInt(dot.dataset.slide);
-        const slideWidth = track.children[0].offsetWidth;
+    function goToSlide(index) {
+        if (index < 0) index = 0;
+        if (index > maxIndex) index = maxIndex;
+        const slideWidth = slides[0].offsetWidth;
         track.style.transform = `translateX(-${index * slideWidth}px)`;
+        currentIndex = index;
+    }
 
-        dots.forEach(d => d.classList.remove('active'));
-        dot.classList.add('active');
+    prevBtn.addEventListener('click', () => {
+        goToSlide(currentIndex - 1);
+    });
+
+    nextBtn.addEventListener('click', () => {
+        goToSlide(currentIndex + 1);
     });
 });
 
-const prevBtn = document.getElementById('carouselPrev');
-const nextBtn = document.getElementById('carouselNext');
-
-let currentIndex = 0;
-
-function goToSlide(index) {
-    const slideWidth = track.children[0].offsetWidth;
-    track.style.transform = `translateX(-${index * slideWidth}px)`;
-    dots.forEach(dot => dot.classList.remove('active'));
-    dots[index].classList.add('active');
-    currentIndex = index;
-}
 
 
-dots.forEach((dot, i) => {
-    dot.addEventListener('click', () => {
-        goToSlide(i);
-    });
-});
+///// 
 
-prevBtn.addEventListener('click', () => {
-    if (currentIndex > 0) goToSlide(currentIndex - 1);
-});
-
-nextBtn.addEventListener('click', () => {
-    if (currentIndex < dots.length - 1) goToSlide(currentIndex + 1);
-});
         </script>
         </body>
 

@@ -42,16 +42,6 @@
     border-radius: inherit;
 }
 
-.indicator-container {
-    height: 1.5rem;
-    width: 1.5rem;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
 .btn-container {
     width: fit-content;
 }
@@ -64,25 +54,6 @@
     font-size: 0.85rem !important;
 }
 
-.custom-carousel-indicators {
-    display: flex;
-    justify-content: center;
-    gap: 0.5rem;
-}
-
-.carousel-dot {
-    width: 12px;
-    height: 12px;
-    background: #fff;
-    border-radius: 50%;
-    border: 2px solid #000;
-    cursor: pointer;
-    opacity: 0.5;
-}
-
-.carousel-dot.active {
-    opacity: 1;
-}
 
 .arrow-btn {
     height: 1.75rem;
@@ -126,11 +97,7 @@ $products = array_filter($products, function($product) {
                                     <?php echo esc_html($product['description']); ?></p>
                                 <div class="w-100 d-flex justify-content-between">
                                     <div class="d-flex gap-2 align-items-center pb-3">
-
-
                                         <h4 class="mb-0 fw-semibold">$<?php echo esc_html($product['price']); ?></h4>
-
-
                                         <?php
 $price = floatval($product['price']);
 $sale_price = $product['sale_price'];
@@ -141,22 +108,13 @@ $sale_price = $product['sale_price'];
                                             $<?php echo esc_html($sale_price); ?>
                                         </span>
                                         <?php endif; ?>
-
-
-
                                     </div>
                                     <span
                                         class="d-flex justify-content-center align-items-center arrow-btn bg-gradient-blue text-light"><i
                                             class="bi bi-arrow-right"></i></span>
                                 </div>
-
                             </div>
-
                         </div>
-
-
-
-
                     </div>
                 </div>
             </div>
@@ -172,22 +130,15 @@ $sale_price = $product['sale_price'];
                                     <small class="text-light"><?php echo esc_html($product['span']); ?></small>
                                 </div>
                                 <h5 class="text-light fw-bold mt-2"><?php echo esc_html($product['name']); ?></h5>
-
                                 <div class="product-card-transparent-image-wrapper mt-2">
                                     <img class="product-card-transparent-image"
                                         src="<?php echo esc_url($product['image']); ?>" />
                                 </div>
-
                             </div>
                             <div class="btn-container d-flex justify-content-center align-items-center w-100 mt-1 pb-2">
                                 <?php echo do_shortcode('[button variant="primary" link="' . esc_url( get_field('link_to_item') ) . '"]$7564[/button]'); ?>
                             </div>
-
                         </div>
-
-
-
-
                     </div>
                 </div>
             </div>
@@ -198,17 +149,17 @@ $sale_price = $product['sale_price'];
     </div>
 </div>
 
-<div class="w-100 d-flex justify-content-end gap-2"><span class="indicator-container bg-light"><i
-            class="bi bi-chevron-left"></i></span><span class="indicator-container bg-light"><i
-            class="bi bi-chevron-right"></i><span></div>
 
 
 
 
-<?php foreach (array_keys($products) as $index): ?>
-<div class="custom-slider-carousel-dot <?php echo $index === 0 ? 'active' : ''; ?>" data-slide="<?php echo $index; ?>">
+<div class="w-100 d-flex justify-content-end gap-2">
+    <span id="carouselPrev" class="indicator-container bg-light cursor-pointer">
+        <i class="bi bi-chevron-left"></i>
+    </span>
+    <span id="carouselNext" class="indicator-container bg-light cursor-pointer">
+        <i class="bi bi-chevron-right"></i>
+    </span>
 </div>
-<?php endforeach; ?>
-<i id="carouselNext" class="carousel-arrow indicator-chevron fas fa-chevron-right ms-2">
-</i>
+
 </div>
