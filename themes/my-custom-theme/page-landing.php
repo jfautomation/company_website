@@ -28,6 +28,9 @@
     
     <!-- //// visit online shop CTA -->
     <?php get_template_part('partials/landing-page-online-shop-cta')?>
+     <!-- //// visit online shop CTA -->
+    <?php get_template_part('partials/landing-page-blog')?>
+    
     <!-- //// reviews -->
     <?php get_template_part('partials/landing-page-reviews')?>
     <!-- //// brands we repair -->
