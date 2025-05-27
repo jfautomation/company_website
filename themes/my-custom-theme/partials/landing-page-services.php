@@ -20,7 +20,7 @@
 
        
         ?>
-        <div class="w-75">
+        <div class="w-75 mt-2">
             <?php
         
          get_template_part('partials/paragraph', null, array(
@@ -71,7 +71,7 @@
         ?>
 
         <div class="row gx-5 pt-1 mt-3">
-            <div class="col-9">
+            <div class="col">
                 <div class="h-100 d-flex flex-column justify-content-between">
 
 
@@ -88,19 +88,6 @@
                             )); ?>
                         <?php endforeach; ?>
                     </div>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="d-flex flex-column justify-content-between">
-                    <p class="text-grey small-services-paragraph">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                        the industry's standard dummy text ever since the 1500s
-                    </p>
-                </div>
-
-                <div class="d-flex align-items-center mt-4">
-                    <?php echo do_shortcode('[button variant="primary" link="#"]Get a quote[/button]'); ?>
                 </div>
             </div>
         </div>

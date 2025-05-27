@@ -1,11 +1,6 @@
-<style>
-.shop-section {
-    background-color: #e3e3e3;
-}
-</style>
 
 
-<section class="shop-section mt-5 pb-5">
+<section class="shop-section mt-5 pb-5 light-grey-container">
     <div class="container">
         <?php
     $args = array(

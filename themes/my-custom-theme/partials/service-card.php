@@ -55,13 +55,10 @@
             </p>
         </div>
 
-        <?php if (!empty($args['link'])): ?>
-        <a href="<?php echo esc_url($args['link']); ?>"
-            class="text-blue fw-semibold text-decoration-underline d-flex align-items-center gap-1 small">
-            Learn more
-            <i class="bi bi-arrow-right"></i>
-        </a>
-        <?php endif; ?>
+<?php get_template_part('partials/learn-more-link', null, [
+    'link' => get_permalink(),  // or your custom link
+    'label' => 'Learn more'     // optional, default is 'Learn more'
+]); ?>
 
     </div>
 
