@@ -38,9 +38,14 @@
                             </div>
                             <div class="d-flex h-100 flex-column justify-content-between mt-2">
                                 <p class="card-text"><?php echo wp_trim_words(get_the_excerpt(), 20); ?></p>
-                                <a href="<?php the_permalink(); ?>" class="text-primary">Read more</a>
+                                <?php get_template_part('partials/learn-more-link', null, [
+    'link' => get_permalink(),  
+    'label' => 'Learn more'    
+]); ?>
 
                             </div>
+
+
                         </div>
 
 

@@ -46,19 +46,27 @@
     <div class="d-flex flex-column gap-3 justify-content-between h-100 border-light-grey px-3 pt-2 pb-3 custom-rounded">
         <div class="d-flex flex-column mt-1">
             <?php if (!empty($args['icon'])): ?>
+
             <i class="bi fs-4 <?php echo esc_attr($args['icon']); ?>"></i>
+
             <?php endif; ?>
 
 
-            <h5 class="fw-bold card-header mt-2"><?php echo esc_html($args['service_heading']); ?></h5>
+            <h5 class="fw-bold card-header mt-3"><?php echo esc_html($args['service_heading']); ?></h5>
             <p class="mt-3 service-description text-grey"><?php echo esc_html($args['paragraph']); ?>
             </p>
         </div>
 
-<?php get_template_part('partials/learn-more-link', null, [
-    'link' => get_permalink(),  // or your custom link
-    'label' => 'Learn more'     // optional, default is 'Learn more'
-]); ?>
+
+        <!-- <?php get_template_part('partials/learn-more-link', null, [
+    'link' => get_permalink(),  
+    'label' => 'Learn more'    
+]); ?> -->
+        <?php echo do_shortcode(
+    '[button variant="primary" size="md" link="' . esc_url(get_field('landing_page_cta_button_link')) . '"]Learn more[/button]'
+); ?>
+
+
 
     </div>
 

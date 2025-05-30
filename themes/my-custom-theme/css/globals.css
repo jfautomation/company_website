@@ -177,9 +177,6 @@ hr {
   border: 1px solid var(--color-light-grey-border);
 }
 
-.indicator-grey {
-  background-color: var(--color-light-grey-carousel-indicators);
-}
 
 /* Base button styles */
 .btn-base {
@@ -269,6 +266,9 @@ hr {
   transform: translate(-50%, -50%) rotate(0deg);
 }
 
+/* --color-gradient-light-blue: #3a7bd5;
+  --color-gradient-dark-blue: #1600a0; */
+
 .btn-outline-primary .btn-inner::before {
   background: linear-gradient(
     270deg,
@@ -298,32 +298,6 @@ hr {
   transform: translate(-50%, -50%) rotate(0deg);
 }
 
-/* //////// btn outline blue  */
-
-.btn-outline-blue .btn-inner::before {
-  background: linear-gradient(
-    270deg,
-    var(--color-gradient-light-blue),
-    var(--color-gradient-dark-blue)
-  );
-  content: "";
-  left: 50%;
-  padding-bottom: 120%;
-  position: absolute;
-  top: 50%;
-  transform: translate(-50%, -50%) rotate(180deg);
-  width: 120%;
-  transition: transform 0.3s ease, background 0.3s ease;
-}
-
-.btn-outline-blue:hover .btn-inner::before {
-  background: linear-gradient(
-    270deg,
-    var(--color-gradient-dark-blue),
-    var(--color-gradient-light-blue)
-  );
-  transform: translate(-50%, -50%) rotate(0deg);
-}
 
 /* ///// btn outline white */
 .btn-outline-white {
@@ -347,23 +321,7 @@ hr {
   color: white;
 }
 
-/* /// btn outline black */
 
-.btn-outline-black {
-  background-color: #212529;
-  color: white;
-  transition: all 0.25s ease;
-  font-weight: 500;
-  min-width: unset !important;
-
-  padding: 5px 30px !important;
-  font-size: 0.85rem !important;
-  white-space: nowrap;
-}
-
-.btn-outline-black:hover {
-  transform: scale(1);
-}
 
 /* //// rounded btn  */
 
