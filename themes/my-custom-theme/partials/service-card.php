@@ -42,7 +42,7 @@
 
 
 
-<div class="col-12 col-md-3 mb-5">
+<div class="col-12 col-md-3 mb-4">
     <div class="d-flex flex-column gap-3 justify-content-between h-100 border-light-grey px-3 pt-2 pb-3 custom-rounded">
         <div class="d-flex flex-column mt-1">
             <?php if (!empty($args['icon'])): ?>
@@ -58,13 +58,10 @@
         </div>
 
 
-        <!-- <?php get_template_part('partials/learn-more-link', null, [
-    'link' => get_permalink(),  
-    'label' => 'Learn more'    
-]); ?> -->
-        <?php echo do_shortcode(
-    '[button variant="primary" size="md" link="' . esc_url(get_field('landing_page_cta_button_link')) . '"]Learn more[/button]'
+  <?php echo do_shortcode(
+    '[button variant="primary" size="md" link="' . esc_url(get_field('landing_page_cta_button_link')) . '" icon="bi-arrow-right"]Learn more[/button]'
 ); ?>
+
 
 
 

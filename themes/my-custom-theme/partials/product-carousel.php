@@ -16,6 +16,10 @@
     border-radius: 10px;
 }
 
+.custom-carousel-card:not(:first-child) {
+  margin-inline-start: 0.8rem;
+}
+
 .custom-carousel-card-inner-wrapper {
     height: 100% !important;
 }
@@ -83,7 +87,7 @@ $products = array_filter($products, function($product) {
         <?php foreach ($products as $index => $product): ?>
         <?php if ($index % 2 === 0): ?>
 
-        <div class="custom-carousel-card custom-rounded p-3 me-3 d-flex flex-column text-dark text-center">
+        <div class="custom-carousel-card custom-rounded p-3 d-flex flex-column text-dark text-center">
             <div class="custom-carousel-card-inner-wrapper custom-rounded">
                 <div class="row h-100">
                     <div class="col p-2 card-col bg-light">
@@ -120,7 +124,7 @@ $sale_price = $product['sale_price'];
             </div>
         </div>
         <?php else: ?>
-        <div class="custom-carousel-card custom-rounded p-3 me-3 d-flex flex-column text-dark text-center">
+        <div class="custom-carousel-card custom-rounded p-3 d-flex flex-column text-dark text-center">
             <div class="custom-carousel-card-inner-wrapper custom-rounded">
                 <div class="row h-100">
                     <div class="col card-col black-bg text-light p-3">

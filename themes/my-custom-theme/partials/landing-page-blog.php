@@ -1,3 +1,4 @@
+
 <section class="blog-section pb-5">
 
     <div class="container">
@@ -25,7 +26,7 @@
 
                         <?php if (has_post_thumbnail()): ?>
                         <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>"
-                            class="card-img-top" alt="<?php echo esc_attr(get_the_title()); ?>">
+                            class="card-img-top custom-rounded" alt="<?php echo esc_attr(get_the_title()); ?>">
                         <?php endif; ?>
 
                         <div class="h-100 d-flex flex-column">

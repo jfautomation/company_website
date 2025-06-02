@@ -12,37 +12,84 @@ function my_custom_theme_setup()
 }
 add_action('after_setup_theme', 'my_custom_theme_setup');
 
-
 function custom_button_shortcode($atts, $content = null) {
-    
     $atts = shortcode_atts(
         array(
             'variant' => 'primary',
-            'link' => '#',
-            'size' => '', 
+            'link'    => '#',
+            'size'    => '',
+            'icon'    => '', // Optional Bootstrap icon class (e.g. "bi-arrow-right")
         ),
         $atts,
         'button'
     );
 
     $variant = esc_attr($atts['variant']);
-    $size = esc_attr($atts['size']);
+    $size    = esc_attr($atts['size']);
+    $link    = esc_url($atts['link']);
+    $icon    = esc_attr($atts['icon']);
 
-    
+    // Construct button classes
     $button_class = 'btn-base btn-' . $variant;
     if (!empty($size)) {
         $button_class .= ' btn-' . $size;
     }
 
-  
-if (str_starts_with($variant, 'outline-')) {
-    return '<a href="' . esc_url($atts['link']) . '" class="' . $button_class . '"><span class="btn-inner"></span>' . do_shortcode($content) . '</a>';
-}
+    // Optional icon HTML (after text)
+    $icon_html = $icon ? ' <i class="ms-2 mt-1 bi ' . $icon . '" aria-hidden="true"></i>' : '';
 
+    // Build button markup
+    $button_html = '<a href="' . $link . '" class="' . $button_class . '">';
 
-    return '<a href="' . esc_url($atts['link']) . '" class="' . $button_class . '">' . do_shortcode($content) . '</a>';
+    // Outline variant gets a special span
+    if (str_starts_with($variant, 'outline-')) {
+        $button_html .= '<span class="btn-inner"></span>';
+    }
+
+    $button_html .= do_shortcode($content) . $icon_html;
+    $button_html .= '</a>';
+
+    return $button_html;
 }
 add_shortcode('button', 'custom_button_shortcode');
+
+
+
+
+
+// function custom_button_shortcode($atts, $content = null) {
+    
+//     $atts = shortcode_atts(
+//         array(
+//             'variant' => 'primary',
+//             'link' => '#',
+//             'size' => '', 
+//         ),
+//         $atts,
+//         'button'
+//     );
+
+//     $variant = esc_attr($atts['variant']);
+//     $size = esc_attr($atts['size']);
+
+    
+//     $button_class = 'btn-base btn-' . $variant;
+//     if (!empty($size)) {
+//         $button_class .= ' btn-' . $size;
+//     }
+
+  
+// if (str_starts_with($variant, 'outline-')) {
+//     return '<a href="' . esc_url($atts['link']) . '" class="' . $button_class . '"><span class="btn-inner"></span>' . do_shortcode($content) . '</a>';
+// }
+
+
+//     return '<a href="' . esc_url($atts['link']) . '" class="' . $button_class . '">' . do_shortcode($content) . '</a>';
+// }
+// add_shortcode('button', 'custom_button_shortcode');
+
+
+
 
 
 function rounded_pill_icon_button_shortcode($atts, $content = null) {
