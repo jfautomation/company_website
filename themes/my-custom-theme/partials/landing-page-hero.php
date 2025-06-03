@@ -77,14 +77,15 @@ $carousel_images = array_filter(array_column($products, 'image'));
                                         class="product-info d-flex justify-content-center align-items-center text-align-left pt-4 gap-5">
                                         <div class="d-flex flex-column justify-content-center align-items-end">
                                             <h6
-                                                class="mt-3 text-dark fw-semibold bg-light py-1 ps-3 pe-1 rounded-pill d-flex gap-2 align-items-center">
+                                                class="mt-3 text-gradient-blue fw-semibold">
                                                 <small><?php echo esc_html($product['name']); ?></small>
-                                                <div
+                                                <!-- <div
                                                     class="text-light fs-4 arrow-circle-link d-flex justify-content-center align-items-center bg-gradient-blue rounded-pill">
                                                     <i class="bi bi-arrow-right-short"></i>
-                                                </div>
+                                                </div> -->
                                             </h6>
-                                            <h4 class="fw-semibold">$<?php echo esc_html($product['price']); ?></h4>
+                                            <h4 class="fw-semibold mb-0">$<?php echo esc_html($product['price']); ?></h4>
+                                            <div class="d-flex align-items-center gap-2 mt-1"><i class="bi bi-cart4"></i><i class="bi bi-arrow-right-square"></i></div>
                                         </div>
                                     </div>
                                 </div>

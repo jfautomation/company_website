@@ -49,7 +49,7 @@ $cta_image_url = $cta_image_url ? esc_url($cta_image_url) : '';
 
                 <div class="mt-4 pt-2 d-flex gap-2">
                     <?php echo do_shortcode(
-                                '[button variant="outline-white" link="' . esc_url(get_field('landing_page_cta_button_link')) . '"]' .
+                                '[button variant="primary" link="' . esc_url(get_field('landing_page_cta_button_link')) . '"]' .
                                 esc_html(get_field('landing_page_cta_button_text')) .
                                 '[/button]'
                             ); ?>
