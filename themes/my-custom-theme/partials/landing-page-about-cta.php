@@ -36,7 +36,7 @@ $cta_image_url = $cta_image_url ? esc_url($cta_image_url) : '';
                 <!-- <p class="mt-1 fs-5">
                             <?php echo esc_html(get_field('landing_page_cta_paragraph')); ?>
                         </p> -->
-                <div class="mt-3 d-flex flex-column gap-1">
+                <div class="mt-4 d-flex flex-column gap-1">
                     <div class="d-flex gap-3 align-items-center">
                         <i class="fs-5 bi bi-wrench"></i>
                         <span class="fs-5">Expert motor repair backed by experience.</span>

@@ -58,6 +58,10 @@ section {
   background-color: var(--color-light-grey-bg);
 }
 
+.dark-pink-bg {
+  background-color: var(--color-dark-pink);
+}
+
 .dark-grey-container {
   background-color: var(--color-dark-grey-bg) !important;
 }

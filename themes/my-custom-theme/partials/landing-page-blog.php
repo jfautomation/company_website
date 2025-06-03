@@ -1,3 +1,11 @@
+<style>
+.category-badge {
+    position: absolute;
+    top: 6px;
+    right: 6px; 
+    border: 2px solid white;
+}
+</style>
 
 <section class="blog-section pb-5">
 
@@ -25,9 +33,13 @@
                     <div class="d-flex flex-column flex-grow-1">
 
                         <?php if (has_post_thumbnail()): ?>
-                        <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>"
-                            class="card-img-top custom-rounded" alt="<?php echo esc_attr(get_the_title()); ?>">
+                        <div class="position-relative">
+                            <span class="badge category-badge">Category</span>
+                            <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>"
+                                class="card-img-top custom-rounded" alt="<?php echo esc_attr(get_the_title()); ?>">
+                        </div>
                         <?php endif; ?>
+
 
                         <div class="h-100 d-flex flex-column">
                             <div class="d-flex flex-column">
@@ -41,7 +53,7 @@
                                 <p class="card-text"><?php echo wp_trim_words(get_the_excerpt(), 20); ?></p>
                                 <?php get_template_part('partials/learn-more-link', null, [
     'link' => get_permalink(),  
-    'label' => 'Learn more'    
+    'label' => 'Read more'    
 ]); ?>
 
                             </div>
