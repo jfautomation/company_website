@@ -119,14 +119,7 @@ hr {
 }
 
 
-.bg-gradient-blue-to-black {
-  background: linear-gradient(
-    to bottom,
-    var(--color-gradient-light-blue),
-    var(--color-gradient-dark-blue),
-    #000814
-  );
-}
+
 
 .bg-gradient-blue {
   background: linear-gradient(

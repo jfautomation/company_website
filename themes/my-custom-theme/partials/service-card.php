@@ -1,74 +1,115 @@
 <style>
-.white-card-with-icon {
+  .white-card-with-icon {
     transition: box-shadow 0.3s ease;
-}
+  }
 
-.card-header {
-    font-size: 1.3rem;
-}
-
-.white-card-with-icon:hover {
+  .white-card-with-icon:hover {
     cursor: pointer;
-}
+  }
 
-.service-description {
-    line-height: 1.5rem !important;
-}
+  .service-description {
+    font-size: 0.9rem !important;
+  }
 
-.service-card-badge {
+  .card-header {
+    font-size: 1.1rem !important;
+    cursor: pointer;
+  }
+
+  .service-card-badge {
     position: absolute;
     right: 0;
     font-size: 0.8rem;
-}
+  }
 
-.arrow {
-    font-size: 0.8rem;
-    font-weight: 600 !important;
-}
+  .arrow-container {
+    margin-top: 2px;
+  }
 
-.card-container {
+  .card-container {
     height: 3rem;
     width: 3rem;
     border-radius: 50%;
     background-color: #efeeee;
-}
+  }
 
-.service-img {
+  .service-img {
     height: 6rem;
-}
+  }
+
+  .service-inner-span {
+    cursor: pointer;
+    position: absolute;
+    z-index: 10;
+    bottom: 0;
+    background: linear-gradient(
+      to right,
+      rgba(58, 123, 213, 0.7),
+      /* #3a7bd5 at 70% opacity */ rgba(22, 0, 160, 0.7)
+        /* #1600a0 at 70% opacity */
+    );
+  }
+
+  .service-image-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.5rem;
+  }
+
+  .service-image-container img {
+    transition: transform 0.5s ease;
+    display: block;
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+  }
+
+  .service-image-container .arrow-container {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none; /* prevents arrow blocking hover */
+  }
+
+  .service-image-container:hover .arrow-container {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .service-image-container:hover img {
+    transform: scale(1.1);
+  }
 </style>
 
-
-
-
-
-<div class="col-12 col-md-3 mb-4">
-    <div class="d-flex flex-column gap-3 justify-content-between h-100 border-light-grey px-3 pt-2 pb-3 custom-rounded">
-        <div class="d-flex flex-column mt-1">
-            <?php if (!empty($args['icon'])): ?>
-
-            <i class="bi fs-4 <?php echo esc_attr($args['icon']); ?>"></i>
-
-            <?php endif; ?>
-
-
-            <h5 class="fw-bold card-header mt-3"><?php echo esc_html($args['service_heading']); ?></h5>
-            <p class="mt-3 service-description text-grey"><?php echo esc_html($args['paragraph']); ?>
-            </p>
+<div class="col-12 col-md-4 mb-4 d-flex flex-column h-100">
+  <div class="d-flex flex-column h-100">
+    <?php if (!empty($args['image'])): ?>
+    <div class="w-100 mb-3 position-relative service-image-container">
+      <div
+        class="service-inner-span d-flex gap-1 w-100 px-2 py-1 text-light fs-4"
+      >
+        <span class="service-inner-span-text"
+          ><?php echo esc_html($args['service_heading']); ?>
+        </span>
+        <div class="arrow-container">
+          <i class="bi bi-arrow-right-short"></i>
         </div>
-
-
-  <?php echo do_shortcode(
-    '[button variant="primary" size="md" link="' . esc_url(get_field('landing_page_cta_button_link')) . '" icon="bi-arrow-right"]Learn more[/button]'
-); ?>
-
-
-
-
+      </div>
+      <img
+        src="<?php echo esc_url($args['image']); ?>"
+        alt="<?php echo esc_attr($args['service_heading']); ?>"
+        class="img-fluid rounded"
+      />
     </div>
+    <?php endif; ?>
 
+    <div class="d-flex flex-column flex-grow-1 justify-content-between">
+      <h6 class="card-header mt-2 fw-semibold">
+        <?php echo esc_html($args['service_heading']); ?>
+      </h6>
 
-
-
-
+      <p class="mt-2 service-description text-grey">
+        <?php echo esc_html($args['paragraph']); ?>
+      </p>
+    </div>
+  </div>
 </div>

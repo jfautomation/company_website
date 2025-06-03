@@ -20,15 +20,7 @@
 
        
         ?>
-        <div class="w-75 mt-2">
-            <?php
-        
-         get_template_part('partials/paragraph', null, array(
-            'paragraph_text' => get_field('services_paragraph')
-        ));
-        ?>
-        </div>
-
+    
 
         <?php
         // Collect services data
@@ -37,7 +29,7 @@
                 'icon'      => get_field('service_icon_1'),
                 'header'    => get_field('service_header_1'),
                 'link'      => get_field('service_1_link'),
-                'paragraph' => get_field('service_1_paragraph'),
+                'paragraph' => get_field('service_paragraph_1'),
                 'span'      => get_field('service_1_span'),
                 'image'     => get_field('service_1_image'),
             ),
@@ -45,7 +37,7 @@
                 'icon'      => get_field('service_icon_2'),
                 'header'    => get_field('service_header_2'),
                 'link'      => get_field('service_2_link'),
-                'paragraph' => get_field('service_2_paragraph'),
+                'paragraph' => get_field('service_paragraph_2'),
                 'span'      => get_field('service_2_span'),
                 'image'     => get_field('service_2_image'),
             ),
@@ -53,7 +45,7 @@
                 'icon'      => get_field('service_icon_3'),
                 'header'    => get_field('service_header_3'),
                 'link'      => get_field('service_3_link'),
-                'paragraph' => get_field('service_3_paragraph'),
+                'paragraph' => get_field('service_paragraph_3'),
                 'span'      => get_field('service_3_span'),
                 'image'     => get_field('service_3_image'),
             ),
@@ -61,7 +53,7 @@
                 'icon'      => get_field('service_icon_4'),
                 'header'    => get_field('service_header_4'),
                 'link'      => get_field('service_4_link'),
-                'paragraph' => get_field('service_4_paragraph'),
+                'paragraph' => get_field('service_paragraph_4'),
                 'span'      => get_field('service_4_span'),
                 'image'     => get_field('service_4_image'),
             ),
@@ -70,14 +62,10 @@
         });
         ?>
 
-        <div class="row gx-5 pt-1 mt-3">
-            <div class="col">
-                <div class="h-100 d-flex flex-column justify-content-between">
+        <div class="row gx-4 pt-1 mt-4">
 
-
-                    <div class="row mt-3">
-                        <?php foreach ($services as $service) : ?>
-                        <?php get_template_part('partials/service-card', null, array(
+            <?php foreach ($services as $service) : ?>
+            <?php get_template_part('partials/service-card', null, array(
                                 'icon' => $service['icon'],
                                 'service_heading' => $service['header'],
                                 'link_to_service_page' => $service['link'],
@@ -86,10 +74,8 @@
                                 'image' => $service['image'],
                                 'link' => $service['link']
                             )); ?>
-                        <?php endforeach; ?>
-                    </div>
-                </div>
-            </div>
+            <?php endforeach; ?>
+
         </div>
     </div>
 </section>
