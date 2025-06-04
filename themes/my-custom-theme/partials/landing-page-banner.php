@@ -11,10 +11,8 @@
                 <h3 class="fw-semibold">Some stuff here for the banner</h3>
                 <p class="mb-0">Some more stuf here as a paragraph to seee what it looks</p>
             </div>
-            <div class="d-flex align-items-center gap-2"><span class="fs-5 fw-semibold">Get it now</span><i
-                    class="mt-1 bi bi-arrow-right"></i></div>
-
-
-        </div>
+        <?php
+        echo do_shortcode('[button variant="outline-black" size="md" link="' . esc_url(get_field('hero_button_link_1')) . '" icon="bi-arrow-right"]Get it now[/button]');
+      ?>
     </div>
 </section>

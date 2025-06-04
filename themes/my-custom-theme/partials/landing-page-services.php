@@ -11,7 +11,7 @@
 <section>
     <div class="container">
         <?php
-        // Section header
+     
         get_template_part('partials/section-header', null, array(
             'h5_text' => get_field('services_subheader'),
             'h2_text' => get_field('services_header'),
@@ -20,10 +20,10 @@
 
        
         ?>
-    
+
 
         <?php
-        // Collect services data
+     
         $services = array_filter([
             array(
                 'icon'      => get_field('service_icon_1'),
@@ -77,5 +77,12 @@
             <?php endforeach; ?>
 
         </div>
+        <?php if (!empty($args['link'])): ?>
+        <a href="<?php echo esc_url($args['link']); ?>"
+            class="text-blue fw-semibold text-decoration-underline d-flex align-items-center gap-1 small mt-3">
+            <?php echo !empty($args['label']) ? esc_html($args['label']) : 'Learn more'; ?>
+            <i class="bi bi-arrow-right"></i>
+        </a>
+        <?php endif; ?>
     </div>
 </section>

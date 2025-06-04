@@ -2,7 +2,7 @@
 .category-badge {
     position: absolute;
     top: 6px;
-    right: 6px; 
+    right: 6px;
     border: 2px solid white;
 }
 </style>

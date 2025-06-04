@@ -37,7 +37,7 @@ $carousel_images = array_filter(array_column($products, 'image'));
         <div class="container h-100">
             <div class="row h-100">
                 <div class="col-lg-6 col-md-12">
-                    <div class="h-100 d-flex flex-column justify-content-center align-items-center">
+                    <div class="content-wrapper h-100 d-flex flex-column justify-content-center align-items-center">
                         <div class="d-flex flex-column align-items-start">
                             <span class="fs-5 text-gradient-blue fw-semibold">#1 authorized Seimens dealer in
                                 Canada</span>

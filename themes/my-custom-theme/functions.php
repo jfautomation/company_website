@@ -55,37 +55,6 @@ add_shortcode('button', 'custom_button_shortcode');
 
 
 
-function rounded_pill_icon_button_shortcode($atts, $content = null) {
-    $atts = shortcode_atts(
-        array(
-            'variant' => 'blue-rounded-btn', 
-            'link' => '#', 
-            'icon' => '', 
-        ),
-        $atts,
-        'rounded_pill_button' 
-    );
-
-    $variant = esc_attr($atts['variant']);
-    $icon = esc_attr($atts['icon']); 
-
-    $button_class = 'rounded-pill-with-icon ' . $variant;
-
-    $icon_html = $icon ? '<div class="rounded-btn-icon-container"><i class="' . $icon . '"></i></div>' : '';
-
-    $button_content = $icon_html . ' ' . do_shortcode($content);
-
-    if (str_starts_with($variant, 'outline-')) {
-        return '<a href="' . esc_url($atts['link']) . '" class="' . $button_class . '"><span class="rounded-pill-with-icon"></span>' . $button_content . '</a>';
-    }
-
-    return '<a href="' . esc_url($atts['link']) . '" class="rounded-pill-with-icon ' . $variant . '">'
-        . '<span class="button-text">' . do_shortcode($content) . '</span>' 
-        . $icon_html . '</a>';
-}
-add_shortcode('rounded_pill_button', 'rounded_pill_icon_button_shortcode');
-
-
 
 //// custom carousel indicators
 function render_custom_carousel_indicators($carousel_id, $images) {

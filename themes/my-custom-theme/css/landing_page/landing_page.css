@@ -2,13 +2,17 @@
   padding-top: 70px;
 }
 
+.content-wrapper {
+  margin-top: 3rem;
+}
+
 .hero-header {
   font-size: 2.6rem !important;
 }
 
 .hero-paragraph {
   font-size: 1.1rem !important;
-  color: #454444; 
+  color: #454444;
 }
 
 .carousel-inner {
@@ -31,11 +35,4 @@
 
 .brand-card-img-wrapper img {
   object-fit: contain;
-}
-
-/* /// in product carousel hero */
-.arrow-circle-link {
-  height: 1.5rem;
-  width: 1.5rem;
-  border-radius: 50%;
 }

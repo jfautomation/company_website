@@ -25,11 +25,6 @@
         <div class="row mt-3">
             <div class="col d-flex flex-column align-items-start">
                 <div><?php echo esc_html(get_field('brand_paragraph')); ?></div>
-                <!-- <div class="mt-4 pt-2">
-                    <?php
-                    echo do_shortcode('[button variant="primary" link="' . esc_url(get_field('brands_button_link')) . '"]' . esc_html(get_field('brands_button_text')) . '[/button]');
-                    ?>
-                </div> -->
             </div>
         </div>
         <div class="">

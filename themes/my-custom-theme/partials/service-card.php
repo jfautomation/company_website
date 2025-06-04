@@ -53,7 +53,6 @@
   .service-image-container {
     position: relative;
     overflow: hidden;
-    border-radius: 0.5rem;
   }
 
   .service-image-container img {
@@ -67,7 +66,7 @@
   .service-image-container .arrow-container {
     opacity: 0;
     transition: opacity 0.3s ease;
-    pointer-events: none; /* prevents arrow blocking hover */
+    pointer-events: none; 
   }
 
   .service-image-container:hover .arrow-container {
@@ -83,7 +82,7 @@
 <div class="col-12 col-md-4 mb-4 d-flex flex-column h-100">
   <div class="d-flex flex-column h-100">
     <?php if (!empty($args['image'])): ?>
-    <div class="w-100 mb-3 position-relative service-image-container">
+    <div class="w-100 mb-3 position-relative service-image-container custom-rounded">
       <div
         class="service-inner-span d-flex gap-1 w-100 px-2 py-1 text-light fs-4"
       >
@@ -97,7 +96,7 @@
       <img
         src="<?php echo esc_url($args['image']); ?>"
         alt="<?php echo esc_attr($args['service_heading']); ?>"
-        class="img-fluid rounded"
+        class="img-fluid"
       />
     </div>
     <?php endif; ?>

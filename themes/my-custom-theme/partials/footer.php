@@ -1,4 +1,3 @@
-        <!-- Optional footer content -->
         <footer class="text-center py-4">
             <p>&copy; <?php echo date("Y"); ?> JF Automation Inc.</p>
         </footer>
@@ -25,7 +24,6 @@ document.addEventListener("DOMContentLoaded", function() {
     window.addEventListener('resize', setHeroHeight);
 
     window.addEventListener('scroll', () => {
-        // const heroHeight = hero.offsetHeight; 
         const heroHeight = 300;
         console.log('ScrollY:', window.scrollY, 'HeroHeight:', heroHeight);
 
@@ -61,12 +59,6 @@ function initCarousel(carouselId) {
     prevBtn.addEventListener('click', () => goToSlide(currentIndex - 1));
     nextBtn.addEventListener('click', () => goToSlide(currentIndex + 1));
 }
-
-
-
-
-
-
         </script>
         </body>
 

@@ -14,29 +14,14 @@
         endwhile;
     endif;
     ?> -->
-    <!-- //// hero -->
+
     <?php get_template_part('partials/landing-page-hero')?>
-    <!-- //// brands preview -->
-    <!-- <?php get_template_part('partials/brands-preview-cta')?> -->
-
-    <!-- //// services -->
     <?php get_template_part('partials/landing-page-services')?>
-    <!-- //// services extend -->
-
-    <!-- //// about & CTA -->
     <?php get_template_part('partials/landing-page-about-cta')?>
-
-    <!-- //// visit online shop CTA -->
     <?php get_template_part('partials/landing-page-online-shop-cta')?>
-    <!-- //// visit online shop CTA -->
-    <!-- //// about & CTA -->
     <?php get_template_part('partials/landing-page-banner')?>
-
     <?php get_template_part('partials/landing-page-blog')?>
-
-    <!-- //// reviews -->
     <?php get_template_part('partials/landing-page-reviews')?>
-    <!-- //// brands we repair -->
     <?php get_template_part('partials/landing-page-brands')?>
 </div>
 <?php get_template_part( 'partials/footer' ); ?>

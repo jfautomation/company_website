@@ -18,8 +18,7 @@ if (!isset($carousel_id)) return;
 </div>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        initCarousel('<?php echo esc_js($carousel_id); ?>');
-    });
+document.addEventListener('DOMContentLoaded', function() {
+    initCarousel('<?php echo esc_js($carousel_id); ?>');
+});
 </script>
-

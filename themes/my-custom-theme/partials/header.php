@@ -36,19 +36,20 @@
                                     if (strtolower($menu_item->title) !== 'contact') :
                                         $is_active = (esc_url($menu_item->url) === home_url($_SERVER['REQUEST_URI'])) ? 'active' : '';
                         ?>
-                                        <li class="nav-item">
-                                            <a class="nav-link <?php echo $is_active; ?>" href="<?php echo esc_url($menu_item->url); ?>">
-                                                <?php echo esc_html($menu_item->title); ?>
-                                            </a>
-                                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link <?php echo $is_active; ?>"
+                                href="<?php echo esc_url($menu_item->url); ?>">
+                                <?php echo esc_html($menu_item->title); ?>
+                            </a>
+                        </li>
                         <?php
                                     endif;
                                 endforeach;
                             else :
                         ?>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">No Menu Items Found</a>
-                                </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">No Menu Items Found</a>
+                        </li>
                         <?php
                             endif;
                         endif;
@@ -59,11 +60,11 @@
                             foreach ($menu_items as $menu_item) :
                                 if (strtolower($menu_item->title) === 'contact') :
                         ?>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="<?php echo esc_url($menu_item->url); ?>">
-                                            <?php echo esc_html($menu_item->title); ?>
-                                        </a>
-                                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?php echo esc_url($menu_item->url); ?>">
+                                <?php echo esc_html($menu_item->title); ?>
+                            </a>
+                        </li>
                         <?php
                                 endif;
                             endforeach;
@@ -72,12 +73,15 @@
                     </ul>
 
                     <div class="d-flex align-items-center gap-3">
-                        <?php echo do_shortcode('[rounded_pill_button link="#" variant="blue-rounded-btn" icon="fa-solid fa-arrow-right"]Shop now[/rounded_pill_button]'); ?>
+                        <?php
+        echo do_shortcode('[button variant="outline-black" size="sm" link="' . esc_url(get_field('hero_button_link_1')) . '" icon="bi-arrow-right"]Shop now[/button]');
+      ?>
+
 
                         <i class="bi fs-5 <?php echo esc_attr(get_field('social_icon_1')); ?>"></i>
                         <i class="bi fs-5 <?php echo esc_attr(get_field('social_icon_2')); ?>"></i>
                     </div>
-                </div> <!-- /.collapse -->
-            </div> <!-- /.container -->
+                </div>
+            </div> 
         </nav>
     </header>

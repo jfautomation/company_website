@@ -33,9 +33,6 @@ $cta_image_url = $cta_image_url ? esc_url($cta_image_url) : '';
                     <!-- <?php echo esc_html(get_field('landing_page_cta_header')); ?> -->
                     Decades of trusted services and some more stuff for the UI
                 </h2>
-                <!-- <p class="mt-1 fs-5">
-                            <?php echo esc_html(get_field('landing_page_cta_paragraph')); ?>
-                        </p> -->
                 <div class="mt-4 d-flex flex-column gap-1">
                     <div class="d-flex gap-3 align-items-center">
                         <i class="fs-5 bi bi-wrench"></i>
