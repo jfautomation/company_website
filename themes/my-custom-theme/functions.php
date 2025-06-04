@@ -55,43 +55,6 @@ add_shortcode('button', 'custom_button_shortcode');
 
 
 
-
-
-// function custom_button_shortcode($atts, $content = null) {
-    
-//     $atts = shortcode_atts(
-//         array(
-//             'variant' => 'primary',
-//             'link' => '#',
-//             'size' => '', 
-//         ),
-//         $atts,
-//         'button'
-//     );
-
-//     $variant = esc_attr($atts['variant']);
-//     $size = esc_attr($atts['size']);
-
-    
-//     $button_class = 'btn-base btn-' . $variant;
-//     if (!empty($size)) {
-//         $button_class .= ' btn-' . $size;
-//     }
-
-  
-// if (str_starts_with($variant, 'outline-')) {
-//     return '<a href="' . esc_url($atts['link']) . '" class="' . $button_class . '"><span class="btn-inner"></span>' . do_shortcode($content) . '</a>';
-// }
-
-
-//     return '<a href="' . esc_url($atts['link']) . '" class="' . $button_class . '">' . do_shortcode($content) . '</a>';
-// }
-// add_shortcode('button', 'custom_button_shortcode');
-
-
-
-
-
 function rounded_pill_icon_button_shortcode($atts, $content = null) {
     $atts = shortcode_atts(
         array(
@@ -132,14 +95,14 @@ function render_custom_carousel_indicators($carousel_id, $images) {
     <!-- Previous Arrow -->
     <span role="button" data-bs-target="#<?php echo esc_attr($carousel_id); ?>" data-bs-slide="prev"
         aria-label="Previous slide" class="indicator-container bg-light cursor-pointer">
-        <i class="indicator-chevron fas fa-chevron-left">
+        <i class="bi bi-arrow-left"></i>
         </i>
     </span>
 
     <!-- Next Arrow -->
     <span role="button" class="indicator-container bg-light cursor-pointer"
         data-bs-target="#<?php echo esc_attr($carousel_id); ?>" data-bs-slide="next" aria-label="Next slide">
-        <i class="indicator-chevron fas fa-chevron-right">
+        <i class="bi bi-arrow-right"></i>
         </i>
     </span>
 </div>

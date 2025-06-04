@@ -79,13 +79,10 @@ $carousel_images = array_filter(array_column($products, 'image'));
                                             <h6
                                                 class="mt-3 text-gradient-blue fw-semibold">
                                                 <small><?php echo esc_html($product['name']); ?></small>
-                                                <!-- <div
-                                                    class="text-light fs-4 arrow-circle-link d-flex justify-content-center align-items-center bg-gradient-blue rounded-pill">
-                                                    <i class="bi bi-arrow-right-short"></i>
-                                                </div> -->
+
                                             </h6>
                                             <h4 class="fw-semibold mb-0">$<?php echo esc_html($product['price']); ?></h4>
-                                            <div class="d-flex align-items-center gap-2 mt-1"><i class="bi bi-cart4"></i><i class="bi bi-arrow-right-square"></i></div>
+                                            <div class="d-flex align-items-center gap-2 mt-1"><i class="cursor-pointer bi bi-cart4"></i><i class="cursor-pointer bi bi-arrow-right-square"></i></div>
                                         </div>
                                     </div>
                                 </div>

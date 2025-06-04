@@ -34,6 +34,10 @@ h2 {
   font-size: 0.875em;
 }
 
+.cursor-pointer {
+  cursor: pointer;
+}
+
 body,
 html {
   margin: 0 !important;
@@ -111,13 +115,15 @@ hr {
 }
 
 .indicator-container {
-  height: 1.5rem;
-  width: 1.5rem;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  height: 2.5rem;
+  width: 2.5rem;
+  box-shadow: 0 2px 16px 0 #10182814;
+  border: 1px solid #d7d7d7;
 }
 
 .bg-gradient-blue {
@@ -140,17 +146,6 @@ hr {
   background: linear-gradient(
     to right,
     var(--color-gradient-light-blue),
-    var(--color-gradient-dark-blue)
-  );
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-}
-
-.text-gradient-red-blue {
-  background: linear-gradient(
-    to right,
-    var(--color-red),
     var(--color-gradient-dark-blue)
   );
   background-clip: text;
@@ -309,38 +304,6 @@ hr {
   color: white;
 }
 
-.custom-indicator {
-  background-color: grey;
-}
 
-.custom-slider-carousel-dot {
-  margin: 0 1px;
-}
 
-.custom-indicator {
-  margin: 0 5px;
-}
 
-.custom-indicator,
-.custom-slider-carousel-dot {
-  width: 12px;
-  height: 12px;
-  background-color: grey;
-  border-radius: 50%;
-  border: none;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-  cursor: pointer;
-}
-
-.custom-indicator.active,
-.custom-slider-carousel-dot.active {
-  background: linear-gradient(
-    to right,
-    var(--color-gradient-light-blue),
-    var(--color-gradient-dark-blue)
-  );
-}
-
-.indicator-chevron:hover {
-  cursor: pointer;
-}

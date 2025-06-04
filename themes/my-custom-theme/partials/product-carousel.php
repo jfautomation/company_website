@@ -100,7 +100,7 @@ $products = array_filter($products, function($product) {
                                 <p class="product-card-description text-grey">
                                     <?php echo esc_html($product['description']); ?></p>
                                 <div class="w-100 d-flex justify-content-between">
-                                    <div class="d-flex gap-2 align-items-center pb-3">
+                                    <div class="d-flex gap-2 align-items-center pb-2">
                                         <h4 class="mb-0 fw-semibold">$<?php echo esc_html($product['price']); ?></h4>
                                         <?php
 $price = floatval($product['price']);
@@ -159,10 +159,10 @@ $sale_price = $product['sale_price'];
 
 <div class="w-100 d-flex justify-content-end gap-2">
     <span id="carouselPrev" class="indicator-container bg-light cursor-pointer">
-        <i class="bi bi-chevron-left"></i>
+        <i class="bi bi-arrow-left"></i>
     </span>
     <span id="carouselNext" class="indicator-container bg-light cursor-pointer">
-        <i class="bi bi-chevron-right"></i>
+        <i class="bi bi-arrow-right"></i>
     </span>
 </div>
 
