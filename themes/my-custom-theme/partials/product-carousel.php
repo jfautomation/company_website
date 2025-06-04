@@ -66,6 +66,12 @@
 }
 </style>
 
+<?php
+$carousel_id = 'carousel_' . uniqid();
+
+ob_start();
+?>
+
 <?php 
 $products = array(
     array('name' => get_field('product_1_name'), 'price' => get_field('product_1_price'), 'sale_price' => get_field('product_1_sale_price'), 'description' => get_field('product_1_description'), 'link_to_item' => get_field('product_1_link_to_item'), 'image' => get_field('product_1_image'), 'span' => get_field('product_1_span')),
@@ -81,8 +87,7 @@ $products = array_filter($products, function($product) {
 });
   
 ?>
-<div class="custom-carousel-container position-relative">
-    <div class="custom-carousel-track" id="customCarouselTrack">
+
 
         <?php foreach ($products as $index => $product): ?>
         <?php if ($index % 2 === 0): ?>
@@ -150,20 +155,8 @@ $sale_price = $product['sale_price'];
 
         <?php endif; ?>
         <?php endforeach; ?>
-    </div>
-</div>
 
-
-
-
-
-<div class="w-100 d-flex justify-content-end gap-2">
-    <span id="carouselPrev" class="indicator-container bg-light cursor-pointer">
-        <i class="bi bi-arrow-left"></i>
-    </span>
-    <span id="carouselNext" class="indicator-container bg-light cursor-pointer">
-        <i class="bi bi-arrow-right"></i>
-    </span>
-</div>
-
-</div>
+<?php
+$carousel_content = ob_get_clean();
+include get_template_directory() . '/partials/carousel-wrapper.php';
+?>

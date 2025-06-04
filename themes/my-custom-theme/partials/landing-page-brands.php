@@ -9,6 +9,10 @@
 }
 </style>
 
+
+
+
+
 <section>
     <div class="container">
         <?php
@@ -18,37 +22,26 @@
         );
         get_template_part('partials/section-header', null, $args);
         ?>
-        <div class="row mt-3
-        ">
+        <div class="row mt-3">
             <div class="col d-flex flex-column align-items-start">
                 <div><?php echo esc_html(get_field('brand_paragraph')); ?></div>
                 <div class="mt-4 pt-2">
                     <?php
-                              
-                                echo do_shortcode('[button variant="primary" link="' . esc_url(get_field('brands_button_link')) . '"]' . esc_html(get_field('brands_button_text')) . '[/button]');
-                                ?>
+                    echo do_shortcode('[button variant="primary" link="' . esc_url(get_field('brands_button_link')) . '"]' . esc_html(get_field('brands_button_text')) . '[/button]');
+                    ?>
                 </div>
             </div>
-
         </div>
-        <div class="mt-5"> <?php
-            $image = get_field('brands_image');
-            if ($image):
-            ?>
-            <img class="img-fluid logo-brand-img w-100" src="<?php echo esc_url($image); ?>" alt="">
-            <?php endif; ?>
-        </div>
-
-        <!-- brands_button_text -->
-
-
-        <!-- <div class="brands-img-container">
+        <div class="mt-5">
             <?php
             $image = get_field('brands_image');
             if ($image):
             ?>
             <img class="img-fluid logo-brand-img w-100" src="<?php echo esc_url($image); ?>" alt="">
             <?php endif; ?>
-        </div> -->
+        </div>
+        <?php
+        get_template_part('partials/brands-carousel');
+         ?>
     </div>
 </section>

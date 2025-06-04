@@ -39,35 +39,58 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-document.addEventListener('DOMContentLoaded', function() {
-    const track = document.getElementById('customCarouselTrack');
-    const slides = track.children;
-    const prevBtn = document.getElementById('carouselPrev');
-    const nextBtn = document.getElementById('carouselNext');
+// document.addEventListener('DOMContentLoaded', function() {
+//     const track = document.getElementById('customCarouselTrack');
+//     const slides = track.children;
+//     const prevBtn = document.getElementById('carouselPrev');
+//     const nextBtn = document.getElementById('carouselNext');
+
+//     let currentIndex = 0;
+//     const maxIndex = slides.length - 1;
+
+//     function goToSlide(index) {
+//         if (index < 0) index = 0;
+//         if (index > maxIndex) index = maxIndex;
+//         const slideWidth = slides[0].offsetWidth;
+//         track.style.transform = `translateX(-${index * slideWidth}px)`;
+//         currentIndex = index;
+//     }
+
+//     prevBtn.addEventListener('click', () => {
+//         goToSlide(currentIndex - 1);
+//     });
+
+//     nextBtn.addEventListener('click', () => {
+//         goToSlide(currentIndex + 1);
+//     });
+// });
+
+function initCarousel(carouselId) {
+    const track = document.getElementById(`${carouselId}_track`);
+    const slides = track?.children || [];
+    const prevBtn = document.getElementById(`${carouselId}_prev`);
+    const nextBtn = document.getElementById(`${carouselId}_next`);
+
+    if (!track || slides.length === 0 || !prevBtn || !nextBtn) return;
 
     let currentIndex = 0;
     const maxIndex = slides.length - 1;
 
     function goToSlide(index) {
-        if (index < 0) index = 0;
-        if (index > maxIndex) index = maxIndex;
-        const slideWidth = slides[0].offsetWidth;
+        index = Math.max(0, Math.min(index, maxIndex));
+        const slideWidth = slides[0].getBoundingClientRect().width;
         track.style.transform = `translateX(-${index * slideWidth}px)`;
         currentIndex = index;
     }
 
-    prevBtn.addEventListener('click', () => {
-        goToSlide(currentIndex - 1);
-    });
-
-    nextBtn.addEventListener('click', () => {
-        goToSlide(currentIndex + 1);
-    });
-});
+    prevBtn.addEventListener('click', () => goToSlide(currentIndex - 1));
+    nextBtn.addEventListener('click', () => goToSlide(currentIndex + 1));
+}
 
 
 
-///// 
+
+
 
         </script>
         </body>
