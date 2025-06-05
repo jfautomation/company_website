@@ -18,7 +18,9 @@
         <?php
         $args = array(
             'h5_text' => 'Brands',
-            'h2_text' => 'Brands we work with'
+            'h2_text' => 'Brands we work with',
+            'see_all_link' => '/#',
+    'see_all_text' => 'Request a quote'
         );
         get_template_part('partials/section-header', null, $args);
         ?>

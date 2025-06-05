@@ -13,7 +13,9 @@
         <?php
         $args = array(
             'h5_text' => 'Blog',
-            'h2_text' => 'Recent posts'
+            'h2_text' => 'Recent posts',
+             'see_all_link' => '/#',
+    'see_all_text' => 'See all'
         );
         get_template_part('partials/section-header', null, $args);
         ?>

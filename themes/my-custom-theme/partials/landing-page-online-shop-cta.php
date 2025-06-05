@@ -6,6 +6,8 @@
     $args = array(
         'h5_text' => get_field('online_shop_subheader'),
         'h2_text' => get_field('online_shop_header'),
+        'see_all_link' => '/#',
+    'see_all_text' => 'Visit shop'
     );
 
     get_template_part('partials/section-header', null, $args);

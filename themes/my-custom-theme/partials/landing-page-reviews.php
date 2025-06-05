@@ -52,7 +52,9 @@
         <?php
         $args = array(
             'h5_text' => 'Reviews',
-            'h2_text' => 'What people are saying'
+            'h2_text' => 'What people are saying', 
+             'see_all_link' => '/#',
+    'see_all_text' => 'See all'
         );
 
         get_template_part('partials/section-header', null, $args);

@@ -8,18 +8,20 @@
 }
 </style>
 
+
+    
 <section>
     <div class="container">
-        <?php
-     
-        get_template_part('partials/section-header', null, array(
-            'h5_text' => get_field('services_subheader'),
-            'h2_text' => get_field('services_header'),
-        ));
-     
+         <?php
+get_template_part('partials/section-header', null, array(
+    'h5_text' => get_field('services_subheader'),
+    'h2_text' => get_field('services_header'),
+    'see_all_link' => '/#',
+    'see_all_text' => 'See all'
+));
+?>
+ 
 
-       
-        ?>
 
 
         <?php
