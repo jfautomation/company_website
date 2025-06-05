@@ -4,8 +4,9 @@
 }
 
 .brand-preview-logo-wrapper {
-    flex: 0 1 auto;         /* prevent logos from stretching full width */
-    width: 130px;     
+    flex: 0 1 auto;
+    /* prevent logos from stretching full width */
+    width: 130px;
     position: relative;
     padding-bottom: 10%;
     overflow: hidden;
@@ -60,31 +61,32 @@ $brands_preview_subheader_text = get_field('brands_preview_subheader_text');
                     <small>
                         <span class="fw-bold"><?php echo esc_html($brands_preview_subheader_number); ?></span>
                         <span class="text-grey"><?php echo esc_html($brands_preview_subheader_text); ?></span>
-                        
+
                     </small>
                 </div>
             </div>
 
             <div class="col-lg-9 d-flex justify-content-around">
-               
-                
-<?php foreach ($brand_images as $brand_image): ?>
-    <?php if (!empty($brand_image)): ?>
-        <div class="brand-preview-logo-wrapper">
-            <div class="brand-preview-logo-inner">
-                <img src="<?php echo esc_url($brand_image); ?>" alt="Brand Logo" class="brand-logo-img" />
-            </div>
-        </div>
-    <?php endif; ?>
-<?php endforeach; ?>
+
+
+                <?php foreach ($brand_images as $brand_image): ?>
+                <?php if (!empty($brand_image)): ?>
+                <div class="brand-preview-logo-wrapper">
+                    <div class="brand-preview-logo-inner">
+                        <img src="<?php echo esc_url($brand_image); ?>" alt="Brand Logo" class="brand-logo-img" />
+                    </div>
+                </div>
+                <?php endif; ?>
+                <?php endforeach; ?>
 
             </div>
 
             <div class="col-lg-1 d-flex align-items-center justify-content-center ps-4">
-                
-                   <?php
-        echo do_shortcode('[button variant="outline-black" size="sm" link="' . esc_url(get_field('hero_button_link_1')) . '" icon="bi-arrow-right"]View all[/button]');
-      ?>
+
+                <?php
+echo do_shortcode('[button variant="outline-black" size="sm" link="#brands" icon="bi-arrow-right"]View all[/button]');
+?>
+
             </div>
             <?php endif; ?>
         </div>

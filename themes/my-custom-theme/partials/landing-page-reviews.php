@@ -51,10 +51,10 @@
     <div class="container">
         <?php
         $args = array(
-            'h5_text' => 'Reviews',
-            'h2_text' => 'What people are saying', 
-             'see_all_link' => '/#',
-    'see_all_text' => 'See all'
+            'h5_text' => get_field('reviews_subheader'),
+            'h2_text' => get_field('reviews_header'),
+            'see_all_link' => get_field('reviews_cta_link'),
+            'see_all_text' => get_field('reviews_cta_text'),
         );
 
         get_template_part('partials/section-header', null, $args);

@@ -10,12 +10,13 @@
 <section class="blog-section pb-5">
 
     <div class="container">
+
         <?php
         $args = array(
-            'h5_text' => 'Blog',
-            'h2_text' => 'Recent posts',
-             'see_all_link' => '/#',
-    'see_all_text' => 'See all'
+            'h5_text' => get_field('blog_subheader'),
+            'h2_text' => get_field('blog_header'),
+             'see_all_link' => get_field('blog_cta_link'),
+    'see_all_text' => get_field('blog_cta_text'),
         );
         get_template_part('partials/section-header', null, $args);
         ?>
