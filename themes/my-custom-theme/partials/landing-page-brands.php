@@ -13,7 +13,7 @@
 
 
 
-<section>
+<section id="brands">
     <div class="container">
         <?php
         $args = array(

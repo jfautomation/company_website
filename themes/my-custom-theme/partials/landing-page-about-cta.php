@@ -28,19 +28,18 @@ $cta_image_url = $cta_image_url ? esc_url($cta_image_url) : '';
       " class="custom-rounded p-5 position-relative h-100 d-flex flex-column align-items-start justify-content-center">
             <div class="dark-overlay"></div>
             <div class="content">
-                <h5 class="fw-semibold">Our guarantee</h5>
+                <h5 class="fw-semibold"><?php echo esc_html(get_field('landing_page_cta_subheader')); ?></h5>
                 <h2 class="w-75 mt-3">
-                    <!-- <?php echo esc_html(get_field('landing_page_cta_header')); ?> -->
-                    Decades of trusted services and some more stuff for the UI
+                    <?php echo esc_html(get_field('landing_page_cta_header')); ?>
                 </h2>
                 <div class="mt-4 d-flex flex-column gap-1">
                     <div class="d-flex gap-3 align-items-center">
-                        <i class="fs-5 bi bi-wrench"></i>
-                        <span class="fs-5">Expert motor repair backed by experience.</span>
+                        <i class="fs-5 bi <?php echo esc_attr(get_field('landing_page_span_1_icon')); ?>"></i>
+                        <span class="fs-5"><?php echo esc_html(get_field('landing_page_span_1')); ?></span>
                     </div>
                     <div class="d-flex gap-3 align-items-center">
-                        <i class="fs-5 bi bi-clock-fill"></i>
-                        <span class="fs-5">Quick turnaround. Minimal downtime.</span>
+                        <i class="fs-5 bi <?php echo esc_attr(get_field('landing_page_span_2_icon')); ?>"></i>
+                        <span class="fs-5"><?php echo esc_html(get_field('landing_page_span_2')); ?></span>
                     </div>
                 </div>
 
