@@ -9,6 +9,10 @@
     font-size: 0.875rem;
 }
 
+.jf-automation-header {
+    margin-top: -6px;
+}
+
 .footer-container {
     color: #2A2A2A;
 }
@@ -27,13 +31,35 @@
 }
 
 .footer-links li:first-child,
-.footer-blog-posts li:first-child {
+.footer-blog-posts li:first-child,
+.contact-info-list li:first-child {
     margin-top: 1.75rem;
 }
 
 .footer-links a {
     color: var(--color-grey-text-on-black);
     text-decoration: none;
+}
+
+.footer-blog-posts a {
+    text-decoration: none;
+}
+
+.footer-blog-posts a:hover {
+    text-decoration: underline;
+}
+
+.contact-info-list {
+    font-size: 0.9rem;
+}
+
+.contact-info-icon {
+    color: var(--color-text-primary);
+    font-size: 0.9rem;
+}
+
+.bottom-footer {
+    background-color: var(--color-black);
 }
         </style>
 
@@ -58,6 +84,24 @@ $footer_links = array(
 );
 ?>
 
+        <?php
+$contact_items = [
+    [
+        'icon'  => get_field('phone_icon'),
+        'label' => get_field('phone_number'),
+    ],
+    [
+        'icon'  => get_field('address_icon'),
+        'label' => get_field('address'),
+    ],
+    [
+        'icon'  => get_field('email_icon'),
+        'label' => get_field('email'),
+    ],
+];
+?>
+
+
 
 
         <footer class="py-4 text-light">
@@ -74,7 +118,8 @@ $footer_links = array(
                     <div class="row text-light gx-5">
                         <div class="footer-section col">
                             <div>
-                                <h3 class="fw-semibold"><?php echo esc_html(get_field('jf_automation_header')); ?></h3>
+                                <h3 class="fw-semibold jf-automation-header">
+                                    <?php echo esc_html(get_field('jf_automation_header')); ?></h3>
                                 <p class="footer-section-margin footer-paragraph">
                                     <?php echo esc_html(get_field('jf_automation_paragraph')); ?></p>
                             </div>
@@ -112,7 +157,8 @@ $footer_links = array(
                     $random_posts->the_post();
                     ?>
                                 <li class="mb-3 d-flex flex-column">
-                                    <a class="text-decoration-none fw-semibold text-light" href="<?php the_permalink(); ?>" class="fw-semibold d-block">
+                                    <a class="fw-semibold text-light" href="<?php the_permalink(); ?>"
+                                        class="fw-semibold d-block">
                                         <?php the_title(); ?>
                                     </a>
                                     <small class="text-grey-on-black">
@@ -132,12 +178,35 @@ $footer_links = array(
                         <div class="footer-section col">
                             <div>
                                 <h6 class="fw-semibold"><?php echo esc_html(get_field('contact_info_title')); ?></h6>
+                                <ul class="list-unstyled contact-info-list">
+                                    <?php foreach ($contact_items as $item) : ?>
+                                    <?php if (!empty($item['label'])) : ?>
+                                    <li class="text-grey-on-black d-flex align-items-center mb-2">
+                                        <?php if (!empty($item['icon'])) : ?>
+                                        <i
+                                            class="contact-info-icon me-3 bi <?php echo esc_attr($item['icon']); ?> me-2"></i>
+                                        <?php endif; ?>
+                                        <span><?php echo esc_html($item['label']); ?></span>
+                                    </li>
+                                    <?php endif; ?>
+                                    <?php endforeach; ?>
+                                </ul>
+
                             </div>
                         </div>
                     </div>
                     <!-- <p>&copy; <?php echo date("Y"); ?> JF Automation Inc.</p> -->
 
                 </div>
+            </div>
+            <div class="bottom-footer">
+                <div class="container py-3 d-flex justify-content-between">
+                    <p class="mb-0">&copy; <?php echo date("Y"); ?> All right reserved. <span class="ms-1 text-blue fw-semibold">JF Automation</span></p>
+                    <div class="d-flex gap-3 text-light"><i class="bi fs-5 <?php echo esc_attr(get_field('social_icon_1')); ?>"></i>
+                        <i class="bi fs-5 <?php echo esc_attr(get_field('social_icon_2')); ?>"></i></div>
+
+                </div>
+
             </div>
 
 
