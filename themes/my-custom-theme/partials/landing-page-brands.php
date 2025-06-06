@@ -10,7 +10,7 @@
 </style>
 
 <section id="brands">
-    <div class="container">
+    <div class="container pb-4">
         <?php
         $args = array(
             'h5_text' =>

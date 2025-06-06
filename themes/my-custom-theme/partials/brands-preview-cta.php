@@ -42,7 +42,6 @@ $brand_images = array_filter([
     get_field('allen_bradley_logo'),
     get_field('yaskawa_logo'),
     get_field('rexroth_indramat_logo'),
-    get_field('abb_logo')
 ]);
 
 $brands_preview_banner = get_field('brands_preview_banner');
