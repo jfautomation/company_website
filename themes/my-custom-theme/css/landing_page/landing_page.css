@@ -1,9 +1,11 @@
-.hero {
-  padding-top: 70px;
-}
 
 .content-wrapper {
   margin-top: 3rem;
+}
+
+.hero {
+  position: relative;
+  z-index: 1;
 }
 
 .hero-header {
@@ -11,8 +13,7 @@
 }
 
 .hero-paragraph {
-  font-size: 1.1rem !important;
-  color: #454444;
+  color: #454444; 
 }
 
 .carousel-inner {

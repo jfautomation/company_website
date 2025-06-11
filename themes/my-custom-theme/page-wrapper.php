@@ -1,7 +1,10 @@
-<!-- <?php get_template_part('partials/header'); ?>
+<?php
+/* Template Name: Page Wrapper */
+get_template_part('partials/header'); ?>
 
-<main class="site-main-content pt-5">
-    <h1 class="mt-5 bg-warning">I AM MAIN!!!!!!</h1>
+
+
+<main class="site-main-content">
     <?php
     if (is_front_page()) {
         get_template_part('page-landing');
@@ -14,10 +17,9 @@
     } elseif (is_archive()) {
         get_template_part('partials/pages/archive');
     } else {
-        // fallback
-        echo '<p>Page not found or not defined in index.php</p>';
+        echo '<p>Page not found or not defined in page-wrapper.php</p>';
     }
     ?>
 </main>
 
-<?php get_template_part('partials/footer'); ?> -->
+<?php get_template_part('partials/footer'); ?>

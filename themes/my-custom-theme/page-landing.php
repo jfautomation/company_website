@@ -4,7 +4,7 @@
  */
 ?>
 
-<?php get_template_part( 'partials/header' ); ?>
+
 <div class="landing-page-content">
     <!-- <?php
     // Use WordPress loop to pull content from the CMS
@@ -23,5 +23,5 @@
     <?php get_template_part('partials/landing-page-blog')?>
     <?php get_template_part('partials/landing-page-reviews')?>
     <?php get_template_part('partials/landing-page-brands')?>
+     <?php get_template_part('partials/landing-page-map')?>
 </div>
-<?php get_template_part( 'partials/footer' ); ?>

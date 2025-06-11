@@ -64,22 +64,26 @@
         </style>
 
         <?php
+$globals_id = 578;
+?>
+
+        <?php
 $footer_links = array(
     array(
-        'text' => get_field('link_1_text'),
-        'url'  => get_field('link_1_link'),
+        'text' => get_field('link_1_text', $globals_id),
+        'url'  => get_field('link_1_link', $globals_id),
     ),
     array(
-        'text' => get_field('link_2_text'),
-        'url'  => get_field('link_2_link'),
+        'text' => get_field('link_2_text', $globals_id),
+        'url'  => get_field('link_2_link', $globals_id),
     ),
     array(
-        'text' => get_field('link_3_text'),
-        'url'  => get_field('link_3_link'),
+        'text' => get_field('link_3_text', $globals_id),
+        'url'  => get_field('link_3_link', $globals_id),
     ),
     array(
-        'text' => get_field('link_4_text'),
-        'url'  => get_field('link_4_link'),
+        'text' => get_field('link_4_text', $globals_id),
+        'url'  => get_field('link_4_link', $globals_id),
     ),
 );
 ?>
@@ -87,16 +91,16 @@ $footer_links = array(
         <?php
 $contact_items = [
     [
-        'icon'  => get_field('phone_icon'),
-        'label' => get_field('phone_number'),
+        'icon'  => get_field('phone_icon', $globals_id),
+        'label' => get_field('phone_number', $globals_id),
     ],
     [
-        'icon'  => get_field('address_icon'),
-        'label' => get_field('address'),
+        'icon'  => get_field('address_icon', $globals_id),
+        'label' => get_field('address', $globals_id),
     ],
     [
-        'icon'  => get_field('email_icon'),
-        'label' => get_field('email'),
+        'icon'  => get_field('email_icon', $globals_id),
+        'label' => get_field('email', $globals_id),
     ],
 ];
 ?>
@@ -104,47 +108,45 @@ $contact_items = [
 
 
 
-        <footer class="py-4 text-light">
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2887.977936550798!2d-79.62397892337076!3d43.62781815407149!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b389c10874e7f%3A0x89b360f99d52ebdb!2s1155%20Fewster%20Dr%2C%20Mississauga%2C%20ON%20L4W%201A2!5e0!3m2!1sen!2sca!4v1749232259674!5m2!1sen!2sca"
-                style="width: 100%; height: 400px;" allowfullscreen="" loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"></iframe>
 
 
-            <div class="footer-container bg-dark">
-                <div class="container py-5">
+
+        <div class="footer-container bg-dark">
+            <div class="container py-5">
 
 
-                    <div class="row text-light gx-5">
-                        <div class="footer-section col">
-                            <div>
-                                <h3 class="fw-semibold jf-automation-header">
-                                    <?php echo esc_html(get_field('jf_automation_header')); ?></h3>
-                                <p class="footer-section-margin footer-paragraph">
-                                    <?php echo esc_html(get_field('jf_automation_paragraph')); ?></p>
-                            </div>
+                <div class="row text-light gx-5">
+                    <div class="footer-section col">
+                        <div>
+                            <h3 class="fw-semibold jf-automation-header">
+                                <?php echo esc_html(get_field('jf_automation_header', $globals_id)); ?></h3>
+                            <p class="footer-section-margin footer-paragraph">
+                                <?php echo esc_html(get_field('jf_automation_paragraph', $globals_id)); ?></p>
                         </div>
-                        <div class="footer-section col">
-                            <div>
-                                <h6 class="fw-semibold"><?php echo esc_html(get_field('quick_links_title')); ?></h6>
-                                <ul class="footer-links d-flex flex-column list-unstyled gap-2">
-                                    <?php foreach ($footer_links as $link) : ?>
-                                    <?php if (!empty($link['text']) && !empty($link['url'])) : ?>
-                                    <li>
-                                        <a href="<?php echo esc_url($link['url']); ?>">
-                                            <?php echo esc_html($link['text']); ?>
-                                        </a>
-                                    </li>
-                                    <?php endif; ?>
-                                    <?php endforeach; ?>
-                                </ul>
-                            </div>
+                    </div>
+                    <div class="footer-section col">
+                        <div>
+                            <h6 class="fw-semibold"><?php echo esc_html(get_field('quick_links_title', $globals_id)); ?>
+                            </h6>
+                            <ul class="footer-links d-flex flex-column list-unstyled gap-2">
+                                <?php foreach ($footer_links as $link) : ?>
+                                <?php if (!empty($link['text']) && !empty($link['url'])) : ?>
+                                <li>
+                                    <a href="<?php echo esc_url($link['url']); ?>">
+                                        <?php echo esc_html($link['text']); ?>
+                                    </a>
+                                </li>
+                                <?php endif; ?>
+                                <?php endforeach; ?>
+                            </ul>
                         </div>
-                        <div class="footer-section col">
-                            <div>
-                                <h6 class="fw-semibold"><?php echo esc_html(get_field('blog_footer_title')); ?></h6>
+                    </div>
+                    <div class="footer-section col">
+                        <div>
+                            <h6 class="fw-semibold"><?php echo esc_html(get_field('blog_footer_title', $globals_id)); ?>
+                            </h6>
 
-                                <?php
+                            <?php
             $random_posts = new WP_Query(array(
                 'post_type'      => 'post',
                 'posts_per_page' => 3,
@@ -156,58 +158,61 @@ $contact_items = [
                 while ($random_posts->have_posts()) :
                     $random_posts->the_post();
                     ?>
-                                <li class="mb-3 d-flex flex-column">
-                                    <a class="fw-semibold text-light" href="<?php the_permalink(); ?>"
-                                        class="fw-semibold d-block">
-                                        <?php the_title(); ?>
-                                    </a>
-                                    <small class="text-grey-on-black">
-                                        <?php echo wp_trim_words(get_the_excerpt(), 5, '...'); ?>
-                                    </small>
-                                </li>
-                                <?php
+                            <li class="mb-3 d-flex flex-column">
+                                <a class="fw-semibold text-light" href="<?php the_permalink(); ?>"
+                                    class="fw-semibold d-block">
+                                    <?php the_title(); ?>
+                                </a>
+                                <small class="text-grey-on-black">
+                                    <?php echo wp_trim_words(get_the_excerpt(), 5, '...'); ?>
+                                </small>
+                            </li>
+                            <?php
                 endwhile;
                 echo '</ul>';
                 wp_reset_postdata();
             endif;
             ?>
 
-                            </div>
-                        </div>
-
-                        <div class="footer-section col">
-                            <div>
-                                <h6 class="fw-semibold"><?php echo esc_html(get_field('contact_info_title')); ?></h6>
-                                <ul class="list-unstyled contact-info-list">
-                                    <?php foreach ($contact_items as $item) : ?>
-                                    <?php if (!empty($item['label'])) : ?>
-                                    <li class="text-grey-on-black d-flex align-items-center mb-2">
-                                        <?php if (!empty($item['icon'])) : ?>
-                                        <i
-                                            class="contact-info-icon me-3 bi <?php echo esc_attr($item['icon']); ?> me-2"></i>
-                                        <?php endif; ?>
-                                        <span><?php echo esc_html($item['label']); ?></span>
-                                    </li>
-                                    <?php endif; ?>
-                                    <?php endforeach; ?>
-                                </ul>
-
-                            </div>
                         </div>
                     </div>
-                    <!-- <p>&copy; <?php echo date("Y"); ?> JF Automation Inc.</p> -->
 
+                    <div class="footer-section col">
+                        <div>
+                            <h6 class="fw-semibold"><?php echo esc_html(get_field('contact_info_title')); ?></h6>
+                            <ul class="list-unstyled contact-info-list">
+                                <?php foreach ($contact_items as $item) : ?>
+                                <?php if (!empty($item['label'])) : ?>
+                                <li class="text-grey-on-black d-flex align-items-center mb-2">
+                                    <?php if (!empty($item['icon'])) : ?>
+                                    <i
+                                        class="contact-info-icon me-3 bi <?php echo esc_attr($item['icon']); ?> me-2"></i>
+                                    <?php endif; ?>
+                                    <span><?php echo esc_html($item['label']); ?></span>
+                                </li>
+                                <?php endif; ?>
+                                <?php endforeach; ?>
+                            </ul>
+
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="bottom-footer">
-                <div class="container py-3 d-flex justify-content-between">
-                    <p class="mb-0">&copy; <?php echo date("Y"); ?> All right reserved. <span class="ms-1 text-blue fw-semibold">JF Automation</span></p>
-                    <div class="d-flex gap-3 text-light"><i class="bi fs-5 <?php echo esc_attr(get_field('social_icon_1')); ?>"></i>
-                        <i class="bi fs-5 <?php echo esc_attr(get_field('social_icon_2')); ?>"></i></div>
+                <!-- <p>&copy; <?php echo date("Y"); ?> JF Automation Inc.</p> -->
 
+            </div>
+        </div>
+        <div class="bottom-footer">
+            <div class="container py-3 d-flex justify-content-between">
+                <p class="mb-0">&copy; <?php echo date("Y"); ?> All right reserved. <span
+                        class="ms-1 text-blue fw-semibold">JF Automation</span></p>
+                <div class="d-flex gap-3 text-light"><i
+                        class="bi fs-5 <?php echo esc_attr(get_field('social_icon_1')); ?>"></i>
+                    <i class="bi fs-5 <?php echo esc_attr(get_field('social_icon_2')); ?>"></i>
                 </div>
 
             </div>
+
+        </div>
 
 
         </footer>
