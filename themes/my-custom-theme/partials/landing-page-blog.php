@@ -1,9 +1,11 @@
 <style>
 .category-badge {
     position: absolute;
+    font-weight: 500;
     top: 6px;
     right: 6px;
-    border: 2px solid white;
+    border: 0.1px solid white;
+    background-color: #ffffff2b;
 }
 </style>
 

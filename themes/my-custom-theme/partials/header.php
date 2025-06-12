@@ -13,7 +13,7 @@
 <body <?php body_class(); ?>>
 
     <!-- <header class="fixed-top"> -->
-        <header class="<?php echo is_front_page() ? 'header-overlay' : ''; ?>">
+    <header class="<?php echo (is_front_page() || is_page('about')) ? 'header-overlay' : ''; ?>">
         <nav class="navbar navbar-expand-lg bg-body-tertiary px-4" id="main-navbar">
             <div class="container">
                 <a class="navbar-brand mt-1" href="#">Navbar</a>
@@ -83,6 +83,6 @@
                         <i class="bi fs-5 <?php echo esc_attr(get_field('social_icon_2')); ?>"></i>
                     </div>
                 </div>
-            </div> 
+            </div>
         </nav>
     </header>

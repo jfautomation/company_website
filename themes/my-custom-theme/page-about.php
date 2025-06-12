@@ -4,9 +4,14 @@
  */
 ?>
 
+<?php
+$about_hero_bg_image = get_field('about_page_hero_image');
+?>
+
 
 
 <div class="about-page-content">
+    <div  style="background-image: url('<?php echo esc_url($about_hero_bg_image); ?>'); background-size: cover; background-position: center;" class="about-page-hero"></div>
     <?php
    
     if ( have_posts() ) :
