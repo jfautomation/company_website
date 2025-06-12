@@ -4,3 +4,12 @@
      z-index: 1;
 
 }
+
+.img-overlay-text {
+    position: absolute;
+    bottom: 0;
+}
+
+.hero-title {
+    font-size: 3.5rem !important;
+}
