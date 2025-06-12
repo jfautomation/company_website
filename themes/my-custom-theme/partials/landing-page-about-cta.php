@@ -20,7 +20,7 @@ $cta_image_url = $cta_image_url ? esc_url($cta_image_url) : '';
     z-index: 1;
 }
 </style>
-<div>
+<div class="mt-3">
     <div class="container text-light custom-rounded">
         <div style="
         background: url('<?php echo $cta_image_url; ?>') center center / cover

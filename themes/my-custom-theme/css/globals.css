@@ -211,8 +211,6 @@ hr {
   box-shadow: 0 0 10px rgba(0, 123, 255, 0.4);
 }
 
-
-
 /* ///// btn outline white */
 .btn-outline-white {
   background: transparent;
@@ -233,7 +231,7 @@ hr {
 /* ///// btn outline black */
 .btn-outline-black {
   background: transparent;
-  border: 2px solid var(--color-bs-dark); 
+  border: 2px solid var(--color-bs-dark);
   color: var(--color-bs-dark);
   transition: all 0.25s ease;
   font-weight: 700;
@@ -243,6 +241,6 @@ hr {
   background: var(--color-bs-dark);
   color: white;
   box-shadow: inset 5px 5px 15px rgba(0, 0, 0, 0.2),
-              inset -5px -5px 15px rgba(255, 255, 255, 0.05);
+    inset -5px -5px 15px rgba(255, 255, 255, 0.05);
   transform: scale(1);
 }

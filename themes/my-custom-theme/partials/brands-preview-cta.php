@@ -5,7 +5,6 @@
 
 .brand-preview-logo-wrapper {
     flex: 0 1 auto;
-    /* prevent logos from stretching full width */
     width: 130px;
     position: relative;
     padding-bottom: 10%;

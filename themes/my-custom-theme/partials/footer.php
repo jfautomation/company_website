@@ -54,7 +54,7 @@
 }
 
 .contact-info-icon {
-    color: var(--color-text-primary);
+    /* color: var(--color-text-primary); */
     font-size: 0.9rem;
 }
 
@@ -186,7 +186,7 @@ $contact_items = [
                                 <li class="text-grey-on-black d-flex align-items-center mb-2">
                                     <?php if (!empty($item['icon'])) : ?>
                                     <i
-                                        class="contact-info-icon me-3 bi <?php echo esc_attr($item['icon']); ?> me-2"></i>
+                                        class="text-primary contact-info-icon me-3 bi <?php echo esc_attr($item['icon']); ?> me-2"></i>
                                     <?php endif; ?>
                                     <span><?php echo esc_html($item['label']); ?></span>
                                 </li>
@@ -204,7 +204,7 @@ $contact_items = [
         <div class="bottom-footer">
             <div class="container py-3 d-flex justify-content-between">
                 <p class="mb-0">&copy; <?php echo date("Y"); ?> All right reserved. <span
-                        class="ms-1 text-blue fw-semibold">JF Automation</span></p>
+                        class="ms-1 text-primary fw-semibold">JF Automation</span></p>
                 <div class="d-flex gap-3 text-light"><i
                         class="bi fs-5 <?php echo esc_attr(get_field('social_icon_1')); ?>"></i>
                     <i class="bi fs-5 <?php echo esc_attr(get_field('social_icon_2')); ?>"></i>

@@ -17,7 +17,7 @@
 }
 
 .custom-carousel-card:not(:first-child) {
-  margin-inline-start: 0.8rem;
+    margin-inline-start: 0.8rem;
 }
 
 .custom-carousel-card-inner-wrapper {
@@ -89,72 +89,72 @@ $products = array_filter($products, function($product) {
 ?>
 
 
-        <?php foreach ($products as $index => $product): ?>
-        <?php if ($index % 2 === 0): ?>
+<?php foreach ($products as $index => $product): ?>
+<?php if ($index % 2 === 0): ?>
 
-        <div class="custom-carousel-card custom-rounded p-3 d-flex flex-column text-dark text-center">
-            <div class="custom-carousel-card-inner-wrapper custom-rounded">
-                <div class="row h-100">
-                    <div class="col p-2 card-col bg-light">
-                        <div class="w-100 h-100 d-flex flex-column">
-                            <div class="product-card-image-container">
-                                <img class="product-card-image" src="<?php echo esc_url($product['image']); ?>" />
-                            </div>
-                            <div class="d-flex text-start flex-column align-items-start justify-content-start">
-                                <h5 class="fw-semibold mt-3"><?php echo esc_html($product['name']); ?></h5>
-                                <p class="product-card-description text-grey">
-                                    <?php echo esc_html($product['description']); ?></p>
-                                <div class="w-100 d-flex justify-content-between">
-                                    <div class="d-flex gap-2 align-items-center pb-2">
-                                        <h4 class="mb-0 fw-semibold">$<?php echo esc_html($product['price']); ?></h4>
-                                        <?php
+<div class="custom-carousel-card custom-rounded p-3 d-flex flex-column text-dark text-center">
+    <div class="custom-carousel-card-inner-wrapper custom-rounded">
+        <div class="row h-100">
+            <div class="col p-2 card-col bg-light">
+                <div class="w-100 h-100 d-flex flex-column">
+                    <div class="product-card-image-container">
+                        <img class="product-card-image" src="<?php echo esc_url($product['image']); ?>" />
+                    </div>
+                    <div class="d-flex text-start flex-column align-items-start justify-content-start">
+                        <h5 class="fw-semibold mt-3"><?php echo esc_html($product['name']); ?></h5>
+                        <p class="product-card-description text-grey">
+                            <?php echo esc_html($product['description']); ?></p>
+                        <div class="w-100 d-flex justify-content-between">
+                            <div class="d-flex gap-2 align-items-center pb-2">
+                                <h4 class="mb-0 fw-semibold">$<?php echo esc_html($product['price']); ?></h4>
+                                <?php
 $price = floatval($product['price']);
 $sale_price = $product['sale_price'];
 ?>
 
-                                        <?php if (!empty($sale_price)): ?>
-                                        <span class="fw-semibold fs-6 text-red text-decoration-line-through mt-1">
-                                            $<?php echo esc_html($sale_price); ?>
-                                        </span>
-                                        <?php endif; ?>
-                                    </div>
-                                    <span
-                                        class="d-flex justify-content-center align-items-center arrow-btn bg-gradient-blue text-light"><i
-                                            class="bi bi-arrow-right"></i></span>
-                                </div>
+                                <?php if (!empty($sale_price)): ?>
+                                <span class="fw-semibold fs-6 text-red text-decoration-line-through mt-1">
+                                    $<?php echo esc_html($sale_price); ?>
+                                </span>
+                                <?php endif; ?>
                             </div>
+                            <span
+                                class="d-flex justify-content-center align-items-center arrow-btn bg-gradient-blue text-light"><i
+                                    class="bi bi-arrow-right"></i></span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <?php else: ?>
-        <div class="custom-carousel-card custom-rounded p-3 d-flex flex-column text-dark text-center">
-            <div class="custom-carousel-card-inner-wrapper custom-rounded">
-                <div class="row h-100">
-                    <div class="col card-col black-bg text-light p-3">
-                        <div class="w-100 d-flex flex-column justify-content-between h-100 gap-3">
-                            <div>
-                                <div class="mt-2">
-                                    <small class="text-light"><?php echo esc_html($product['span']); ?></small>
-                                </div>
-                                <h5 class="text-light fw-bold mt-2"><?php echo esc_html($product['name']); ?></h5>
-                                <div class="product-card-transparent-image-wrapper mt-2">
-                                    <img class="product-card-transparent-image"
-                                        src="<?php echo esc_url($product['image']); ?>" />
-                                </div>
-                            </div>
-                            <div class="btn-container d-flex justify-content-center align-items-center w-100 mt-1 pb-2">
-                                <?php echo do_shortcode('[button variant="primary" link="' . esc_url( get_field('link_to_item') ) . '"]$7564[/button]'); ?>
-                            </div>
+    </div>
+</div>
+<?php else: ?>
+<div class="custom-carousel-card custom-rounded p-3 d-flex flex-column text-dark text-center">
+    <div class="custom-carousel-card-inner-wrapper custom-rounded">
+        <div class="row h-100">
+            <div class="col card-col black-bg text-light p-3">
+                <div class="w-100 d-flex flex-column justify-content-between h-100 gap-3">
+                    <div>
+                        <div class="mt-2">
+                            <small class="text-light"><?php echo esc_html($product['span']); ?></small>
                         </div>
+                        <h5 class="text-light fw-bold mt-2"><?php echo esc_html($product['name']); ?></h5>
+                        <div class="product-card-transparent-image-wrapper mt-2">
+                            <img class="product-card-transparent-image"
+                                src="<?php echo esc_url($product['image']); ?>" />
+                        </div>
+                    </div>
+                    <div class="btn-container d-flex justify-content-center align-items-center w-100 mt-1 pb-2">
+                        <?php echo do_shortcode('[button variant="primary" link="' . esc_url( get_field('link_to_item') ) . '"]$7564[/button]'); ?>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+</div>
 
-        <?php endif; ?>
-        <?php endforeach; ?>
+<?php endif; ?>
+<?php endforeach; ?>
 
 <?php
 $carousel_content = ob_get_clean();

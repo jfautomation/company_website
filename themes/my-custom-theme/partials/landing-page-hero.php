@@ -39,14 +39,13 @@ $carousel_images = array_filter(array_column($products, 'image'));
     <div class="hero d-flex flex-column justify-content-center align-items-center"
         style="background-image: url('<?php echo esc_url($hero_bg_image); ?>'); background-size: cover; background-position: center;">
         <div class="container h-100">
-            <div class="row h-100">
+            <div class="row mt-3 h-100">
                 <div class="col-lg-6 col-md-12">
                     <div class="content-wrapper h-100 d-flex flex-column justify-content-center align-items-center">
                         <div class="d-flex flex-column align-items-start">
                             <span
                                 class="fs-5 text-gradient-blue fw-semibold"><?php echo esc_html(get_field('hero_subheader')); ?></span>
                             <h1 class="hero-header text-start fw-semibold w-75 mt-2">
-                                <!-- <?php echo esc_html(get_field('hero_header_text')); ?> -->
                                 Complete Automation Motor Repair<span class="text-gradient-blue"> Solutions</span>
                             </h1>
                             <p class="mt-2 pt-1 hero-paragraph">

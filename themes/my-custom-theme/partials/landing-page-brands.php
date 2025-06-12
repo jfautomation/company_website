@@ -9,7 +9,7 @@
 }
 </style>
 
-<section id="brands">
+<section class="" id="brands">
     <div class="container pb-4">
         <?php
         $args = array(
