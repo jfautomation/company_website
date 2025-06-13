@@ -73,7 +73,7 @@ $carousel_images = array_filter(array_column($products, 'image'));
                 <div class="col-lg-6 col-md-12">
                     <div class="h-100 w-100 d-flex flex-column justify-content-center align-items-center mt-5">
                         <div id="product-images-carousel" class="carousel slide">
-                            <div class="carousel-inner">
+                            <div class="carousel-inner hero-carousel-inner">
                                 <?php foreach ($products as $index => $product) : ?>
                                 <?php if (!empty($product['image'])) : ?>
                                 <div class="h-100 w-100 carousel-item <?php echo ($index === 0) ? 'active' : ''; ?>">

@@ -1,11 +1,8 @@
 <style>
-.category-badge {
+.category-badge-container {
     position: absolute;
-    font-weight: 500;
     top: 6px;
     right: 6px;
-    border: 0.1px solid white;
-    background-color: #ffffff2b;
 }
 </style>
 
@@ -39,7 +36,9 @@
 
                         <?php if (has_post_thumbnail()): ?>
                         <div class="position-relative">
-                            <span class="badge category-badge">Category</span>
+                            <div class="category-badge-container"> <span class="badge custom-badge">Category</span>
+                            </div>
+
                             <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>"
                                 class="card-img-top custom-rounded" alt="<?php echo esc_attr(get_the_title()); ?>">
                         </div>

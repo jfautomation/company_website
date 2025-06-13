@@ -8,11 +8,20 @@
 }
 </style>
 
+<div class="mt-3">
+<?php
+get_template_part('partials/header-and-text', null, array(
+    'h2_text' => get_field('landing_page_intro_header'),
+    'p' => get_field('landing_page_intro_paragraph'),
+   
+));?>
+</div>
+<section class="mt-1">
 
-    
-<section>
     <div class="container">
-         <?php
+
+
+        <?php
 get_template_part('partials/section-header', null, array(
     'h5_text' => get_field('services_subheader'),
     'h2_text' => get_field('services_header'),
@@ -20,7 +29,9 @@ get_template_part('partials/section-header', null, array(
     'see_all_text' => 'See all'
 ));
 ?>
- 
+
+
+
 
 
 

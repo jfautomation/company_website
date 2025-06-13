@@ -14,5 +14,5 @@
     <?php get_template_part('partials/landing-page-blog')?>
     <?php get_template_part('partials/landing-page-reviews')?>
     <?php get_template_part('partials/landing-page-brands')?>
-     <?php get_template_part('partials/landing-page-map')?>
+    <?php get_template_part('partials/landing-page-map')?>
 </div>

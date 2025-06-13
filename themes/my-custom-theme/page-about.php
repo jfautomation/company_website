@@ -44,4 +44,8 @@ get_template_part('partials/header-and-text', null, array(
     <?php
 get_template_part('partials/about-page-selling-cards')
 ?>
+
+    <?php
+get_template_part('partials/about-page-image-carousel')
+?>
 </div>

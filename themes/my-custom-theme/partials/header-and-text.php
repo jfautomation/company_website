@@ -1,6 +1,6 @@
 <style>
 .header-and-text-paragraph {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
 }
 </style>
 
