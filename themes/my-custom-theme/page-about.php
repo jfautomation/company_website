@@ -32,18 +32,12 @@ $about_hero_bg_image = get_field('about_page_hero_image');
         endwhile;
     endif;
     ?>
-    <!-- /// header and text -->
-    <?php
-get_template_part('partials/header-and-text', null, array(
-    'h2_text' => get_field('about_page_opening_header_title'),
-    'p' => get_field('about_page_opening_header_paragraph'),
-));?>
-
-
-
-    <?php
+<?php
 get_template_part('partials/about-page-selling-cards')
-?>
+?> 
+
+
+
 
     <?php
 get_template_part('partials/about-page-image-carousel')

@@ -81,7 +81,7 @@
 </style>
 
 <!-- <div class="col-12 col-md-4 mb-4 d-flex flex-column h-100"> -->
-<div class="col-12 d-flex justify-content-between">
+<div class="col-12 d-flex gap-5">
     <div> <?php if (!empty($args['image'])): ?>
         <div class="w-100 mb-3 position-relative service-image-container custom-rounded">
             <div class="service-inner-span d-flex gap-1 w-100 px-2 py-1 text-light fs-5">

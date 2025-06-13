@@ -4,6 +4,8 @@
     top: 6px;
     right: 6px;
 }
+
+
 </style>
 
 <section class="blog-section pb-5">
@@ -30,7 +32,7 @@
 
     if ($query->have_posts()):
         while ($query->have_posts()): $query->the_post(); ?>
-            <div class="col-md-4 mb-4">
+            <div class="col-md-4 mb-4 position-relative">
                 <div class="h-100 d-flex flex-column">
                     <div class="d-flex flex-column flex-grow-1">
 
@@ -69,6 +71,7 @@
 
                     </div>
                 </div>
+                <div class="about-page-carousel-text-span"><span class="custom-badge">some text here to test first</span></div>
             </div>
 
             <?php endwhile;
